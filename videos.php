@@ -6,7 +6,7 @@ include('layout/header.php'); ?>
 
 <?php
 
-$path = file_get_contents('externals/youtube_cache.txt');
+$path = file_get_contents('externals/data/youtube.txt');
 $array = unserialize($path);
 
 usort($array, function($b, $a) {
