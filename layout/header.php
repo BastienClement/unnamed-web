@@ -1,6 +1,8 @@
 <?php
-$PAGE_TIME_START = microtime(true);
-?><!DOCTYPE html>
+if(!defined('UNNAMED'))
+	require dirname(__FILE__).'/common.php';
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">

@@ -6,8 +6,8 @@ include('layout/header.php'); ?>
 
 <?php
 
-$path = file_get_contents('externals/data/youtube.txt');
-$array = unserialize($path);
+$data = load_external('youtube');
+$array = unserialize($data);
 
 usort($array, function($b, $a) {
 	return $a["upload_date"]-$b["upload_date"];
