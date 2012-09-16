@@ -1,7 +1,7 @@
 <h2>Activité récente</h2>
 
 <?php
-$data = file_get_contents('../www/activityfeed_cache.php');
+$data = load_external('activity');
 $activities = unserialize($data);
 
 foreach($activities as $key => $feed) {
