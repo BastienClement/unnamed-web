@@ -60,13 +60,13 @@ if(!defined('UNNAMED'))
 			<div id="menu">
 				<ul>
 					<li><a href="/index.php">Accueil</a></li>
-					<li><a href="">Articles</a></li>
-					<li><a href="">Blogs</a></li>
+					<li><a href="/articles.php">Articles</a></li>
+					<li><a href="/blogs.php">Blogs</a></li>
 					<li><a href="/videos.php">Vidéos</a></li>
-					<li><a href="">Streams</a></li>
-					<li><a href="">Progression</a></li>
+					<li><a href="streams.php">Streams</a></li>
+					<li><a href="progression.php">Progression</a></li>
 					<li><a class="active" href="">Roster</a></li>
-					<li><a href="">Recrutement</a></li>
+					<li><a href="recrutement.php">Recrutement</a></li>
 					<li><a href="/forums/">Forums</a></li>
 				</ul>
 				<div class="clearfix"></div>
