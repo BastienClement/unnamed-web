@@ -1,7 +1,5 @@
 <?php
 
-define("HIDE_BLOGS_SLIDER",true);
-
 include('layout/header.php'); ?>
 
 <?php
