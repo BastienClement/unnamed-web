@@ -50,6 +50,8 @@
 				<div class="col col3">
 					<?php require 'home-blocks/ranking.php'; ?>
 					<div class="hr"></div>
+					<?php require 'home-blocks/facebook.php'; ?>
+					<div class="hr"></div>
 					<?php require 'home-blocks/activity.php'; ?>
 					<div class="hr"></div>
 					<?php require 'home-blocks/sponsors.php'; ?>

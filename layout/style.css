@@ -197,6 +197,32 @@ a:first-child .col-slide:first-child {
 	height: 250px;
 }
 
+#login-bar{
+	padding:10px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	background: rgba(0, 0, 0, 0.9);
+}
+
+#logon{
+	float:right;
+}
+
+#login-bar a{
+font-weight:bold;
+color:#bbb;
+}
+
+#login-bar a:hover{
+color:#FFF;
+}
+
+#logon a{
+	margin-left:20px;
+}
+
 #social {
 	position: absolute;
 	left: 100%;
@@ -205,7 +231,7 @@ a:first-child .col-slide:first-child {
 }
 
 #social img {
-	height: 50px;
+	height: 40px;
 	display: block;
 	position: relative;
 	left: -25px;

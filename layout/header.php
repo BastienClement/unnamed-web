@@ -1,6 +1,14 @@
 <?php
+
+if(!defined("IS_PUN")){
+define('PUN_ROOT', './forums/');
+define('PUN_TURN_OFF_MAINT', 1);
+require PUN_ROOT.'include/common.php';
+}
+
 if(!defined('UNNAMED'))
 	require dirname(__FILE__).'/common.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +43,16 @@ if(!defined('UNNAMED'))
 	<script src="http://static.wowhead.com/widgets/power.js"></script>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=229695590414675";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="top-background">
 <div id="page">
 
@@ -63,16 +81,27 @@ if(!defined('UNNAMED'))
 					<li><a href="/articles.php">Articles</a></li>
 					<li><a href="/blogs.php">Blogs</a></li>
 					<li><a href="/videos.php">Vidéos</a></li>
-					<li><a href="streams.php">Streams</a></li>
-					<li><a href="progression.php">Progression</a></li>
-					<li><a class="active" href="">Roster</a></li>
-					<li><a href="recrutement.php">Recrutement</a></li>
+					<li><a href="/streams.php">Streams</a></li>
+					<li><a href="/progression.php">Progression</a></li>
+					<li><a class="/active" href="">Roster</a></li>
+					<li><a href="/recrutement.php">Recrutement</a></li>
 					<li><a href="/forums/">Forums</a></li>
 				</ul>
 				<div class="clearfix"></div>
 			</div>
 
 			<div id="slider-news">
+				<?php if($pun_user['is_guest']): ?>
+				<div id="login-bar">
+					<div id="logon"><a href="/forums/login.php"><i class="icon-lock icon-white"></i> Se connecter</a><a href="/forums/register.php"><i class="icon-user icon-white"></i> S'inscrire</a></div>
+					Vous n'êtes pas identifié(e).
+				</div>
+				<?php else: ?>
+				<div id="login-bar">
+					<div id="logon"><?php echo'<a href="/forums/login.php?action=out&id='.$pun_user['id'].'&csrf_token='.pun_hash($pun_user['id'].pun_hash(get_remote_address())).'"><i class="icon-ban-circle icon-white"></i> Se déconnecter</a>'?></div>
+					Bienvenue <a href="/forum/profile.php?id=<?php echo $pun_user['id'] ?>"><?php echo $pun_user['username'] ?></a>.
+				</div>
+				<?php endif; ?>
 				<div id="slide-news"></div>
 			</div>
 		</div>
