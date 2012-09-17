@@ -3,6 +3,9 @@
 define('UNNAMED', 1);
 define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
 
+define('UNNAMED_PROD', isset($_SERVER['UNNAMED_PROD']));
+define('UNNAMED_DEV', !UNNAMED_PROD);
+
 require UNNAMED_ROOT.'/externals/loader.php';
 
 if(!defined("IS_PUN")){

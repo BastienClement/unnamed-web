@@ -312,7 +312,7 @@ else if ($action == 'change_email')
 
 else if ($action == 'upload_avatar' || $action == 'upload_avatar2')
 {
-	if ($pun_config['o_avatars'] == '0')
+	if ($pun_config['o_avatars'] == '0' || UNNAMED_DEV)
 		message($lang_profile['Avatars disabled']);
 
 	if ($pun_user['id'] != $id && !$pun_user['is_admmod'])
@@ -1514,7 +1514,7 @@ else
 		<div class="box">
 			<form id="profile4" method="post" action="profile.php?section=personality&amp;id=<?php echo $id ?>">
 				<div><input type="hidden" name="form_sent" value="1" /></div>
-<?php if ($pun_config['o_avatars'] == '1'): ?>				<div class="inform">
+<?php if ($pun_config['o_avatars'] == '1' && UNNAMED_PROD): ?>				<div class="inform">
 					<fieldset id="profileavatar">
 						<legend><?php echo $lang_profile['Avatar legend'] ?></legend>
 						<div class="infldset">
