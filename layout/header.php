@@ -110,7 +110,7 @@ if(!defined('UNNAMED'))
 			<a href="https://twitter.com/GuildeUnnamed">
 				<img src="/layout/img/social-icons/twitter.png"/>
 			</a>
-			<a href="">
+			<a href="/rss">
 				<img src="/layout/img/social-icons/rss.png"/>
 			</a>
 		</div>

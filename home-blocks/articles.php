@@ -2,7 +2,7 @@
 
 <div class="content-block">
 <div class="last-news">
-<a href=""><div class="last-news-title">
+<a href="/article"><div class="last-news-title">
 <h3>La cinématique de Mists of Pandaria</h3>
 <div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
 <div class="last-news-img-bar"></div>
@@ -15,7 +15,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 <div class="content-block">
 <div class="last-news">
-<a href=""><div class="last-news-title">
+<a href="/article"><div class="last-news-title">
 <h3>La cinématique de Mists of Pandaria</h3>
 <div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
 <div class="last-news-img-bar"></div>
@@ -28,7 +28,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 <div class="content-block">
 <div class="last-news">
-<a href=""><div class="last-news-title">
+<a href="/article"><div class="last-news-title">
 <h3>La cinématique de Mists of Pandaria</h3>
 <div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
 <div class="last-news-img-bar"></div>
@@ -41,7 +41,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 <div class="content-block">
 <div class="last-news">
-<a href=""><div class="last-news-title">
+<a href="/article"><div class="last-news-title">
 <h3>La cinématique de Mists of Pandaria</h3>
 <div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
 <div class="last-news-img-bar"></div>
@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 <div class="content-block">
 <div class="last-news">
-<a href=""><div class="last-news-title">
+<a href="/article"><div class="last-news-title">
 <h3>La cinématique de Mists of Pandaria</h3>
 <div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
 <div class="last-news-img-bar"></div>
@@ -65,4 +65,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 </div>
 
-<div class="button-wrapper"><a href="" class="button">Voir tous les articles</a></div>
+<div class="button-wrapper"><a href="/articles" class="button">Voir tous les articles</a></div>
