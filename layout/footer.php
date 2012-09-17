@@ -29,11 +29,7 @@
 			<div class="right">
 				Conception PHP5 / HTML5 / CSS3 / JS : <a href="">Noumah</a>, <a href="">Blash</a>
 			</div>
-			<?php
-				$PAGE_TIME_END = microtime(true);
-				$PAGE_TIME = round(($PAGE_TIME_END - $PAGE_TIME_START)*1000)/1000;
-			?>
-			© Unnamed.eu – Généré par <a href="http://www.fluxbb.org/">FluxBB</a>, <a href="http://jquery.com">jQuery</a> en <?php echo $PAGE_TIME; ?>s
+			© Unnamed.eu – Généré par <a href="http://www.fluxbb.org/">FluxBB</a>, <a href="http://jquery.com">jQuery</a> en <unnamed_time>s
 		</div>
 	</div>
 </div>
