@@ -71,7 +71,7 @@ if(!defined('UNNAMED'))
 		<div id="top">
 			<div id="menu">
 				<ul>
-					<li><a href="/">Accueil</a></li>
+					<li><a href="/"><div id="home-link"></div></a></li>
 					<li><a href="/articles">Articles</a></li>
 					<li><a href="/blogs">Blogs</a></li>
 					<li><a href="/videos">Vidéos</a></li>
@@ -87,12 +87,12 @@ if(!defined('UNNAMED'))
 			<div id="slider-news">
 				<?php if($pun_user['is_guest']): ?>
 				<div id="login-bar">
-					<div id="logon"><a href="/forums/login.php"><i class="icon-lock icon-white"></i> Se connecter</a><a href="/forums/register.php"><i class="icon-user icon-white"></i> S'inscrire</a></div>
+					<div id="logon"><a href="/forums/login.php"><i class="icon-check icon-white"></i> Se connecter</a><a href="/forums/register.php"><i class="icon-edit icon-white"></i> S'inscrire</a></div>
 					Vous n'êtes pas identifié(e).
 				</div>
 				<?php else: ?>
 				<div id="login-bar">
-					<div id="logon"><?php echo'<a href="/forums/login.php?action=out&id='.$pun_user['id'].'&csrf_token='.pun_hash($pun_user['id'].pun_hash(get_remote_address())).'"><i class="icon-ban-circle icon-white"></i> Se déconnecter</a>'?></div>
+					<div id="logon"><?php echo'<a href="/forums/login.php?action=out&id='.$pun_user['id'].'&csrf_token='.pun_hash($pun_user['id'].pun_hash(get_remote_address())).'"><i class="icon-share icon-white"></i> Se déconnecter</a>'?></div>
 					Bienvenue <a href="/forums/profile.php?id=<?php echo $pun_user['id'] ?>"><?php echo $pun_user['username'] ?></a>.
 				</div>
 				<?php endif; ?>

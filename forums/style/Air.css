@@ -878,8 +878,14 @@ MAIN POSTS
 	padding-top: 10px;
 }
 
+.usercontacts span{
+margin: 0 10px 0 0;
+}
+
 .pun .blockpost .usercontacts span:before {
-	background-image:url("../../layout/bootstrap/img/glyphicons-halflings.png");
+	position:relative;
+	top:2px;
+	background-image:url("../../layout/bootstrap/img/glyphicons-halflings-white.png");
 	margin:0 5px 0 0;
 	display:inline-block;
 	content:"";
@@ -1271,6 +1277,8 @@ MAIN FORMS
 } */
 
 .pun .blockform .bblinks li span:before{
+position:relative;
+top:2px;
 	background-position: -96px -96px;
 	background-image:url("../../layout/bootstrap/img/glyphicons-halflings-white.png");
 	margin:0 5px 0 0;
@@ -1617,20 +1625,20 @@ COLOUR SCHEME
 }
 
 .postfootright a:before{
-	margin:0 5px 0 0;
+	margin:1px 5px 0 0;
 	float:left;
 	content:"";
 	width:14px;
 	height:14px;
-	background-image:url("../../layout/bootstrap/img/glyphicons-halflings.png");
+	background-image:url("../../layout/bootstrap/img/glyphicons-halflings-white.png");
 }
 
 .postreport a:before{
-	background-position: -144px -120px;
+	background-position: -72px -120px;
 }
 
 .postdelete a:before{
-	background-position: -456px 0;
+	background-position: -312px 0;
 }
 
 .postedit a:before{

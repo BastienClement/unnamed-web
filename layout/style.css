@@ -154,6 +154,26 @@ color:#bbb;
 color:#fff;
 }
 
+.col-footer .stats, .col-footer .links, .col-footer .mmochampion, .col-footer .bluetracker {
+padding:0 0 0 26px;
+}
+
+.col-footer .stats{
+background:url('/layout/img/stats.png') no-repeat left center;
+}
+
+.col-footer .links{
+background:url('/layout/img/links.png') no-repeat left center;
+}
+
+.col-footer .bluetracker{
+background:url('/layout/img/tracker.png') no-repeat left center;
+}
+
+.col-footer .mmochampion{
+background:url('/layout/img/rss.png') no-repeat left center;
+}
+
 /* ----- Header ----- */
 
 #menu {
@@ -187,6 +207,18 @@ color:#fff;
 #menu a:hover {
 	background: #6ddc00;
 	color: #000;
+}
+
+#home-link{
+position:relative;
+top:-1px;
+height:20px;
+width:20px;
+background:url('/layout/img/home-white.png') center no-repeat;
+}
+
+a:hover #home-link{
+background:url('/layout/img/home-black.png') center no-repeat;
 }
 
 #top-wrapper {
@@ -1064,6 +1096,18 @@ color:#FFF;
 	background: rgba(0, 0, 0, 0.3);
 	display: inline-block;
 	box-shadow: inset 1px 1px 2px #000;
+}
+
+.button:after{
+position:relative;
+top:2px;
+margin:0 0 0 5px;
+display:inline-block;
+	background-image:url('bootstrap/img/glyphicons-halflings-white.png');
+	background-position:-456px -72px;
+	width:12px;
+	height:14px;
+	content:"";
 }
 
 .button:first-child {

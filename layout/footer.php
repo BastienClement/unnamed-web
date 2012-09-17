@@ -5,17 +5,17 @@
 		<div class="section-light">
 			<div class="section-content">
 				<div class="col col-footer">
-					<h2>MMO-Champion</h2>
+					<h2 class="mmochampion">MMO-Champion</h2>
 
 				</div>
 				
 				<div class="col col-footer">
-					<h2>Blue Tracker</h2>
+					<h2 class="bluetracker">Blue Tracker</h2>
 
 				</div>
 				
 				<div class="col col-footer">
-					<h2>Liens</h2>
+					<h2 class="links">Liens</h2>
 					<ul>
 			<li><a href="http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The Unnamed/news">Actualités de la guilde</a></li>
            <li><a href="http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The Unnamed/">Armurerie</a></li>
@@ -30,7 +30,7 @@
 				</div>
 				
 				<div class="col col-footer">
-					<h2>Statistiques</h2>
+					<h2 class="stats">Statistiques</h2>
 					<ul>
 					<?php
 					
