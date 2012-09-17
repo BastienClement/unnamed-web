@@ -53,8 +53,8 @@
 					<?php require 'home-blocks/facebook.php'; ?>
 					<div class="hr"></div>
 					<?php require 'home-blocks/activity.php'; ?>
-					<div class="hr"></div>
-					<?php require 'home-blocks/sponsors.php'; ?>
+					<!-- <div class="hr"></div>
+					<?php require 'home-blocks/sponsors.php'; ?> -->
 				</div>
 				<div class="clearfix"></div>
 			</div>

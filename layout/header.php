@@ -93,7 +93,7 @@ if(!defined('UNNAMED'))
 				<?php else: ?>
 				<div id="login-bar">
 					<div id="logon"><?php echo'<a href="/forums/login.php?action=out&id='.$pun_user['id'].'&csrf_token='.pun_hash($pun_user['id'].pun_hash(get_remote_address())).'"><i class="icon-ban-circle icon-white"></i> Se déconnecter</a>'?></div>
-					Bienvenue <a href="/forum/profile.php?id=<?php echo $pun_user['id'] ?>"><?php echo $pun_user['username'] ?></a>.
+					Bienvenue <a href="/forums/profile.php?id=<?php echo $pun_user['id'] ?>"><?php echo $pun_user['username'] ?></a>.
 				</div>
 				<?php endif; ?>
 				<div id="slide-news"></div>

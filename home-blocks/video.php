@@ -1,5 +1,21 @@
 <h2>Dernière vidéo</h2>
 
-<iframe width="380" height="250" src="http://www.youtube.com/embed/Mj0hYb7gaQk" frameborder="0" allowfullscreen></iframe>
+<?php
 
-<div class="button-wrapper"><a href="" class="button">Voir toutes les vidéos</a></div>
+$data = load_external('youtube');
+$array = unserialize($data);
+
+usort($array, function($b, $a) {
+	return $a["upload_date"]-$b["upload_date"];
+});
+
+$array = array_shift($array);
+
+$url = $array['url'];
+parse_str( parse_url( $url, PHP_URL_QUERY ), $video_id );
+
+?>
+
+<iframe width="380" height="250" src="http://www.youtube.com/embed/<?php echo $video_id['v']; ?>" frameborder="0" allowfullscreen></iframe>
+
+<div class="button-wrapper"><a href="/videos.php" class="button">Voir toutes les vidéos</a></div>

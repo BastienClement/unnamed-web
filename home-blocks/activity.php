@@ -5,7 +5,7 @@ $data = load_external('activity');
 $activities = unserialize($data);
 
 foreach($activities as $key => $feed) {
-	if($key >= 8)
+	if($key >= 10)
 		break;
 	
 	$full       = trim($feed["full"]);
@@ -56,4 +56,4 @@ foreach($activities as $key => $feed) {
 }
 ?>
 
-<div class="button-wrapper"><a href="" class="button">Afficher plus</a></div>
+<div class="button-wrapper"><a href="http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The Unnamed/news" class="button">Afficher plus</a></div>
