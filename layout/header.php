@@ -64,21 +64,21 @@ if(!defined('UNNAMED'))
 <![endif]-->
 
 <div id="header">
-	<div id="logo"><a href=""><img src="/layout/img/logo_shadowed.png"/></a></div>
+	<div id="logo"><a href="/"><img src="/layout/img/logo_shadowed.png"/></a></div>
 	<div id="sponsor"></div>
 	
 	<div id="top-wrapper">
 		<div id="top">
 			<div id="menu">
 				<ul>
-					<li><a href="/index.php">Accueil</a></li>
-					<li><a href="/articles.php">Articles</a></li>
-					<li><a href="/blogs.php">Blogs</a></li>
-					<li><a href="/videos.php">Vidéos</a></li>
-					<li><a href="/streams.php">Streams</a></li>
-					<li><a href="/progression.php">Progression</a></li>
-					<li><a class="/active" href="">Roster</a></li>
-					<li><a href="/recrutement.php">Recrutement</a></li>
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/articles">Articles</a></li>
+					<li><a href="/blogs">Blogs</a></li>
+					<li><a href="/videos">Vidéos</a></li>
+					<li><a href="/streams">Streams</a></li>
+					<li><a href="/progression">Progression</a></li>
+					<li><a class="/active" href="/roster">Roster</a></li>
+					<li><a href="/recrutement">Recrutement</a></li>
 					<li><a href="/forums/">Forums</a></li>
 				</ul>
 				<div class="clearfix"></div>
