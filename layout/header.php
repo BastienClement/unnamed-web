@@ -1,11 +1,5 @@
 <?php
 
-if(!defined("IS_PUN")){
-define('PUN_ROOT', './forums/');
-define('PUN_TURN_OFF_MAINT', 1);
-require PUN_ROOT.'include/common.php';
-}
-
 if(!defined('UNNAMED'))
 	require dirname(__FILE__).'/common.php';
 
@@ -49,7 +43,7 @@ if(!defined('UNNAMED'))
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=229695590414675";
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=229695590414675";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

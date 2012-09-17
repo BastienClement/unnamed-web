@@ -5,6 +5,12 @@ define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
 
 require UNNAMED_ROOT.'/externals/loader.php';
 
+if(!defined("IS_PUN")){
+define('PUN_ROOT', './forums/');
+define('PUN_TURN_OFF_MAINT', 1);
+require PUN_ROOT.'include/common.php';
+}
+
 // Load timer
 
 if(defined('IS_PUN')):
