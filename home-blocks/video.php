@@ -11,8 +11,7 @@ usort($array, function($b, $a) {
 
 $array = array_shift($array);
 
-$url = $array['url'];
-parse_str( parse_url( $url, PHP_URL_QUERY ), $video_id );
+parse_str( parse_url( $array['url'], PHP_URL_QUERY ), $video_id );
 
 ?>
 

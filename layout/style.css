@@ -142,6 +142,18 @@ a:first-child .col-slide:first-child {
 	margin-left: 0px;
 }
 
+.col-footer ul{
+	list-style:none;
+}
+
+.col-footer a{
+color:#bbb;
+}
+
+.col-footer a:hover{
+color:#fff;
+}
+
 /* ----- Header ----- */
 
 #menu {
