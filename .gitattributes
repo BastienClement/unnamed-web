@@ -1,10 +1,10 @@
 * text=auto
 
-*.php	text
-*.css	text
-*.js	text
-*.txt	text
-*.html	text
+*.php	eol=lf
+*.css	eol=lf
+*.js	eol=lf
+*.txt	eol=lf
+*.html	eol=lf
 
 *.png	binary
 *.jpg	binary
