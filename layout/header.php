@@ -39,8 +39,7 @@ if(!defined('UNNAMED'))
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="/layout/bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://static.wowhead.com/widgets/power.js"></script>
-	
-	
+	<!--[if lt IE 10]><script src="/layout/scripts/ie_transitions.js"></script><![endif]-->
 </head>
 <body>
 
