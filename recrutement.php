@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Recrutement";
 include('layout/header.php'); ?>
 
 	

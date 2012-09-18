@@ -1,5 +1,5 @@
-<?php
-
+﻿<?php
+$page_title = "Vidéos";
 include('layout/header.php'); ?>
 
 <?php

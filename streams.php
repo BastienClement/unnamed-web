@@ -1,4 +1,5 @@
 <?php
+$page_title = "Streams";
 
 include('layout/header.php'); ?>
 

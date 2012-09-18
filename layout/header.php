@@ -12,7 +12,11 @@ if(!defined('UNNAMED'))
 	<?php if(defined("IS_PUN")): ?>
 		<pun_head>
 	<?php else: ?>
-		<title></title>
+		<?php if (isset($page_title)):?>
+		<title>Unnamed.eu - <?php echo $page_title; ?></title>
+		<?php else: ?>
+		<title>Unnamed.eu - Portail de la guilde The Unnamed sur le serveur Marécage de Zangar (EU)</title>
+		<?php endif;?>
 	<?php endif; ?>
 	
 	<meta name="description" content="">
@@ -21,10 +25,10 @@ if(!defined('UNNAMED'))
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
 	<link rel="stylesheet" type="text/css" href="/layout/style.css">
+	<link rel="icon" type="image/png" href="/layout/img/fav.png" />
 	
 	<style type="text/css">
 		@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
-		
 		<?php if(preg_match("/Chrome/", $_SERVER["HTTP_USER_AGENT"]) && preg_match("/Windows/", $_SERVER["HTTP_USER_AGENT"])): ?>
 		@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400");
 		<?php else: ?>
@@ -35,6 +39,8 @@ if(!defined('UNNAMED'))
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="/layout/bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://static.wowhead.com/widgets/power.js"></script>
+	
+	
 </head>
 <body>
 

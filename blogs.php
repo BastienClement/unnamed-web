@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Blogs";
 include('layout/header.php'); ?>
 
 	

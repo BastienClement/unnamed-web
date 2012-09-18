@@ -146,6 +146,15 @@ a:first-child .col-slide:first-child {
 	list-style:none;
 }
 
+.col-footer li{
+margin-top:5px;
+}
+
+.col-footer .footrss{
+font-style:italic;
+color:#545454;
+}
+
 .col-footer a{
 color:#bbb;
 }

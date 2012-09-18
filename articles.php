@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Articles";
 include('layout/header.php'); ?>
 
 	

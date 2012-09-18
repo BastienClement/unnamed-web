@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Progression";
 include('layout/header.php'); ?>
 
 	
