@@ -28,9 +28,9 @@
 					<?php
 						
 						$data = load_external('bluetracker');
-						$mmochampion = unserialize($data);
+						$bluetracker = unserialize($data);
 						
-						foreach($mmochampion as $key => $value){
+						foreach($bluetracker as $key => $value){
 							if($key >= 5)
 							break;
 							echo "<li><a href=\"".$value['url']."\">".$value['title']."</a></li><span class=\"footrss\">Publié le ".$value['date']."</span>";
