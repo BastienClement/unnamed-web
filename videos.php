@@ -1,8 +1,7 @@
 ﻿<?php
-$page_title = "Vidéos";
-include('layout/header.php'); ?>
-
-<?php
+define('ACTIVE_PAGE', 'videos');
+define('PAGE_TITLE',  'Vidéos');
+include('layout/header.php');
 
 $data = load_external('youtube');
 $array = unserialize($data);

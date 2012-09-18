@@ -1,5 +1,7 @@
-<?php include('layout/header.php'); ?>
-
+<?php
+define('ACTIVE_PAGE', 'index');
+include('layout/header.php');
+?>
 <div class="section">
 	<div class="section-light">
 		<div class="section-content">
