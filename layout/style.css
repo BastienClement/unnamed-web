@@ -244,7 +244,7 @@ a:first-child .col-slide:first-child {
 	content: "";
 }
 
-#menu li.sub > a:hover:after {
+#menu li.sub > a:hover:after, #menu li.sub > a.active:after {
 	background-image: url('bootstrap/img/glyphicons-halflings.png');
 }
 
