@@ -90,6 +90,13 @@ if(!defined('UNNAMED'))
 					</li>
 					<li><a href="/videos">Vidéos</a></li>
 					<li class="sub">
+						<a href="/forums/">Forums</a>
+						<?php require UNNAMED_LAYOUT.'/flux_nav.php'; ?>
+					</li>
+					<li><a href="/progression">Progression</a></li>
+					<li><a class="active" href="/roster">Roster</a></li>
+					<li><a href="/recrutement">Recrutement</a></li>
+					<li class="sub">
 						<a href="/streams">Streams</a>
 						<ul>
 							<li><a href="">Stream de random</a></li>
@@ -99,10 +106,6 @@ if(!defined('UNNAMED'))
 							<li><a href="">Stream de random</a></li>
 						</ul>
 					</li>
-					<li><a href="/progression">Progression</a></li>
-					<li><a class="active" href="/roster">Roster</a></li>
-					<li><a href="/recrutement">Recrutement</a></li>
-					<li><a href="/forums/">Forums</a></li>
 				</ul>
 				<div class="clearfix"></div>
 			</div>

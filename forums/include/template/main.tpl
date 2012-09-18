@@ -6,9 +6,6 @@
 
 <div id="pun<pun_page>" class="pun">
 
-<pun_navlinks>
-<div class="clearfix" style="margin-bottom: 30px;"></div>
-
 <pun_status>
 
 <pun_announcement>
