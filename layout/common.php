@@ -2,6 +2,7 @@
 
 define('UNNAMED', 1);
 define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
+define('UNNAMED_BLOCKS', UNNAMED_ROOT.'/blocks');
 
 define('UNNAMED_PROD', isset($_SERVER['UNNAMED_PROD']));
 define('UNNAMED_DEV', !UNNAMED_PROD);

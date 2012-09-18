@@ -36,25 +36,25 @@
 		<div class="section-content">
 			<div class="threecols-layout">
 				<div class="col col1">
-					<?php require 'home-blocks/comments.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/comments.php'; ?>
 					<div class="hr"></div>
-					<?php require 'home-blocks/threads.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/threads.php'; ?>
 				</div>
 				
 				<div class="col col2">
-					<?php require 'home-blocks/articles.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/articles.php'; ?>
 					<div class="hr"></div>
-					<?php require 'home-blocks/video.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/video.php'; ?>
 				</div>
 				
 				<div class="col col3">
-					<?php require 'home-blocks/ranking.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/ranking.php'; ?>
 					<div class="hr"></div>
-					<?php require 'home-blocks/facebook.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/facebook.php'; ?>
 					<div class="hr"></div>
-					<?php require 'home-blocks/activity.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/activity.php'; ?>
 					<!-- <div class="hr"></div>
-					<?php require 'home-blocks/sponsors.php'; ?> -->
+					<?php require UNNAMED_BLOCKS.'/sponsors.php'; ?> -->
 				</div>
 				<div class="clearfix"></div>
 			</div>
