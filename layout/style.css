@@ -29,7 +29,6 @@ h2 {
 h3 {
 	margin: 0 0 3px 0;
 	font-size: 16px;
-	
 	font-weight: normal;
 }
 
@@ -88,7 +87,6 @@ p {
 .section-light {
 	background: url('/layout/img/shade.png') no-repeat top;
 	border-top: 1px solid rgba(0,0,0,0);
-
 }
 
 .section-content {
@@ -113,8 +111,7 @@ p {
 	background: url('img/threecol.gif') center;
 }
 
-.threecols-layout .col1,
-.threecols-layout .col3 {
+.threecols-layout .col1, .threecols-layout .col3 {
 	width: 260px;
 }
 
@@ -142,45 +139,45 @@ a:first-child .col-slide:first-child {
 	margin-left: 0px;
 }
 
-.col-footer ul{
-	list-style:none;
+.col-footer ul {
+	list-style: none;
 }
 
-.col-footer li{
-margin-top:5px;
+.col-footer li {
+	margin-top: 5px;
 }
 
-.col-footer .footrss{
-font-style:italic;
-color:#545454;
+.col-footer .footrss {
+	font-style: italic;
+	color: #545454;
 }
 
-.col-footer a{
-color:#bbb;
+.col-footer a {
+	color: #bbb;
 }
 
-.col-footer a:hover{
-color:#fff;
+.col-footer a:hover {
+	color: #fff;
 }
 
 .col-footer .stats, .col-footer .links, .col-footer .mmochampion, .col-footer .bluetracker {
-padding:0 0 0 26px;
+	padding: 0 0 0 26px;
 }
 
-.col-footer .stats{
-background:url('/layout/img/stats.png') no-repeat left center;
+.col-footer .stats {
+	background: url('/layout/img/stats.png') no-repeat left center;
 }
 
-.col-footer .links{
-background:url('/layout/img/links.png') no-repeat left center;
+.col-footer .links {
+	background: url('/layout/img/links.png') no-repeat left center;
 }
 
-.col-footer .bluetracker{
-background:url('/layout/img/tracker.png') no-repeat left center;
+.col-footer .bluetracker {
+	background: url('/layout/img/tracker.png') no-repeat left center;
 }
 
-.col-footer .mmochampion{
-background:url('/layout/img/rss.png') no-repeat left center;
+.col-footer .mmochampion {
+	background: url('/layout/img/rss.png') no-repeat left center;
 }
 
 /* ----- Header ----- */
@@ -197,24 +194,24 @@ background:url('/layout/img/rss.png') no-repeat left center;
 }
 
 #menu li {
-	height:40px;
-	display:block;
-	float:left;
-	padding:10px 0 10px 0;
+	height: 40px;
+	display: block;
+	float: left;
+	padding: 10px 0 10px 0;
 	margin: 0 0 0 10px;
 }
 
 #menu ul ul {
-	display:none;
+	display: none;
 	background: rgba(0, 0, 0, 0.9);
-	position:absolute;
-	left:0;
-	right:0;
-	top:60px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
 }
 
-#menu li:hover ul{
-	display:block;	
+#menu li:hover ul {
+	display: block;
 }
 
 #menu a {
@@ -234,18 +231,16 @@ background:url('/layout/img/rss.png') no-repeat left center;
 	color: #000;
 }
 
-
-
-#home-link{
-position:relative;
-top:-1px;
-height:20px;
-width:20px;
-background:url('/layout/img/home-white.png') center no-repeat;
+#home-link {
+	position: relative;
+	top: -1px;
+	height: 20px;
+	width: 20px;
+	background: url('/layout/img/home-white.png') center no-repeat;
 }
 
-a:hover #home-link{
-background:url('/layout/img/home-black.png') center no-repeat;
+a:hover #home-link {
+	background: url('/layout/img/home-black.png') center no-repeat;
 }
 
 #top-wrapper {
@@ -268,30 +263,30 @@ background:url('/layout/img/home-black.png') center no-repeat;
 	height: 250px;
 }
 
-#login-bar{
-	padding:10px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	right:0;
+#login-bar {
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	background: rgba(0, 0, 0, 0.9);
 }
 
-#logon{
-	float:right;
+#logon {
+	float: right;
 }
 
-#login-bar a{
-font-weight:bold;
-color:#bbb;
+#login-bar a {
+	font-weight: bold;
+	color: #bbb;
 }
 
-#login-bar a:hover{
-color:#FFF;
+#login-bar a:hover {
+	color: #FFF;
 }
 
-#logon a{
-	margin-left:20px;
+#logon a {
+	margin-left: 20px;
 }
 
 #social {
@@ -1119,22 +1114,24 @@ color:#FFF;
 .button {
 	cursor: pointer;
 	margin-left: 10px;
-	padding: 10px;
+	padding: 10px 25px 10px 10px;
 	background: rgba(0, 0, 0, 0.3);
 	display: inline-block;
 	box-shadow: inset 1px 1px 2px #000;
+	position: relative;
 }
 
-.button:after{
-position:relative;
-top:2px;
-margin:0 0 0 5px;
-display:inline-block;
-	background-image:url('bootstrap/img/glyphicons-halflings-white.png');
-	background-position:-456px -72px;
-	width:12px;
-	height:14px;
-	content:"";
+.button:after {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	margin: 0 0 0 5px;
+	display: inline-block;
+	background-image: url('bootstrap/img/glyphicons-halflings-white.png');
+	background-position: -456px -72px;
+	width: 12px;
+	height: 14px;
+	content: "";
 }
 
 .button:first-child {
