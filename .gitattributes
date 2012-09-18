@@ -1,0 +1,12 @@
+* text=auto
+
+*.php	text
+*.css	text
+*.js	text
+*.txt	text
+*.html	text
+
+*.png	binary
+*.jpg	binary
+*.jpeg	binary
+*.gif	binary
