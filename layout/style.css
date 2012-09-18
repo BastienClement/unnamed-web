@@ -202,23 +202,50 @@ a:first-child .col-slide:first-child {
 }
 
 #menu ul ul {
-	display: none;
 	background: rgba(0, 0, 0, 0.9);
 	position: absolute;
 	left: 0;
 	right: 0;
 	top: 60px;
+	height: 0px;
+	overflow: hidden;
+	-webkit-transition: height .3s ease;
+	-moz-transition: height .3s ease;
+	-ms-transition: height .3s ease;
+	-o-transition: height .3s ease;
+	transition: height .3s ease;
 }
 
 #menu li:hover ul {
-	display: block;
+	height: 60px;
 }
 
 #menu a {
 	color: #bbb;
 	text-shadow: none;
-	float: left;
+	position: relative;
+	display: inline-block;
 	padding: 10px;
+}
+
+#menu li.sub > a {
+	padding-right: 30px;
+}
+
+#menu li.sub > a:after {
+	position: absolute;
+	top: 11px;
+	right: 11px;
+	margin: 0 0 0 5px;
+	background-image: url('bootstrap/img/glyphicons-halflings-white.png');
+	background-position: -313px -119px;
+	width: 12px;
+	height: 14px;
+	content: "";
+}
+
+#menu li.sub > a:hover:after {
+	background-image: url('bootstrap/img/glyphicons-halflings.png');
 }
 
 #menu a.active {
@@ -1126,7 +1153,6 @@ a:hover #home-link {
 	top: 10px;
 	right: 10px;
 	margin: 0 0 0 5px;
-	display: inline-block;
 	background-image: url('bootstrap/img/glyphicons-halflings-white.png');
 	background-position: -456px -72px;
 	width: 12px;

@@ -79,7 +79,8 @@ if(!defined('UNNAMED'))
 				<ul>
 					<li><a href="/"><div id="home-link"></div></a></li>
 					<li><a href="/articles">Articles</a></li>
-					<li><a href="/blogs">Blogs</a>
+					<li class="sub">
+						<a href="/blogs">Blogs</a>
 						<ul>
 							<li><a href="">Blog de random</a></li>
 							<li><a href="">Blog de random</a></li>
@@ -89,7 +90,8 @@ if(!defined('UNNAMED'))
 						</ul>
 					</li>
 					<li><a href="/videos">Vidéos</a></li>
-					<li><a href="/streams">Streams</a>
+					<li class="sub">
+						<a href="/streams">Streams</a>
 						<ul>
 							<li><a href="">Stream de random</a></li>
 							<li><a href="">Stream de random</a></li>
