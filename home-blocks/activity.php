@@ -56,4 +56,4 @@ foreach($activities as $key => $feed) {
 }
 ?>
 
-<div class="button-wrapper"><a href="http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The Unnamed/news" class="button">Afficher plus</a></div>
+<div class="button-wrapper"><a href="http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The Unnamed/news" class="button">Toute l'activité</a></div>

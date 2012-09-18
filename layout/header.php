@@ -79,11 +79,27 @@ if(!defined('UNNAMED'))
 				<ul>
 					<li><a href="/"><div id="home-link"></div></a></li>
 					<li><a href="/articles">Articles</a></li>
-					<li><a href="/blogs">Blogs</a></li>
+					<li><a href="/blogs">Blogs</a>
+						<ul>
+							<li><a href="">Blog de random</a></li>
+							<li><a href="">Blog de random</a></li>
+							<li><a href="">Blog de random</a></li>
+							<li><a href="">Blog de random</a></li>
+							<li><a href="">Blog de random</a></li>
+						</ul>
+					</li>
 					<li><a href="/videos">Vidéos</a></li>
-					<li><a href="/streams">Streams</a></li>
+					<li><a href="/streams">Streams</a>
+						<ul>
+							<li><a href="">Stream de random</a></li>
+							<li><a href="">Stream de random</a></li>
+							<li><a href="">Stream de random</a></li>
+							<li><a href="">Stream de random</a></li>
+							<li><a href="">Stream de random</a></li>
+						</ul>
+					</li>
 					<li><a href="/progression">Progression</a></li>
-					<li><a class="/active" href="/roster">Roster</a></li>
+					<li><a class="active" href="/roster">Roster</a></li>
 					<li><a href="/recrutement">Recrutement</a></li>
 					<li><a href="/forums/">Forums</a></li>
 				</ul>

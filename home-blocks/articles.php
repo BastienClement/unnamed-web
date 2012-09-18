@@ -65,4 +65,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus
 
 </div>
 
-<div class="button-wrapper"><a href="/articles" class="button">Voir tous les articles</a></div>
+<div class="button-wrapper"><a href="/articles" class="button">Tous les articles</a></div>
