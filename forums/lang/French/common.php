@@ -92,7 +92,7 @@ $lang_common = array(
 'BBCode list size error'		=>	'Votre liste étant trop longue pour être analysée, veuillez la réduire s\'il vous plaît&#160;!',
 
 // Stuff for the navigator (top of every page)
-'Index'				=>	'Accueil',
+'Index'				=>	'Forums',
 'User list'			=>	'Liste des membres',
 'Rules'				=>  	'Règles',
 'Search'			=>  	'Recherche',
