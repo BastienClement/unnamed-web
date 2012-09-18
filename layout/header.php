@@ -75,7 +75,7 @@ if(!defined('UNNAMED'))
 			<div id="menu">
 				<ul>
 					<li>
-						<a href="/"<?php if(ACTIVE_PAGE == 'index') echo ' class="active"'; ?>><div id="home-link"></div></a>
+						<a href="/"><div id="home-link"></div></a>
 					</li>
 					<li>
 						<a href="/articles"<?php if(ACTIVE_PAGE == 'articles') echo ' class="active"'; ?>>Articles</a>
