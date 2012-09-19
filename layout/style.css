@@ -124,6 +124,22 @@ p {
 	background: url('img/threecol.gif') center;
 }
 
+#twocolsWrapper{
+	background-image: url('/layout/img/line-col.gif');
+	background-repeat:repeat-y;
+	background-position:700px 0;
+}
+
+#twocolsLeft{
+	width:680px;
+	float:left;
+
+}
+
+#twocolsRight{
+margin-left:720px;
+}
+
 /* Special cases */
 .col-footer {
 	width: 230px;
