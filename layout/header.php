@@ -89,22 +89,13 @@ if(!defined('UNNAMED'))
 							<li><a href="">Blog de random</a></li>
 							<li><a href="">Blog de random</a></li>
 						</ul>
-					</li>
-					<li>
-						<a href="/videos"<?php if(ACTIVE_PAGE == 'videos') echo ' class="active"'; ?>>Vidéos</a>
-					</li>
 					<li class="sub">
 						<a href="/forums/"<?php if(defined('IS_PUN')) echo ' class="active"'; ?>>Forums</a>
 						<?php require UNNAMED_LAYOUT.'/flux_nav.php'; ?>
 					</li>
-					<li>
-						<a href="/progression"<?php if(ACTIVE_PAGE == 'progress') echo ' class="active"'; ?>>Progression</a>
 					</li>
 					<li>
-						<a href="/roster"<?php if(ACTIVE_PAGE == 'roster') echo ' class="active"'; ?>>Roster</a>
-					</li>
-					<li>
-						<a href="/recrutement"<?php if(ACTIVE_PAGE == 'apply') echo ' class="active"'; ?>>Recrutement</a>
+						<a href="/videos"<?php if(ACTIVE_PAGE == 'videos') echo ' class="active"'; ?>>Vidéos</a>
 					</li>
 					<li class="sub">
 						<a href="/streams"<?php if(ACTIVE_PAGE == 'streams') echo ' class="active"'; ?>>Streams</a>
@@ -115,6 +106,15 @@ if(!defined('UNNAMED'))
 							<li><a href="">Stream de random</a></li>
 							<li><a href="">Stream de random</a></li>
 						</ul>
+					</li>
+					<li>
+						<a href="/progression"<?php if(ACTIVE_PAGE == 'progress') echo ' class="active"'; ?>>Progression</a>
+					</li>
+					<li>
+						<a href="/roster"<?php if(ACTIVE_PAGE == 'roster') echo ' class="active"'; ?>>Roster</a>
+					</li>
+					<li>
+						<a href="/recrutement"<?php if(ACTIVE_PAGE == 'apply') echo ' class="active"'; ?>>Recrutement</a>
 					</li>
 				</ul>
 				<div class="clearfix"></div>
