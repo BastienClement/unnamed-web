@@ -1,6 +1,7 @@
 <?php
 
 define('UNNAMED', 1);
+
 define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
 define('UNNAMED_BLOCKS', UNNAMED_ROOT.'/blocks');
 define('UNNAMED_LAYOUT', UNNAMED_ROOT.'/layout');
@@ -10,11 +11,12 @@ define('UNNAMED_DEV', !UNNAMED_PROD);
 
 require UNNAMED_ROOT.'/externals/loader.php';
 
-if(!defined("IS_PUN")){
-define('PUN_ROOT', './forums/');
-define('PUN_TURN_OFF_MAINT', 1);
-require PUN_ROOT.'include/common.php';
-}
+if(!defined("IS_PUN")):
+	define('PUN_ROOT', UNNAMED_ROOT.'/forums/');
+	define('PUN_TURN_OFF_MAINT', 1);
+	define('PUN_QUIET_VISIT', 1);
+	require PUN_ROOT.'include/common.php';
+endif;
 
 // Load timer
 
