@@ -121,24 +121,19 @@ p {
 
 /* 2-col */
 .twocols-layout {
-	background: url('img/threecol.gif') center;
-}
-
-#twocolsWrapper{
 	background-image: url('/layout/img/line-col.gif');
 	background-repeat:repeat-y;
 	background-position:700px 0;
 }
 
-#twocolsLeft{
-	width:680px;
-	float:left;
-
+.twocols-layout .col1{
+width: 680px;
 }
 
-#twocolsRight{
-margin-left:720px;
+.twocols-layout .col2{
+width: 260px;
 }
+
 
 /* Special cases */
 .col-footer {
