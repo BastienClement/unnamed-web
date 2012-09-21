@@ -46,12 +46,35 @@ a {
 	transition: background .3s ease, color .3s ease;
 }
 
+form textarea{
+	width: 660px;
+	max-width: 660px;
+	height:150px;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: inset 1px 1px 2px black;
+	color: #bbb;
+	font-size: 12px;
+	padding: 10px;
+	outline: none;
+	border:0;
+		font-family: 'Open Sans', Arial, sans-serif;
+
+}
+
 a:hover {
 	color: #fff;
 }
 
 p {
 	margin-bottom: 10px;
+}
+
+.alert{
+box-shadow: inset 1px 1px 2px black;
+text-align:center;
+padding:10px;
+background: rgba(0, 0, 0, 0.3);
+margin:0 0 20px 0
 }
 
 /* ----- Main elements ----- */
@@ -79,7 +102,7 @@ p {
 /* ----- Sections ----- */
 
 .section {
-	margin: 20px 0px;
+	margin: 20px 0 0 0;
 	background: url('/layout/img/line-hr.gif') repeat-x top;
 	border-top: 1px solid rgba(0,0,0,0);
 }
@@ -91,6 +114,10 @@ p {
 
 .section-content {
 	margin-top: 20px;
+}
+
+.footer{
+margin : 20px 0;
 }
 
 /* ----- Three/Two cols layout ----- */
@@ -479,9 +506,11 @@ a:hover #home-link {
 	height: 100%;
 }
 
-.last-news:hover .last-news-img-bar {
-
-	bottom: 0;
+.last-news-infos a{
+color:inherit;
+}
+.last-news-infos a:hover{
+color:#fff;
 }
 
 #copyright {
@@ -1243,4 +1272,15 @@ a.button:hover {
 
 #rankingProgress span, #rankingFr span, #rankingRegion span, #rankingWorld span {
 	font-size: 1.8em;
+}
+
+.article-header{
+	margin:10px 0 10px 0;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	width:100%;
+	height:200px;
+}
+
+.article-comments{
+float:right;
 }

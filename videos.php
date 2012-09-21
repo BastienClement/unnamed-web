@@ -37,8 +37,9 @@ foreach($array as $i => $value):
 endforeach;
 ?>
 <div class="clearfix"></div>
-<div class="button-wrapper"><a href="http://www.youtube.com/user/WoWUnnamed/" class="button">Toutes les vidéos sur Youtube</a></div>
+
 </div>
+<div class="button-wrapper"><a href="http://www.youtube.com/user/WoWUnnamed/" class="button">Toutes les vidéos sur Youtube</a></div>
 </div>
 </div>
 

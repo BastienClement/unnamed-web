@@ -6,9 +6,7 @@ include('layout/header.php');
 <div class="section">
 	<div class="section-light">
 	<div class="section-content">
-	</div>
-</div>
-<div class="twocols-layout">
+	<div class="twocols-layout">
 <div class="col col1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue sem a dui iaculis a ultrices lacus facilisis. Nulla iaculis mauris eget magna placerat aliquet. Maecenas feugiat egestas eros sit amet adipiscing. In ac massa eget felis tincidunt pharetra ut sed metus. Curabitur at lectus neque, ut tempus justo. Vivamus mollis nisl et mi egestas porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis, felis id faucibus tincidunt, tellus neque sollicitudin enim, id vestibulum dui magna a magna. Vivamus pretium porttitor interdum. Vivamus pharetra, dolor pulvinar vestibulum egestas, mauris lacus ultrices nulla, quis ullamcorper orci tellus quis nisi.
 
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc felis neque, interdum eget laoreet sit amet, semper ut eros. Vivamus auctor massa sit amet est aliquet vel mattis elit fringilla. Ut auctor, risus ut pretium eleifend, velit augue rhoncus nisl, laoreet accumsan enim diam non elit. Proin vel orci magna. Donec sit amet dui id lectus ornare lacinia vitae id nibh. Nunc nec est nibh, sit amet cursus quam. Ut ac lorem arcu, tincidunt tempus tortor.
@@ -32,5 +30,8 @@ Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut q
 <div class="clearfix"></div>
 
 </div>
+	</div>
+</div>
+
 
 <?php include('layout/footer.php'); ?>
