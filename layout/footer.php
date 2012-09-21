@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	
-	<div class="section footer">
+	<div class="section">
 		<div class="section-content" id="copyright">
 			<div class="right">
 				Conception PHP5 / HTML5 / CSS3 / JS : <a href="/forums/profile.php?id=2">Noumah</a>, <a href="/forums/profile.php?id=215">Blash</a>
