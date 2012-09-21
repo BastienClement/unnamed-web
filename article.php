@@ -11,7 +11,7 @@ include('layout/header.php');
 
 <h2>Ceci est un titre d'article un peu trop long mais qui fit quand même et s'il est trop long ça fait pas trop moche ? !</h2>
 
-<div class="last-news-infos"><span class="article-comments"><a href="#showcomments">832 <i class=" icon-comment"></i></a> / <a href="">240 <i class=" icon-heart"></i></a> / 2500 <i class=" icon-eye-open"></i></span>Publié par <a href="">Noumah</a> le 21/09/2012 à 14h20.</div>
+<div class="last-news-infos"><span class="article-comments">2500 <i class=" icon-eye-open"></i> / <a href="#showcomments">832 <i class=" icon-comment"></i></a> / <a href="">240 <i class=" icon-heart"></i></a></span>Publié par <a href="">Noumah</a> le 21/09/2012 à 14h20.</div>
 
 <img class="article-header" src="http://pandarenmonk.net/wp-content/uploads/Pandaren-Names.png"/>
 
@@ -34,29 +34,28 @@ include('layout/header.php');
 <p>Vivamus egestas augue ut ligula fermentum quis malesuada mi tincidunt. Fusce suscipit purus faucibus velit lobortis at eleifend nibh rutrum. Cras eu metus elit. Suspendisse quam quam, luctus quis lobortis lobortis, luctus eu massa. Vestibulum ultricies pulvinar eros, nec aliquet velit sagittis at. Donec tempus sem consectetur lectus malesuada auctor. Nullam in libero sit amet risus convallis ultricies. In nibh nibh, vulputate ut congue in, euismod at eros. In orci lacus, luctus ac aliquam non, ornare id odio. Aenean iaculis aliquam leo, ac egestas nisl ullamcorper eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus venenatis quam vel tristique. Integer id nunc ipsum, vitae consectetur lectus. Vestibulum viverra dolor sit amet ligula vulputate convallis.</p>
 
 <p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p>
-<div id="showcomments">
+
 <div class="section">
-	<div class="section-content">
+	<div class="section-content" id="showcomments">
 
 <h2>Commentaires</h2>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue sem a dui iaculis a ultrices lacus facilisis. Nulla iaculis mauris eget magna placerat aliquet. Maecenas feugiat egestas eros sit amet adipiscing. In ac massa eget felis tincidunt pharetra ut sed metus. Curabitur at lectus neque, ut tempus justo. Vivamus mollis nisl et mi egestas porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis, felis id faucibus tincidunt, tellus neque sollicitudin enim, id vestibulum dui magna a magna. Vivamus pretium porttitor interdum. Vivamus pharetra, dolor pulvinar vestibulum egestas, mauris lacus ultrices nulla, quis ullamcorper orci tellus quis nisi.
 
-</div></div></div>
+</div></div>
 
-<div id="leavecomment">
 <div class="section">
-	<div class="section-content">
+	<div class="section-content" id="leavecomment">
 
 <h2>écrire un commentaire</h2>
 <div class="alert">Vous devez être <a href="/forums/login.php">identifié(e)</a> afin de pouvour écrire un commentaire !</div>
 <form>
 <textarea></textarea>
 
-<div class="button-wrapper"><a href="" class="button">Valider</a></div>
+<div class="button-wrapper"><input type="button" class="button" value="Valider" /></div>
 </form>
 
-</div></div></div>
+</div></div>
 
 </div>
 
