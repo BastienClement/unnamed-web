@@ -13,6 +13,8 @@ include('layout/header.php');
 
 <div class="last-news-infos"><span class="article-comments">2500 <i class=" icon-eye-open"></i> / <a href="#showcomments">832 <i class=" icon-comment"></i></a> / <a href="">240 <i class=" icon-heart"></i></a></span>Publié par <a href="">Noumah</a> le 21/09/2012 à 14h20.</div>
 
+<div class="article-body">
+
 <img class="article-header" src="http://pandarenmonk.net/wp-content/uploads/Pandaren-Names.png"/>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue sem a dui iaculis a ultrices lacus facilisis. Nulla iaculis mauris eget magna placerat aliquet. Maecenas feugiat egestas eros sit amet adipiscing. In ac massa eget felis tincidunt pharetra ut sed metus. Curabitur at lectus neque, ut tempus justo. Vivamus mollis nisl et mi egestas porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis, felis id faucibus tincidunt, tellus neque sollicitudin enim, id vestibulum dui magna a magna. Vivamus pretium porttitor interdum. Vivamus pharetra, dolor pulvinar vestibulum egestas, mauris lacus ultrices nulla, quis ullamcorper orci tellus quis nisi.</p>
@@ -35,6 +37,8 @@ include('layout/header.php');
 
 <p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p>
 
+</div>
+
 <div class="hr" id="showcomments"></div>
 
 <h2>Commentaires</h2>
@@ -42,19 +46,19 @@ include('layout/header.php');
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/243"/></a></div>
 <div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Aarak</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</div>
+<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</p></div></div>
 </div>
 
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/2"/></a></div>
 <div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Noumah</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-<p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div>
+<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
 </div>
 
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/215"/></a></div>
 <div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Blash</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-<p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</p><p>Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div>
+<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</p><p>Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
 </div>
 
 	<div class="hr" id="leavecomment"></div>
@@ -79,9 +83,16 @@ Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut q
 <a href=""><img src="/layout/img/social-icons/twitter.png" alt="Twitter" title="Twitter"/></a>
 <a href=""><img src="/layout/img/social-icons/google.png" alt="Google+" title="Google+"/></a>
 <a href=""><img src="/layout/img/social-icons/mail.png" alt="Email" title="Email"/></a>
+<a href=""><img src="/layout/img/social-icons/addthis.png" alt="AddThis" title="AddThis"/></a>
 </div>
 
 <div class="clearfix"></div>
+
+<div class="hr"></div>
+
+<h2>Sommaire de l'article</h2>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue sem a dui iaculis a ultrices lacus facilisis. Nulla iaculis mauris eget magna placerat aliquet. Maecenas feugiat egestas eros sit amet adipiscing. In ac massa eget felis tincidunt pharetra ut sed metus. Curabitur at lectus neque, ut tempus justo. Vivamus mollis nisl et mi egestas porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis, felis id faucibus tincidunt, tellus neque sollicitudin enim, id vestibulum dui magna a magna. Vivamus pretium porttitor interdum. Vivamus pharetra, dolor pulvinar vestibulum egestas, mauris lacus ultrices nulla, quis ullamcorper orci tellus quis nisi.
 
 <div class="hr"></div>
 

@@ -27,9 +27,9 @@
 	<div class="section">
 		<div class="section-content" id="copyright">
 			<div class="right">
-				Conception PHP5 / HTML5 / CSS3 / JS : <a href="/forums/profile.php?id=2">Noumah</a>, <a href="/forums/profile.php?id=215">Blash</a>
+				Réalisation : <a href="/forums/profile.php?id=2">Noumah</a>, <a href="/forums/profile.php?id=215">Blash</a> – PHP5 / HTML5 / CSS3 / JS
 			</div>
-			© Unnamed.eu – Généré par <a href="http://www.fluxbb.org/">FluxBB</a>, <a href="http://jquery.com">jQuery</a> en <unnamed_time>s
+			© 2009-<?php echo date('Y');?> Unnamed.eu – Tous droits réservés – Généré en <unnamed_time>s
 		</div>
 	</div>
 </div>
