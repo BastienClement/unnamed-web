@@ -1,3 +1,30 @@
 <h2>Derniers commentaires</h2>
+	
+<div class="last-article"><a href="">
+<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+<div class="last-article-date"><i class=" icon-time"></i> 08:45</div>
+<div class="last-article-author">Aarak</div>
+</div>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices. Donec sodales commodo urna sed blandit. Cras id nunc sed enim dignissim feugiat. Aenean vestibulum cursus dolor porttitor imperdiet. Fusce sagittis augue tempor sapien vestibulum consequat pretium neque pharetra. Donec scelerisque consectetur urna, et egestas libero interdum ut. Phasellus gravida purus et urna auctor sit amet faucibus libero vulputate. Sed vel ante interdum felis ullamcorper semper. Maecenas at magna at nisl posuere tempor. In non consequat magna. Sed ut tortor convallis sem dictum sodales non ut lacus.
+<div class="last-article"><a href="">
+<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+<div class="last-article-date"><i class=" icon-time"></i> 05:30</div>
+<div class="last-article-author">Noumah</div>
+</div>
+
+<div class="last-article"><a href="">
+<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+<div class="last-article-author">Coconutsdown</div>
+</div>
+
+<div class="last-article"><a href="">
+<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+<div class="last-article-author">Blashz</div>
+</div>
+<div class="last-article"><a href="">
+<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+<div class="last-article-author">fuckyou@archimonde</div>
+</div>

@@ -52,7 +52,7 @@ foreach($activities as $key => $feed) {
 	$full = rtrim($full, ".");
 	$time = ucfirst(str_replace(" ", "&nbsp;", $time));
 
-	echo "<div class=\"newsfeed clearfix\"><span class=\"icon\" style=\"$icon\"></span> $full.<br /><span class=\"time\">$time</span></div>";
+	echo "<div class=\"newsfeed clearfix\"><span class=\"icon\" style=\"$icon\"></span> $full.<br /><span class=\"time\"><i class=\"icon-time\"></i> $time</span></div>";
 }
 ?>
 

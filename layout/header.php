@@ -12,7 +12,7 @@ if(!defined('UNNAMED'))
 	<?php if(defined("IS_PUN")): ?>
 		<pun_head>
 	<?php else: ?>
-		<title>Unnamed.eu - <?php if(defined('PAGE_TITLE')): echo PAGE_TITLE; else: ?>Portail de la guilde The Unnamed sur le serveur Marécage de Zangar (EU)<?php endif; ?></title>
+		<title><?php if(defined('DOCUMENT_TITLE')) echo DOCUMENT_TITLE.' - ';?>Unnamed.eu - <?php if(defined('PAGE_TITLE')): echo PAGE_TITLE; else: ?>Portail de la guilde The Unnamed sur le serveur Marécage de Zangar (EU)<?php endif; ?></title>
 	<?php endif; ?>
 	
 	<meta name="description" content="">
@@ -22,6 +22,7 @@ if(!defined('UNNAMED'))
 	
 	<style type="text/css">
 		@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+		@import url("http://fonts.googleapis.com/css?family=Droid+Sans+Mono");
 		<?php if(preg_match("/Chrome/", $_SERVER["HTTP_USER_AGENT"]) && preg_match("/Windows/", $_SERVER["HTTP_USER_AGENT"])): ?>
 		@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400");
 		<?php else: ?>
@@ -144,16 +145,16 @@ if(!defined('UNNAMED'))
 
 		<div id="social">
 			<a href="https://www.facebook.com/Guilde.Unnamed">
-				<img src="/layout/img/social-icons/facebook.png"/>
+				<img src="/layout/img/social-icons/facebook.png" alt="Facebook" title="Facebook"/>
 			</a>
 			<a href="http://www.youtube.com/user/WoWUnnamed/">
-				<img src="/layout/img/social-icons/youtube.png"/>
+				<img src="/layout/img/social-icons/youtube.png" alt="Youtube" title="Youtube"/>
 			</a>
 			<a href="https://twitter.com/GuildeUnnamed">
-				<img src="/layout/img/social-icons/twitter.png"/>
+				<img src="/layout/img/social-icons/twitter.png"  alt="Twitter" title="Twitter"/>
 			</a>
 			<a href="/rss">
-				<img src="/layout/img/social-icons/rss.png"/>
+				<img src="/layout/img/social-icons/rss.png"/  alt="Flux RSS" title="Flux RSS">
 			</a>
 		</div>
 	</div>
