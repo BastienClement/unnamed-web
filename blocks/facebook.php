@@ -1,3 +1,3 @@
 <h2>Facebook</h2>
 
-<div class="fb-like-box" data-href="https://www.facebook.com/Guilde.Unnamed" data-width="260" data-colorscheme="dark" data-show-faces="false" data-stream="false" data-header="true"></div>
+<fb:fan profile_id="158745760860229" stream="0" width="260" height="300" connections="12" css="http://noumah-dev.unnamed.eu/layout/fb-style.css?125"></fb:fan>

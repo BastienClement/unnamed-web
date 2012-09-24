@@ -38,6 +38,9 @@ include('layout/header.php');
 		<div class="section-content">
 			<div class="threecols-layout">
 				<div class="col col1">
+				
+					<?php require UNNAMED_BLOCKS.'/facebook.php'; ?>
+					<div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/comments.php'; ?>
 					<div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/threads.php'; ?>
@@ -51,8 +54,6 @@ include('layout/header.php');
 				
 				<div class="col col3">
 					<?php require UNNAMED_BLOCKS.'/ranking.php'; ?>
-					<div class="hr"></div>
-					<?php require UNNAMED_BLOCKS.'/facebook.php'; ?>
 					<div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/activity.php'; ?>
 					<!-- <div class="hr"></div>

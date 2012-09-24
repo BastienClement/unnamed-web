@@ -5,7 +5,7 @@ $data = load_external('activity');
 $activities = unserialize($data);
 
 foreach($activities as $key => $feed) {
-	if($key >= 10)
+	if($key >= 8)
 		break;
 	
 	$full       = trim($feed["full"]);

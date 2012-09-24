@@ -5,7 +5,7 @@
 	$bluetracker = unserialize($data);
 	
 	foreach($bluetracker as $key => $value){
-		if($key >= 5)
+		if($key >= 4)
 		break;
 		echo "<li><a href=\"".$value['url']."\">".$value['title']."</a></li><span class=\"footrss\">Publié le ".$value['date']."</span>";
 	}
