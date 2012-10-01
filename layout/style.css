@@ -157,18 +157,22 @@ p {
 
 /* 2-col */
 
-.twocols-layout {
+.twocols-layout, .twocols-alt-layout {
 	background-image: url('/layout/img/line-col.gif');
 	background-repeat: repeat-y;
 	background-position: 700px 0;
 }
 
-.twocols-layout .col1 {
-	width: 680px;
+.twocols-alt-layout {
+	background-position: 220px 0;
 }
 
-.twocols-layout .col2 {
-	width: 260px;
+.twocols-layout .col1, .twocols-alt-layout .col2 {
+	width: 740px;
+}
+
+.twocols-layout .col2, .twocols-alt-layout .col1 {
+	width: 200px;
 }
 
 /* Special cases */
