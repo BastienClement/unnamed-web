@@ -163,16 +163,26 @@ p {
 	background-position: 700px 0;
 }
 
+.twocols-layout .col1 {
+	width: 680px;
+}
+
+.twocols-layout .col2 {
+	width: 260px;
+}
+
+/* 2-col alt */
+
 .twocols-alt-layout {
 	background-position: 220px 0;
 }
 
-.twocols-layout .col1, .twocols-alt-layout .col2 {
-	width: 740px;
+.twocols-alt-layout .col1 {
+	width: 200px;
 }
 
-.twocols-layout .col2, .twocols-alt-layout .col1 {
-	width: 200px;
+.twocols-alt-layout .col2 {
+	width: 740px;
 }
 
 /* Special cases */
