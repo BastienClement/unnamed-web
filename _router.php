@@ -1,9 +1,11 @@
 <?php
 
 define('UNNAMED_ROUTED', 1);
+ob_start();
 
 // Print 404 and exit
 function return_404() {
+	while(@ob_end_clean()); // Closes all open buffers
 	require '404.php';
 	exit;
 }
