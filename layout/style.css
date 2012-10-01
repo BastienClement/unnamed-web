@@ -443,16 +443,25 @@ a:hover #home-link {
 	font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.slide-author {
+.slide-author, .slide-comments {
 	color: #545454;
 	font-size: 12px;
 	text-transform: none;
+	position: relative;
+	bottom: -20px;
+	-webkit-transition: bottom .3s ease;
+	-moz-transition: bottom .3s ease;
+	-ms-transition: bottom .3s ease;
+	-o-transition: bottom .3s ease;
+	transition: bottom .3s ease;
 }
 
 .slide-comments {
-	font-size: 12px;
-	color: #545454;
 	float: right;
+}
+
+.col-slide:hover .slide-author, .col-slide:hover .slide-comments {
+	bottom: 0;
 }
 
 #slider-blogs a {
