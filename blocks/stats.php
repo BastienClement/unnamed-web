@@ -48,7 +48,10 @@
 		else
 			++$num_guests;
 	}
+	
 	echo '<li>'.sprintf($lang_index['Guests online'], forum_number_format($num_guests)).'</li>'."\n";
-	echo '<li>'.sprintf($lang_index['Users online'], implode(', ', $users)).'</li>'."\n";
+	
+	if(!empty($users))
+		echo '<li>'.sprintf($lang_index['Users online'], implode(', ', $users)).'</li>'."\n";
 ?>
 </ul>
