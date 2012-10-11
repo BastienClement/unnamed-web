@@ -5,6 +5,7 @@ define('UNNAMED', 1);
 define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
 define('UNNAMED_BLOCKS', UNNAMED_ROOT.'/blocks');
 define('UNNAMED_LAYOUT', UNNAMED_ROOT.'/layout');
+define('UNNAMED_LIBS',   UNNAMED_ROOT.'/libs');
 
 define('UNNAMED_PROD', isset($_SERVER['UNNAMED_PROD']));
 define('UNNAMED_DEV', !UNNAMED_PROD);
@@ -17,6 +18,8 @@ if(!defined("IS_PUN")):
 	define('PUN_QUIET_VISIT', 1);
 	require PUN_ROOT.'include/common.php';
 endif;
+
+require UNNAMED_LIBS.'/unnamed/functions.php';
 
 // Load timer
 
