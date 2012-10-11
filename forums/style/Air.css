@@ -190,8 +190,8 @@
 }
 
 .pun .punwrap {
-	border: 1px solid;
-	padding: 18px;
+	/*border: 1px solid;
+	padding: 18px;*/
 }
 
 .pun .top-box {
@@ -199,6 +199,7 @@
 	margin-bottom: -18px;
 	position: relative;
 	background: url(Air/img/main_top.png) top left no-repeat;
+	display: none;
 }
 
 .pun .top-box div {
@@ -1487,9 +1488,17 @@ PROFILES (+ ADMIN MENU)
 }
 
 #adintro, #adstats {
-	border-style: solid;
+	/*border-style: solid;
 	border-width: 1px;
-	padding: 18px;
+	padding: 18px;*/
+}
+
+#adminconsole .block {
+	position: relative;
+}
+
+#adminconsole .box {
+	margin-bottom: 20px;
 }
 
 #adintro li span {
@@ -1525,9 +1534,9 @@ COLOUR SCHEME
 ----------------------------------------------------------------*/
 
 .pun .punwrap {
-	background: #fff;
+	/*background: #fff;
 	border-color: #cad7e1;
-	color: #566579;
+	color: #566579;*/
 }
 
 #brdtitle #brddesc, .pun .pagepost, #brdstats #onlinelist, #brdfooter #searchlinks, #brdfooter #modcontrols,
