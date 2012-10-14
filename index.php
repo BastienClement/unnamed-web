@@ -47,12 +47,11 @@ include('layout/header.php');
 		<div class="section-content">
 			<div class="threecols-layout">
 				<div class="col col1">
-				
-					<?php require UNNAMED_BLOCKS.'/facebook.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/threads.php'; ?>
 					<div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/comments.php'; ?>
 					<div class="hr"></div>
-					<?php require UNNAMED_BLOCKS.'/threads.php'; ?>
+					<?php require UNNAMED_BLOCKS.'/facebook.php'; ?>
 				</div>
 				
 				<div class="col col2">

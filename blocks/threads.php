@@ -28,3 +28,5 @@
 <div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
 <div class="last-article-author">Coconutsdown</div>
 </div>
+
+<div class="button-wrapper"><a href="/articles" class="button">Accéder au forum</a></div>
