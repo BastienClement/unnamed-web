@@ -16,7 +16,7 @@ while($row = $db->fetch_assoc($res)):
 
 <div class="content-block">
 	<div class="last-news">
-		<a href="/article/<?php echo $row['id']; ?>-<?php echo sluggify($row['subject']); ?>">
+		<a href="/article/<?php echo $row['id']; ?>/<?php echo sluggify($row['subject']); ?>">
 			<div class="last-news-title">
 				<h3><?php echo htmlspecialchars($row['subject']); ?></h3>
 				<div class="last-news-img">

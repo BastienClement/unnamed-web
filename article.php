@@ -1,7 +1,20 @@
 ﻿<?php
-define('ACTIVE_PAGE', '');
+
+if(!isset($_ARGS[0]))
+	return_404();
+
+include('layout/common.php');
+
+$art_id = (int) $_ARGS[0];
+$res = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+
+if(!$row = $db->fetch_assoc($res))
+	return_404();
+
+define('ACTIVE_PAGE', 'articles');
 define('PAGE_TITLE',  'Articles');
-define('DOCUMENT_TITLE',  'Titre d\'article de random');
+define('DOCUMENT_TITLE',  $row['subject']);
+
 include('layout/header.php');
 ?>
 <div class="section">
@@ -10,115 +23,22 @@ include('layout/header.php');
 	<div class="twocols-layout">
 <div class="col col1">
 
-<h2>Ceci est un titre d'article un peu trop long mais qui fit quand même et s'il est trop long ça fait pas trop moche ? !</h2>
+<h2><?php echo htmlspecialchars($row['subject']); ?></h2>
 
-<div class="last-news-infos"><span class="article-comments">2500 <i class=" icon-eye-open"></i> / <a href="#showcomments">832 <i class=" icon-comment"></i></a> / <a href="">240 <i class=" icon-heart"></i></a></span>Publié par <a href="">Noumah</a> le 21/09/2012 à 14h20</div>
+<div class="last-news-infos">
+	<span class="article-comments">
+		<?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
+		/ <a href="#showcomments"><?php echo $row['num_replies']; ?> <i class=" icon-comment"></i></a>
+	</span>
+	Publié par <a href="/profile/<?php echo $row['poster_id']; ?>/<?php echo sluggify($row['poster']); ?>"><?php echo htmlspecialchars($row['poster']); ?></a>
+	<abbr class="timeago" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
+</div>
 
-<div class="article-body ucode">
-
-<p><img src="http://image.jeuxvideo.com/images/pc/w/o/world-of-warcraft-mists-of-pandaria-pc-1319229630-001.jpg"/></p>
-
-<h3>This is 3rd level heading</h3>
-<h4>This is 4th level heading</h4>
-<h5>This is 5th level heading</h5>
-<h6>This is 6th level heading</h6>
-
-<p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p>
-
-<p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p>
-
-<ol>
-	<li><a href="">Définition du Tanking</a>
-		<ol>
-			<li><a href="">Les priorités d'un Tank </a>
-				<ol>
-			<li><a href="">Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Titre 3</a>
-				<ol>
-			<li><a href="">Sous Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Sous Titre 3</a></li>
-			<li><a href="">Sous Sous Sous Titre 4</a></li>
-		</ol>
-			</li>
-			<li><a href="">Sous Sous Titre 4</a></li>
-		</ol>
-			</li>
-			<li><a href="">Niveau 56 : Sang bouillonnant - Parasite de peste - Chancre impie</a></li>
-			<li><a href="">Sous Titre 3</a></li>
-			<li><a href="">Sous Titre 4</a></li>
-		</ol>
-	
-	</li>
-	<li><a href="">Les nouveautés du DK à Mists of Pandaria</a></li>
-	<li><a href="">Talents</a></li>
-	<li><a href="">Glyphes</a></li>
-	<li><a href="">Optimisation théorique</a></li>
-	<li><a href="">Optimisation pratique</a></li>
-	<li><a href="">Tanker en raid</a></li>
-</ol>
-
-<ul>
-	<li><a href="">Définition du Tanking</a>
-		<ul>
-			<li><a href="">Les priorités d'un Tank </a>
-				<ul>
-			<li><a href="">Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Titre 3</a>
-				<ul>
-			<li><a href="">Sous Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Sous Titre 3</a></li>
-			<li><a href="">Sous Sous Sous Titre 4</a></li>
-		</ul>
-			</li>
-			<li><a href="">Sous Sous Titre 4</a></li>
-		</ul>
-			</li>
-			<li><a href="">Niveau 56 : Sang bouillonnant - Parasite de peste - Chancre impie</a></li>
-			<li><a href="">Sous Titre 3</a></li>
-			<li><a href="">Sous Titre 4</a></li>
-		</ul>
-	
-	</li>
-	<li><a href="">Les nouveautés du DK à Mists of Pandaria</a></li>
-	<li><a href="">Talents</a></li>
-	<li><a href="">Glyphes</a></li>
-	<li><a href="">Optimisation théorique</a></li>
-	<li><a href="">Optimisation pratique</a></li>
-	<li><a href="">Tanker en raid</a></li>
-</ul>
-
-<table cellspacing="0" cellpadding="0">
-	<tr><th></th><th>Curabitur purus dolor</th><th>Curabitur purus dolor</th><th>Curabitur purus dolor</th></tr>
-	<tr><th>Item 1</th><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td></tr>
-	<tr><th>Item 2</th><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td></tr>
-	<tr><th>Item 3</th><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td></tr>
-	<tr><th>Item 4</th><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td></tr>
-	<tr><th>Item 5</th><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td><td>Curabitur purus dolor</td></tr>
-</table>
-
-<pre><code>#showtooltip Pacte mortel
-/cast Sang vampirique
-/cast Réanimation morbide
-/cast Pacte mortel
-/cast Connexion runique
-#showtooltip Pacte mortel
-/cast Sang vampirique
-/cast Réanimation morbide
-/cast Pacte mortel
-/cast Connexion runique</code></pre>
-
-<blockquote><div class="quote-author">Blash a écrit :</div><blockquote><div class="quote-author">Blash a écrit :</div><blockquote><div class="quote-author">Blash a écrit :</div><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. <a href="">Curabitur vel rutrum nulla</a>. Vestibulum bland</p></blockquote><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</p></blockquote><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</p></blockquote>
-
-<blockquote class="blizzquote">
-<div class="quote-author">Blizzard :</div>
- <p>The time is nearly upon us as the mists begin to part and a new age of discovery amidst turmoil begins! For those of you prepared to begin your adventures the moment <a href="">Curabitur vel rutrum nulla</a> Mists of Pandaria is launched in your region, we’ve put together some important details that should get your expedition underway.</p>
-<p><strong>Titre</strong><br />As soon as we activate the new expansion content on launch, players who already have a Mists of Pandaria license with the data installed will gain instant access. If you’re in the game when the clock strikes midnight, you don’t even have to logout!</p>
-</blockquote>
-
+<div class="article-body">
+<?php
+	$xbbc = xbbc_ucode_parser();
+	echo $xbbc->Parse($row['message']);
+?>
 </div>
 
 <div class="hr" id="showcomments"></div>
