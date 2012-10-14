@@ -549,6 +549,10 @@ a:hover #home-link {
 	color: #fff;
 }
 
+.last-news .ucode > :first-child {
+	margin-top: 0;
+}
+
 #copyright {
 	color: #545454;
 }
