@@ -79,7 +79,7 @@ class ListItemTag extends SimpleTag {
 	protected $max_nesting = 0;
 	
 	public function __construct() {
-		parent::__construct("<li>", "</li>");
+		parent::__construct('<li>', '</li>');
 		$this->display = \XBBC\DISPLAY_SPECIAL;
 	}
 	
@@ -100,7 +100,7 @@ class TableTag extends SimpleTag {
 	protected $max_nesting = 5;
 	
 	public function __construct() {
-		parent::__construct("<table>", "</table>", true);
+		parent::__construct('<table cellspacing="0" cellpadding="0">', '</table>', true);
 	}
 	
 	public function AllowText() {
