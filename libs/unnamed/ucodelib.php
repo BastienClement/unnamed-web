@@ -5,9 +5,18 @@
 
 namespace UCode;
 
-use \XBBC\SimpleTag,
+use \XBBC\RootTag,
+	\XBBC\SimpleTag,
 	\XBBC\SingleTag,
 	\XBBC\QuoteTag;
+
+class Root extends RootTag {
+	public function __construct() {
+		parent::__construct();
+		$this->before = '<div class="ucode">';
+		$this->after  = '</div>';
+	}
+}
 
 //
 // [blizzquote]
@@ -91,7 +100,7 @@ class TableTag extends SimpleTag {
 	protected $max_nesting = 5;
 	
 	public function __construct() {
-		parent::__construct("<table border=1>", "</table>", true);
+		parent::__construct("<table>", "</table>", true);
 	}
 	
 	public function AllowText() {
@@ -148,6 +157,7 @@ abstract class Lib {
 		// Basics
 		$parser->DefineTag('hr',         new SingleTag('<div class="hr"></div>', true));
 		$parser->DefineTag('blizzquote', new BlizzquoteTag());
+		$parser->DefineTag('center',     new SimpleTag('<center>', '</center>'));
 		
 		// Lists
 		$parser->DefineTag('list',       new ListTag());

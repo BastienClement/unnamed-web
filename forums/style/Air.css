@@ -722,7 +722,7 @@ MAIN POSTS
 	margin: 20px 0px;
 	padding: 0px 20px;
 	background-color: rgba(0,0,0,0.3);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .pun .blockpost .box {
@@ -833,7 +833,7 @@ MAIN POSTS
 }
 
 .postavatar img {
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .pun .blockpost .postleft .postavatar {
@@ -848,7 +848,7 @@ MAIN POSTS
 
 .pun .postmsg {
 	width:100%;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	word-wrap: break-word;
 }
 

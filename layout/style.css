@@ -61,7 +61,7 @@ form textarea {
 }
 
 pre {
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	overflow: auto;
 	padding: 10px;
 	background: rgba(0, 0, 0, 0.3);
@@ -338,7 +338,7 @@ a:hover #home-link {
 
 #top {
 	background: rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	position: relative;
 	z-index: 20;
 }
@@ -396,7 +396,7 @@ a:hover #home-link {
 	-ms-transition: left .3s ease;
 	-o-transition: left .3s ease;
 	transition: left .3s ease;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	background: rgba(0, 0, 0, 0.6);
 }
 
@@ -412,7 +412,7 @@ a:hover #home-link {
 .col-slide {
 	position: relative;
 	background: rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	height: 150px;
 	margin-left: 20px;
 	width: 230px;
@@ -513,7 +513,7 @@ a:hover #home-link {
 	position: absolute;
 	left: 0;
 	top: 0;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	width: 100px;
 	height: 100px;
 	overflow: hidden;
@@ -594,7 +594,7 @@ a:hover #home-link {
 .box {
 	padding: 20px;
 	background-color: rgba(0,0,0,0.3);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 #ie-warning {
@@ -1273,7 +1273,7 @@ a.button:after {
 	float: left;
 	width: 18px;
 	height: 18px;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .video-row {
@@ -1315,64 +1315,64 @@ a.button:after {
 	text-align: justify;
 }
 
-.article-body .quote-author {
+.ucode .quote-author {
 	font-weight: bold;
 }
 
-.article-body blockquote {
+.ucode blockquote {
 	border-left: 3px solid #222;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	padding: 10px;
 	background: rgba(0, 0, 0, 0.3);
 	margin: 10px 0;
 }
 
-.article-body .blizzquote {
+.ucode .blizzquote {
 	color: #0091FF;
 }
 
-.article-body .blizzquote strong, .article-body .blizzquote em, .article-body .blizzquote a {
+.ucode .blizzquote strong, .ucode .blizzquote em, .ucode .blizzquote a {
 	color: #bbb;
 }
 
-.article-body > blockquote > blockquote {
+.ucode > blockquote > blockquote {
 	background: rgba(70, 70, 70, 0.1);
 }
 
-.article-body blockquote :last-child {
+.ucode blockquote :last-child {
 	margin-bottom: 0;
 }
 
-.article-body blockquote :first-child {
+.ucode blockquote :first-child {
 	margin-top: 0;
 }
 
-.article-body table {
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+.ucode table {
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	text-align: left;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.3);
 }
 
-.article-body tr:nth-child(2n) {
+.ucode tr:nth-child(2n) {
 	background: rgba(70, 70, 70, 0.1);
 }
 
-.article-body th {
+.ucode th {
 	color: #6ddc00;
 }
 
-.article-body td, .article-body th {
+.ucode td, .ucode th {
 	background: url('/layout/img/line-hr.gif') repeat-x bottom;
 	padding: 10px 10px 12px 10px;
 }
 
-.article-body tr:last-child td, .article-body tr:last-child th {
+.ucode tr:last-child td, .ucode tr:last-child th {
 	padding: 10px;
 	background: none;
 }
 
-.article-body h3, .article-body h4, .article-body h5, .article-body h6 {
+.ucode h3, .ucode h4, .ucode h5, .ucode h6 {
 	margin: 10px 0;
 	font-family: 'PT Sans Narrow', sans-serif;
 	text-transform: uppercase;
@@ -1380,37 +1380,49 @@ a.button:after {
 	color: #6ddc00;
 }
 
-.article-body h3 {
+.ucode h3 {
 	font-size: 20px;
 }
 
-.article-body h4 {
+.ucode h4 {
 	font-size: 18px;
 }
 
-.article-body h5 {
+.ucode h5 {
 	font-size: 16px;
 }
 
-.article-body h6 {
+.ucode h6 {
 	font-size: 14px;
 }
 
-.article-body ul, .article-body ol {
+.ucode ul, .ucode ol {
 	margin: 0 0 0 20px;
 }
 
-.article-body > ul, .article-body > ol {
+.ucode > ul, .ucode > ol {
 	margin: 10px 0 10px 20px;
 }
 
-.article-body ul li, .article-body ol li {
+.ucode ul li, .ucode ol li {
 	margin-top: 3px;
 }
 
-.article-body img {
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+.ucode img {
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	max-width: 100%;
+}
+
+.ucode strong {
+	color: #ddd;
+}
+
+.postmsg .ucode > :first-child {
+	margin-top: 0;
+}
+
+.postmsg .ucode > :last-child {
+	margin-bottom: 0;
 }
 
 .article-comments {
@@ -1419,7 +1431,7 @@ a.button:after {
 
 #share {
 	background: rgba(0, 0, 0, 0.3);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 #share a {
@@ -1428,7 +1440,7 @@ a.button:after {
 }
 
 #share img {
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	background: rgba(0, 0, 0, 0.6);
 	width: 48px;
 	height: 48px;
@@ -1453,7 +1465,7 @@ a.button:after {
 	padding: 15px;
 	background: rgba(0, 0, 0, 0.3);
 	margin: 0 0 20px;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .author-avatar {
@@ -1461,7 +1473,7 @@ a.button:after {
 	float: left;
 	width: 60px;
 	height: 60px;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .author-avatar img {
@@ -1542,7 +1554,7 @@ a.button:after {
 #about-author-avatar {
 	margin-top: 1px;
 	float: left;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	width: 84px;
 	height: 84px;
 }
@@ -1561,7 +1573,7 @@ a.button:after {
 	text-align: center;
 	padding: 10px;
 	background: rgba(0, 0, 0, 0.3);
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	margin-top: 10px;
 }
 

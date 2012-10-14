@@ -856,15 +856,18 @@ function do_smilies($text)
 	return substr($text, 1, -1);
 }
 
-
 //
 // Parse message text
 //
+$xbbc = xbbc_ucode_parser();
 function parse_message($text, $hide_smilies)
 {
-	global $pun_config, $lang_common, $pun_user;
+	//global $pun_config, $lang_common, $pun_user;
+	
+	global $xbbc; 
+	return $xbbc->Parse($text);
 
-	if ($pun_config['o_censoring'] == '1')
+	/*if ($pun_config['o_censoring'] == '1')
 		$text = censor_words($text);
 
 	// Convert applicable characters to HTML entities
@@ -901,7 +904,7 @@ function parse_message($text, $hide_smilies)
 		}
 	}
 
-	return clean_paragraphs($text);
+	return clean_paragraphs($text);*/
 }
 
 
@@ -936,9 +939,12 @@ function clean_paragraphs($text)
 //
 function parse_signature($text)
 {
-	global $pun_config, $lang_common, $pun_user;
+	//global $pun_config, $lang_common, $pun_user;
+	
+	global $xbbc; 
+	return $xbbc->Parse($text);
 
-	if ($pun_config['o_censoring'] == '1')
+	/*if ($pun_config['o_censoring'] == '1')
 		$text = censor_words($text);
 
 	// Convert applicable characters to HTML entities
@@ -956,5 +962,5 @@ function parse_signature($text)
 	$replace = array('<br />', '&#160; &#160; ', '&#160; ', ' &#160;');
 	$text = str_replace($pattern, $replace, $text);
 
-	return clean_paragraphs($text);
+	return clean_paragraphs($text);*/
 }

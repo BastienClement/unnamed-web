@@ -193,8 +193,7 @@ require PUN_ROOT.'header.php';
 <?php
 
 
-//require PUN_ROOT.'include/parser.php';
-$xbbc = xbbc_ucode_parser();
+require PUN_ROOT.'include/parser.php';
 
 $post_count = 0; // Keep track of post numbers
 
@@ -325,8 +324,7 @@ while ($cur_post = $db->fetch_assoc($result))
 	}
 
 	// Perform the main parsing of the message (BBCode, smilies, censor words etc)
-	//$cur_post['message'] = parse_message($cur_post['message'], $cur_post['hide_smilies']);
-	$cur_post['message'] = $xbbc->Parse($cur_post['message']);
+	$cur_post['message'] = parse_message($cur_post['message'], $cur_post['hide_smilies']);
 
 	// Do signature parsing/caching
 	if ($pun_config['o_signatures'] == '1' && $cur_post['signature'] != '' && $pun_user['show_sig'] != '0')
@@ -335,8 +333,7 @@ while ($cur_post = $db->fetch_assoc($result))
 			$signature = $signature_cache[$cur_post['poster_id']];
 		else
 		{
-			//$signature = parse_signature($cur_post['signature']);
-			$signature = $xbbc->Parse($cur_post['signature']);
+			$signature = parse_signature($cur_post['signature']);
 			$signature_cache[$cur_post['poster_id']] = $signature;
 		}
 	}

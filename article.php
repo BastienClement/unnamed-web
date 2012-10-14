@@ -14,7 +14,7 @@ include('layout/header.php');
 
 <div class="last-news-infos"><span class="article-comments">2500 <i class=" icon-eye-open"></i> / <a href="#showcomments">832 <i class=" icon-comment"></i></a> / <a href="">240 <i class=" icon-heart"></i></a></span>Publié par <a href="">Noumah</a> le 21/09/2012 à 14h20</div>
 
-<div class="article-body">
+<div class="article-body ucode">
 
 <p><img src="http://image.jeuxvideo.com/images/pc/w/o/world-of-warcraft-mists-of-pandaria-pc-1319229630-001.jpg"/></p>
 
