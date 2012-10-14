@@ -1,68 +1,43 @@
 <h2>Derniers articles</h2>
 
-<div class="content-block">
-<div class="last-news">
-<a href="/article"><div class="last-news-title">
-<h3>La cinématique de Mists of Pandaria</h3>
-<div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
-<div class="last-news-img-bar"></div>
-</div>
-</div></a>
-<div class="last-news-infos">Il y a 23 semaines &ndash; 832 <i class=" icon-comment"></i> / 240 <i class=" icon-heart"></i></div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices.</div>
+<?php
 
-</div>
+$res = $db->query("SELECT t.poster, t.subject, t.posted, t.num_views, t.num_replies, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 16 ORDER BY t.posted DESC LIMIT 5");
 
-<div class="content-block">
-<div class="last-news">
-<a href="/article"><div class="last-news-title">
-<h3>La cinématique de Mists of Pandaria</h3>
-<div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
-<div class="last-news-img-bar"></div>
-</div>
-</div></a>
-<div class="last-news-infos">Il y a 23 semaines &ndash; 832 <i class=" icon-comment"></i> / 240 <i class=" icon-heart"></i></div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices.</div>
+$xbbc_lead = xbbc_ucode_parser();
+$xbbc_meta = xbbc_ucode_parser();
 
-</div>
+$xbbc_lead->SetFlag(\XBBC\PARSE_LEAD);
+$xbbc_meta->SetFlag(\XBBC\PARSE_META);
+
+while($row = $db->fetch_assoc($res)):
+	$meta = $xbbc_meta->Parse($row['message']);
+?>
 
 <div class="content-block">
-<div class="last-news">
-<a href="/article"><div class="last-news-title">
-<h3>La cinématique de Mists of Pandaria</h3>
-<div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
-<div class="last-news-img-bar"></div>
-</div>
-</div></a>
-<div class="last-news-infos">Il y a 23 semaines &ndash; 832 <i class=" icon-comment"></i> / 240 <i class=" icon-heart"></i></div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices.</div>
-
-</div>
-
-<div class="content-block">
-<div class="last-news">
-<a href="/article"><div class="last-news-title">
-<h3>La cinématique de Mists of Pandaria</h3>
-<div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
-<div class="last-news-img-bar"></div>
-</div>
-</div></a>
-<div class="last-news-infos">Il y a 23 semaines &ndash; 832 <i class=" icon-comment"></i> / 240 <i class=" icon-heart"></i></div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices.</div>
-
+	<div class="last-news">
+		<a href="/article">
+			<div class="last-news-title">
+				<h3><?php echo htmlspecialchars($row['subject']); ?></h3>
+				<div class="last-news-img">
+					<img src="<?php echo $meta['thumb']; ?>"/>
+					<div class="last-news-img-bar"></div>
+				</div>
+			</div>
+		</a>
+		<div class="last-news-infos">
+			<abbr class="timeago" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
+			&ndash; <?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
+			/ <?php echo $row['num_replies']; ?> <i class=" icon-comment"></i>
+		</div>
+		<?php
+			echo $meta['desc'] ? $xbbc_lead->Parse($meta['desc']) : $xbbc_lead->Parse($row['message']);
+		?>
+	</div>
 </div>
 
-<div class="content-block">
-<div class="last-news">
-<a href="/article"><div class="last-news-title">
-<h3>La cinématique de Mists of Pandaria</h3>
-<div class="last-news-img"><img src="http://turbo.themezilla.com/duplex/files/2010/11/computer-430x320.jpg"/>
-<div class="last-news-img-bar"></div>
-</div>
-</div></a>
-<div class="last-news-infos">Il y a 23 semaines &ndash; 832 <i class=" icon-comment"></i> / 240 <i class=" icon-heart"></i></div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus tellus bibendum sapien scelerisque ultrices.</div>
-
-</div>
+<?php
+endwhile;
+?>
 
 <div class="button-wrapper"><a href="/articles" class="button">Tous les articles</a></div>

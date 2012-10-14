@@ -33,16 +33,18 @@ if(!defined('UNNAMED'))
 	</style>
 	
 	<link rel="stylesheet" type="text/css" href="/layout/style.css">
+	<link rel="stylesheet" type="text/css" href="/layout/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/layout/shadowbox-3.0.3/shadowbox.css">
 
 	<link rel="icon" type="image/png" href="/layout/img/fav.png" />
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="/layout/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/layout/scripts/timeago.js"></script>
 	<script src="http://static.wowhead.com/widgets/power.js"></script>
 	<script type="text/javascript" src="/layout/shadowbox-3.0.3/shadowbox.js"></script>
 	<script type="text/javascript">
-	Shadowbox.init();
+		Shadowbox.init();
 	</script>
 	<!--[if lt IE 10]><script src="/layout/scripts/ie_transitions.js"></script><![endif]-->
 </head>
