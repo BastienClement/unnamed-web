@@ -2,7 +2,7 @@
 
 <?php
 
-$res = $db->query("SELECT t.poster, t.subject, t.posted, t.num_views, t.num_replies, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 16 ORDER BY t.posted DESC LIMIT 5");
+$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 16 ORDER BY t.posted DESC LIMIT 5");
 
 $xbbc_lead = xbbc_ucode_parser();
 $xbbc_meta = xbbc_ucode_parser();
@@ -16,7 +16,7 @@ while($row = $db->fetch_assoc($res)):
 
 <div class="content-block">
 	<div class="last-news">
-		<a href="/article">
+		<a href="/article/<?php echo $row['id']; ?>-<?php echo sluggify($row['subject']); ?>">
 			<div class="last-news-title">
 				<h3><?php echo htmlspecialchars($row['subject']); ?></h3>
 				<div class="last-news-img">
