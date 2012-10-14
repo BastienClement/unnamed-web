@@ -24,7 +24,7 @@
 				<div id="rankingRegion"><span><?php echo $ranking['world']; ?></span> World</div>
 			</td>
 			<td style="width: 50%;">
-				<div id="rankingLink"><a href="http://www.wowprogress.com/guild/eu/mar%C3%A9cage-de-zangar/The+Unnamed/rating.tier13_10">WowProgress</a></div>
+				<div id="rankingLink"><a href="http://www.wowprogress.com/guild/eu/mar%C3%A9cage-de-zangar/The+Unnamed">WowProgress</a></div>
 			</td>
 		</tr>
 	</table>

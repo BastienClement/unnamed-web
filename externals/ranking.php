@@ -1,6 +1,6 @@
 <?php
 
-$URL = "http://www.wowprogress.com/guild/eu/mar%C3%A9cage-de-zangar/The+Unnamed/rating.tier13_10";
+$URL = "http://www.wowprogress.com/guild/eu/mar%C3%A9cage-de-zangar/The+Unnamed";
 
 $REGEX_WORLD    = "/world:.*?(\d+)/msi";
 $REGEX_EU       = "/eu:.*?(\d+)/msi";
