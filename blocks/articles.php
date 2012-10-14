@@ -26,7 +26,7 @@ while($row = $db->fetch_assoc($res)):
 			</div>
 		</a>
 		<div class="last-news-infos">
-			<abbr class="timeago" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
+			<abbr class="timeago-uc" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
 			&ndash; <?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
 			/ <?php echo $row['num_replies']; ?> <i class=" icon-comment"></i>
 		</div>

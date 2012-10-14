@@ -107,9 +107,9 @@
     }
   });
 
-  $.fn.timeago = function() {
+  $.fn.timeago = function(uppercase) {
     var self = this;
-    self.each(refresh);
+    self.each(function() { refresh.call(this, uppercase); });
 
     var $s = $t.settings;
     if ($s.refreshMillis > 0) {
@@ -118,10 +118,13 @@
     return self;
   };
 
-  function refresh() {
+  function refresh(uppercase) {
     var data = prepareData(this);
     if (!isNaN(data.datetime)) {
-      $(this).text(inWords(data.datetime));
+      var words = inWords(data.datetime);
+      if(uppercase)
+        words = words.substr(0,1).toUpperCase() + words.substr(1);
+      $(this).text(words);
     }
     return this;
   }
@@ -153,8 +156,8 @@
 
 $.timeago.settings.strings = {
 	// environ ~= about, it's optional
-	prefixAgo: "Il y a",
-	prefixFromNow: "d'ici",
+	prefixAgo: "il y a",
+	prefixFromNow: "dans",
 	seconds: "moins d'une minute",
 	minute: "une minute",
 	minutes: "%d minutes",
@@ -170,4 +173,5 @@ $.timeago.settings.strings = {
 
 $(document).ready(function() {
 	$(".timeago").timeago();
+	$(".timeago-uc").timeago(true);
 });
