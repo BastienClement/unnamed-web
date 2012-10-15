@@ -104,7 +104,7 @@ include('layout/header.php');
 
 <div class="hr"></div>
 
-<h2>à propos de l'auteur</h2>
+<h2>À propos de l'auteur</h2>
 
 <div id="about-author">
 <div id="about-author-avatar"><?php user_avatar($art['poster_id']); ?></div>
@@ -122,37 +122,65 @@ if(count($titles) >= 4):
 ?>
 <h2>Table des matières</h2>
 <div id="sommaire-article">
-	<ol>
 	<?php
-	$trace = array();
-	$c_level = null;
+	
+	class TOCNode {
+		protected $level, $slug, $text;
+		protected $children = array();
+		
+		public function __construct($level, $slug, $text) {
+			$this->level = $level;
+			$this->slug = $slug;
+			$this->text = $text;
+		}
+		
+		public function Insert($level, $slug, $text) {
+			if(($last_child = end($this->children)) && $last_child->level < $level) {
+				$last_child->Insert($level, $slug, $text);
+			} else {
+				$this->children[] = new TOCNode($level, $slug, $text);
+				return;
+			}
+		}
+		
+		public function Generate() {
+			return '<li><a href="#'.$this->slug.'">'.$this->text.'</a>'.$this->GenerateSubtree().'</li>';
+		}
+		
+		protected function GenerateSubtree() {
+			if(!empty($this->children)) {
+				$html = '<ol>';
+				foreach($this->children as $child)
+					$html .= $child->Generate();
+				$html .= '</ol>';
+				
+				return $html;
+			}
+
+			return '';
+		}
+	}
+	
+	class TOCTree extends TOCNode {
+		public function __construct() {
+			parent::__construct(0, null, null);
+		}
+		
+		public function Generate() {
+			echo $this->GenerateSubtree();
+		}
+	}
+	
+	$toc = new TOCTree;
 	
 	foreach($titles as $i => $title) {
 		list(, $level, $slug, $text) = $title;
-		
-		if(!$c_level) {
-			array_push($trace, ($c_level = $level));
-			echo "<li><a href=\"#$slug\">$text</a>";
-		} else if($level == $c_level) {
-			echo "</li><li><a href=\"#$slug\">$text</a>";
-		} else if($level > $c_level) {
-			array_push($trace, ($c_level = $level));
-			echo "<ol><li><a href=\"#$slug\">$text</a>";
-		} else {
-			while(($trace_level = array_pop($trace)) && $trace_level > $level) {
-				echo "</li></ol></li>";
-			}
-			
-			array_push($trace, ($c_level = $level));
-			echo "<li><a href=\"#$slug\">$text</a>";
-		}
+		$level -= 2;
+		$toc->Insert($level, $slug, $text);
 	}
-
-	while(array_pop($trace)) {
-		echo "</li></ol></li>";
-	}
+	
+	$toc->Generate();
 	?>
-	</ol>
 </div>
 
 <div class="hr"></div>
