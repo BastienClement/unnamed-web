@@ -90,174 +90,130 @@ include('layout/header.php');
 
 <div class="col col2">
 
-<h2>Partager cet article</h2>
+	<h2>Partager cet article</h2>
+	
+	<div id="share">
+		<a href=""><img src="/layout/img/social-icons/facebook.png" alt="Facebook" title="Facebook"/></a>
+		<a href=""><img src="/layout/img/social-icons/twitter.png" alt="Twitter" title="Twitter"/></a>
+		<a href=""><img src="/layout/img/social-icons/google.png" alt="Google+" title="Google+"/></a>
+		<a href=""><img src="/layout/img/social-icons/mail.png" alt="Email" title="Email"/></a>
+		<a href=""><img src="/layout/img/social-icons/addthis.png" alt="AddThis" title="AddThis"/></a>
+	</div>
+	<div class="clearfix"></div>
 
-<div id="share">
-<a href=""><img src="/layout/img/social-icons/facebook.png" alt="Facebook" title="Facebook"/></a>
-<a href=""><img src="/layout/img/social-icons/twitter.png" alt="Twitter" title="Twitter"/></a>
-<a href=""><img src="/layout/img/social-icons/google.png" alt="Google+" title="Google+"/></a>
-<a href=""><img src="/layout/img/social-icons/mail.png" alt="Email" title="Email"/></a>
-<a href=""><img src="/layout/img/social-icons/addthis.png" alt="AddThis" title="AddThis"/></a>
-</div>
+	<div class="hr"></div>
 
-<div class="clearfix"></div>
+	<h2>À propos de l'auteur</h2>
 
-<div class="hr"></div>
+	<div id="about-author">
+		<div id="about-author-avatar">
+			<?php user_avatar($art['poster_id']); ?>
+		</div>
+		<div id="about-author-desc">
+			Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.
+		</div>
+		<div class="clearfix"></div>
+		<div id="about-author-contact">
+			<a href="/profile/<?php echo $art['poster_id']; ?>"><i class="icon-user icon-white"></i> Profil</a>
+			<a href=""><i class="icon-envelope icon-white"></i> MP</a>
+			<a href=""><i class="icon-envelope icon-white"></i> E-mail</a>
+		</div>
+	</div>
 
-<h2>À propos de l'auteur</h2>
+	<div class="hr"></div>
 
-<div id="about-author">
-<div id="about-author-avatar"><?php user_avatar($art['poster_id']); ?></div>
-<div id="about-author-desc">
-Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</div>
-<div class="clearfix"></div>
-<div id="about-author-contact"><a href="/profile/<?php echo $art['poster_id']; ?>"><i class=" icon-user icon-white"></i> Profil</a><a href=""><i class=" icon-envelope icon-white"></i> MP</a><a href=""><i class=" icon-envelope icon-white"></i> E-mail</a></div>
-</div>
-
-<div class="hr"></div>
-
-<?php
-preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
-if(count($titles) >= 4):
-?>
-<h2>Table des matières</h2>
-<div id="sommaire-article">
 	<?php
-	
-	class TOCNode {
-		protected $level, $slug, $text;
-		protected $children = array();
-		
-		public function __construct($level, $slug, $text) {
-			$this->level = $level;
-			$this->slug = $slug;
-			$this->text = $text;
-		}
-		
-		public function Insert($level, $slug, $text) {
-			if(($last_child = end($this->children)) && $last_child->level < $level) {
-				$last_child->Insert($level, $slug, $text);
-			} else {
-				$this->children[] = new TOCNode($level, $slug, $text);
-				return;
-			}
-		}
-		
-		public function Generate() {
-			return '<li><a href="#'.$this->slug.'">'.$this->text.'</a>'.$this->GenerateSubtree().'</li>';
-		}
-		
-		protected function GenerateSubtree() {
-			if(!empty($this->children)) {
-				$html = '<ol>';
-				foreach($this->children as $child)
-					$html .= $child->Generate();
-				$html .= '</ol>';
-				
-				return $html;
-			}
-
-			return '';
-		}
-	}
-	
-	class TOCTree extends TOCNode {
-		public function __construct() {
-			parent::__construct(0, null, null);
-		}
-		
-		public function Generate() {
-			echo $this->GenerateSubtree();
-		}
-	}
-	
-	$toc = new TOCTree;
-	
-	foreach($titles as $i => $title) {
-		list(, $level, $slug, $text) = $title;
-		$level -= 2;
-		$toc->Insert($level, $slug, $text);
-	}
-	
-	$toc->Generate();
+	preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
+	if(count($titles) >= 4):
 	?>
-</div>
+	<h2>Table des matières</h2>
+	<div id="sommaire-article">
+		<?php
+		require UNNAMED_LIBS.'/unnamed/tocgenerator.php';
+		$toc = new TOC;
+		
+		foreach($titles as $title) {
+			list(, $level, $slug, $text) = $title;
+			$toc->Insert($level-2, $slug, $text);
+		}
+		
+		$toc->Generate();
+		?>
+	</div>
+	<div class="hr"></div>
+	<?php
+	endif;
+	?>
 
-<div class="hr"></div>
-
-<?php
-endif;
-?>
-
-<h2>Du même auteur</h2>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="hr"></div>
-
-<h2>Derniers articles</h2>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-<div class="last-article"><a href="">
-<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
-<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
-<div class="last-article-author">Coconutsdown</div>
-</div>
-
-</div>
-
-<div class="clearfix"></div>
-
-</div>
+	<h2>Du même auteur</h2>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="hr"></div>
+	
+	<h2>Derniers articles</h2>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	<div class="last-article"><a href="">
+	<div class="last-article-title">La cinématique de Mists of Pandaria</div></a>
+	<div class="last-article-date"><i class=" icon-calendar"></i> 23/09/2012</div>
+	<div class="last-article-author">Coconutsdown</div>
+	</div>
+	
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	</div>
 
 	</div>
 </div>
