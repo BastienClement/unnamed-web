@@ -11,6 +11,12 @@ $res = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.nu
 if(!$row = $db->fetch_assoc($res))
 	return_404();
 
+if(sluggify($row['subject']) != $_ARGS[1]) {
+	header('HTTP/1.1 301 Moved Permanently'); 
+	header('Location: /article/'.$art_id.'/'.sluggify($row['subject']));
+	exit;
+}
+
 define('ACTIVE_PAGE', 'articles');
 define('PAGE_TITLE',  'Articles');
 define('DOCUMENT_TITLE',  $row['subject']);
