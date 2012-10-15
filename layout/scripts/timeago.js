@@ -113,7 +113,7 @@
 
     var $s = $t.settings;
     if ($s.refreshMillis > 0) {
-      setInterval(function() { self.each(refresh); }, $s.refreshMillis);
+      setInterval(function() { self.each(function() { refresh.call(this, uppercase); }); }, $s.refreshMillis);
     }
     return self;
   };
