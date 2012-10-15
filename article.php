@@ -7,20 +7,20 @@ if(!isset($_ARGS[0]))
 	return_404();
 
 $art_id = (int) $_ARGS[0];
-$res = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
 
-if(!$row = $db->fetch_assoc($res))
+if(!$art = $db->fetch_assoc($articles))
 	return_404();
 
-if(sluggify($row['subject']) != $_ARGS[1]) {
+if(sluggify($art['subject']) != $_ARGS[1]) {
 	header('HTTP/1.1 301 Moved Permanently'); 
-	header('Location: /article/'.$art_id.'/'.sluggify($row['subject']));
+	header('Location: /article/'.$art_id.'/'.sluggify($art['subject']));
 	exit;
 }
 
 define('ACTIVE_PAGE', 'articles');
 define('PAGE_TITLE',  'Articles');
-define('DOCUMENT_TITLE',  $row['subject']);
+define('DOCUMENT_TITLE',  $art['subject']);
 
 include('layout/header.php');
 ?>
@@ -30,22 +30,22 @@ include('layout/header.php');
 	<div class="twocols-layout">
 <div class="col col1">
 
-<h2><?php echo htmlspecialchars($row['subject']); ?></h2>
+<h2><?php echo htmlspecialchars($art['subject']); ?></h2>
 
 <div class="last-news-infos">
 	<span class="article-comments">
 		<?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
-		/ <a href="#showcomments"><?php echo $row['num_replies']; ?> <i class=" icon-comment"></i></a>
+		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class=" icon-comment"></i></a>
 	</span>
 	Publié par
-	<strong><a href="/profile/<?php echo $row['poster_id']; ?>/<?php echo sluggify($row['poster']); ?>"><?php echo htmlspecialchars($row['poster']); ?></a></strong>,
-	<abbr class="timeago" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
+	<strong><a href="/profile/<?php echo $art['poster_id']; ?>/<?php echo sluggify($art['poster']); ?>"><?php echo htmlspecialchars($art['poster']); ?></a></strong>,
+	<abbr class="timeago" title="<?php echo date('c', $art['posted']); ?>"><?php echo date('d/m/Y H:i', $art['posted']); ?></abbr>
 </div>
 
 <div class="article-body">
 <?php
 	$xbbc = xbbc_ucode_parser();
-	$art_html = $xbbc->Parse($row['message']);
+	$art_html = $xbbc->Parse($art['message']);
 	echo $art_html;
 ?>
 </div>
