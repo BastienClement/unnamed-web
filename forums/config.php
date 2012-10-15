@@ -1,6 +1,6 @@
 <?php
 
-$db_type = 'mysqli';
+$db_type = 'mysqli_innodb';
 $db_host = 'localhost';
 $db_name = 'unnamed';
 $db_username = 'unnamed';
