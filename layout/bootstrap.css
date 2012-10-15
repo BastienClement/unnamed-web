@@ -15,6 +15,20 @@
 	background-image: url("bootstrap/img/glyphicons-halflings-white.png");
 }
 
+[class^="icon-"] > [class^="icon-"], [class*=" icon-"] > [class*=" icon-"] {
+	background-image: url("bootstrap/img/glyphicons-halflings-white.png");
+	opacity: 0;
+	-webkit-transition: opacity .3s ease;
+	-moz-transition: opacity .3s ease;
+	-ms-transition: opacity .3s ease;
+	-o-transition: opacity .3s ease;
+	transition: opacity .3s ease;
+}
+
+a:hover [class^="icon-"] > [class^="icon-"], a:hover [class*=" icon-"] > [class*=" icon-"] {
+	opacity: 1;
+}
+
 .icon-glass {
 	background-position: 0 0;
 }
