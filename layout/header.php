@@ -98,7 +98,7 @@ if(!defined('UNNAMED'))
 							?>
 							<li>
 								<a href="http://<?php echo sluggify($row['poster']); ?>.unnamed.eu/">
-									Blog de <?php echo htmlspecialchars(ucfirst($row['poster'])); ?>
+									<?php echo htmlspecialchars(ucfirst($row['poster'])); ?>
 								</a>
 							</li>
 							<?php endwhile; ?>
