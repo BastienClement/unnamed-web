@@ -162,13 +162,22 @@ class TableDataTag extends SimpleTag {
 class TitleTag extends SimpleTag {
 	protected $level;
 	
+	protected static $IDS_CACHE = array();
+	
 	public function __construct($level) {
 		parent::__construct("<h$level>", "</h$level>", true);
 		$this->level = $level;
 	}
 	
 	public function Reduce() {
-		$id = sluggify(strip_tags($this->FlushText()->content));
+		$id = 'h-'.sluggify(strip_tags($this->FlushText()->content));
+		
+		if(isset(self::$IDS_CACHE[$id])) {
+			$id = $id.'-'.(self::$IDS_CACHE[$id]++);
+		} else {
+			self::$IDS_CACHE[$id] = 1;
+		}
+		
 		$this->before = "<h{$this->level} id=\"$id\">";
 		return parent::Reduce();
 	}
