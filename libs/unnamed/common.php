@@ -39,7 +39,7 @@ $PAGE_TIME_START = microtime(true);
 ob_start(function($html) {
 	global $PAGE_TIME_START;
 	$PAGE_TIME_END = microtime(true);
-	$PAGE_TIME = round(($PAGE_TIME_END - $PAGE_TIME_START)*1000)/1000;
+	$PAGE_TIME = sprintf('%.3f', $PAGE_TIME_END - $PAGE_TIME_START);
 	
 	return str_replace("<unnamed_time>", $PAGE_TIME, $html);
 });
