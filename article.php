@@ -59,19 +59,19 @@ include('layout/header.php');
 
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="/layout/img/noavatar.jpg"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Aarak</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
+<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Aarak</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
 <div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</p></div></div>
 </div>
 
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/2"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Noumah</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
+<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Noumah</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
 <div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
 </div>
 
 <div class="comment-block">
 <div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/215"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"></i> Citer</a></span><a href="">Blash</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
+<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Blash</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
 <div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</p><p>Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
 </div>
 
@@ -107,11 +107,11 @@ include('layout/header.php');
 <h2>à propos de l'auteur</h2>
 
 <div id="about-author">
-<div id="about-author-avatar"><img src="/layout/img/noavatar.jpg"/></div>
+<div id="about-author-avatar"><?php user_avatar($art['poster_id']); ?></div>
 <div id="about-author-desc">
 Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</div>
 <div class="clearfix"></div>
-<div id="about-author-contact"><a href=""><i class=" icon-user icon-white"></i> Profil</a><a href=""><i class=" icon-envelope icon-white"></i> MP</a><a href=""><i class=" icon-envelope icon-white"></i> E-mail</a></div>
+<div id="about-author-contact"><a href="/profile/<?php echo $art['poster_id']; ?>"><i class=" icon-user icon-white"></i> Profil</a><a href=""><i class=" icon-envelope icon-white"></i> MP</a><a href=""><i class=" icon-envelope icon-white"></i> E-mail</a></div>
 </div>
 
 <div class="hr"></div>

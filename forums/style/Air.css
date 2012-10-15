@@ -596,6 +596,11 @@ thead {
 	white-space: nowrap;
 }
 
+.tclcon .byuser {
+	color: #545454;
+	margin-left: 5px;
+}
+
 .pun .blocktable .tcl h3 span.newtext {
 	font-size: 0.929em;
 	font-weight: normal;

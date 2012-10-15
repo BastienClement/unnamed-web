@@ -22,3 +22,40 @@ function require_routing() {
 		exit;
 	}
 }
+
+function user_avatar($id) {
+	echo "<img src=\"http://www.unnamed.eu/avatars/$id\" />";
+}
+
+function truncate($string, $max_length = 50, $replacement = '...', $trunc_at_space = false) {
+	$max_length -= strlen($replacement);
+	$string_length = strlen($string);
+	
+	if($string_length <= $max_length)
+		return $string;
+	
+	if( $trunc_at_space && ($space_position = strrpos($string, ' ', $max_length-$string_length)) )
+		$max_length = $space_position;
+	
+	return substr_replace($string, $replacement, $max_length);
+}
+
+
+function links_list($articles) {
+	foreach($articles as $article):
+		@list($link, $title, $sub, $icon) = $article;
+?>
+		<div class="links-list-item">
+			<a href="<?php echo htmlspecialchars($link); ?>">
+				<div class="links-list-title"><?php echo htmlspecialchars($title); ?></div>
+			</a>
+			<div class="links-list-sub">
+				<?php if($icon): ?>
+					<i class="icon-<?php echo $icon; ?>"></i>
+				<?php endif; ?>
+				<?php echo $sub; ?>
+			</div>
+		</div>
+<?php
+	endforeach;
+}
