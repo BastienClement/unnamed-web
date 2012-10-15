@@ -2,7 +2,7 @@
 
 define('UNNAMED', 1);
 
-define('UNNAMED_ROOT', dirname(dirname(__FILE__)));
+define('UNNAMED_ROOT', dirname(dirname(dirname(__FILE__))));
 define('UNNAMED_BLOCKS', UNNAMED_ROOT.'/blocks');
 define('UNNAMED_LAYOUT', UNNAMED_ROOT.'/layout');
 define('UNNAMED_LIBS',   UNNAMED_ROOT.'/libs');

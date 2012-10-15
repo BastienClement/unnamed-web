@@ -42,7 +42,7 @@
 <body>
 	<div id="squares"></div>
 	<div id="logo">
-		<a href="http://www.unnamed.eu/"><img src="/layout/img/404.png" /></a>
+		<a href="/"><img src="/layout/img/404.png" /></a>
 	</div>
 </body>
 </html>

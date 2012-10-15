@@ -1,9 +1,10 @@
 ﻿<?php
 
+include('libs/unnamed/common.php');
+require_routing();
+
 if(!isset($_ARGS[0]))
 	return_404();
-
-include('layout/common.php');
 
 $art_id = (int) $_ARGS[0];
 $res = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
@@ -36,7 +37,8 @@ include('layout/header.php');
 		<?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
 		/ <a href="#showcomments"><?php echo $row['num_replies']; ?> <i class=" icon-comment"></i></a>
 	</span>
-	Publié par <a href="/profile/<?php echo $row['poster_id']; ?>/<?php echo sluggify($row['poster']); ?>"><?php echo htmlspecialchars($row['poster']); ?></a>
+	Publié par
+	<strong><a href="/profile/<?php echo $row['poster_id']; ?>/<?php echo sluggify($row['poster']); ?>"><?php echo htmlspecialchars($row['poster']); ?></a></strong>,
 	<abbr class="timeago" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
 </div>
 

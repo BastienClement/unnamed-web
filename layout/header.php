@@ -1,7 +1,7 @@
 <?php
 
 if(!defined('UNNAMED'))
-	require dirname(__FILE__).'/common.php';
+	require dirname(dirname(__FILE__)).'/libs/unnamed/common.php';
 
 ?>
 <!DOCTYPE html>
