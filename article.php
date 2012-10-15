@@ -45,7 +45,8 @@ include('layout/header.php');
 <div class="article-body">
 <?php
 	$xbbc = xbbc_ucode_parser();
-	echo $xbbc->Parse($row['message']);
+	$art_html = $xbbc->Parse($row['message']);
+	echo $art_html;
 ?>
 </div>
 
@@ -71,7 +72,7 @@ include('layout/header.php');
 <div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</p><p>Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
 </div>
 
-	<div class="hr" id="leavecomment"></div>
+<div class="hr" id="leavecomment"></div>
 
 <h2>écrire un commentaire</h2>
 <div class="alert">Vous devez être <a href="/forums/login.php">identifié(e)</a> afin de pouvour écrire un commentaire !</div>
@@ -112,42 +113,50 @@ Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut q
 
 <div class="hr"></div>
 
+<?php
+preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
+if(count($titles) >= 4):
+?>
 <h2>Table des matières</h2>
 <div id="sommaire-article">
-<ol>
-	<li><a href="">Définition du Tanking</a>
-		<ol>
-			<li><a href="">Les priorités d'un Tank </a>
-				<ol>
-			<li><a href="">Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Titre 3</a>
-				<ol>
-			<li><a href="">Sous Sous Sous Titre 1</a></li>
-			<li><a href="">Sous Sous Sous Titre 2</a></li>
-			<li><a href="">Sous Sous Sous Titre 3</a></li>
-			<li><a href="">Sous Sous Sous Titre 4</a></li>
-		</ol>
-			</li>
-			<li><a href="">Sous Sous Titre 4</a></li>
-		</ol>
-			</li>
-			<li><a href="">Niveau 56 : Sang bouillonnant - Parasite de peste - Chancre impie</a></li>
-			<li><a href="">Sous Titre 3</a></li>
-			<li><a href="">Sous Titre 4</a></li>
-		</ol>
+	<ol>
+	<?php
+	$trace = array();
+	$c_level = null;
 	
-	</li>
-	<li><a href="">Les nouveautés du DK à Mists of Pandaria</a></li>
-	<li><a href="">Talents</a></li>
-	<li><a href="">Glyphes</a></li>
-	<li><a href="">Optimisation théorique</a></li>
-	<li><a href="">Optimisation pratique</a></li>
-	<li><a href="">Tanker en raid</a></li>
-</ol>
+	foreach($titles as $i => $title) {
+		list(, $level, $slug, $text) = $title;
+		
+		if(!$c_level) {
+			array_push($trace, ($c_level = $level));
+			echo "<li><a href=\"#$slug\">$text</a>";
+		} else if($level == $c_level) {
+			echo "</li><li><a href=\"#$slug\">$text</a>";
+		} else if($level > $c_level) {
+			array_push($trace, ($c_level = $level));
+			echo "<ol><li><a href=\"#$slug\">$text</a>";
+		} else {
+			while(($trace_level = array_pop($trace)) && $trace_level > $level) {
+				echo "</li></ol></li>";
+			}
+			
+			array_push($trace, ($c_level = $level));
+			echo "<li><a href=\"#$slug\">$text</a>";
+		}
+	}
+
+	while(array_pop($trace)) {
+		echo "</li></ol></li>";
+	}
+	?>
+	</ol>
 </div>
 
 <div class="hr"></div>
+
+<?php
+endif;
+?>
 
 <h2>Du même auteur</h2>
 
