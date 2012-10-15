@@ -147,6 +147,31 @@ class TableDataTag extends SimpleTag {
 		$this->display = \XBBC\DISPLAY_SPECIAL;
 		$this->strip_empty = false;
 	}
+	
+	public function StripWhitespaces() { return false; }
+	
+	public function Reduce() {
+		$this->content = preg_replace('/^(\s|<br \/>)+|(\s|<br \/>)+$/', '', $this->FlushText()->content);
+		return parent::Reduce();
+	}
+}
+
+//
+// [h1] ... [h4]
+//
+class TitleTag extends SimpleTag {
+	protected $level;
+	
+	public function __construct($level) {
+		parent::__construct("<h$level>", "</h$level>", true);
+		$this->level = $level;
+	}
+	
+	public function Reduce() {
+		$id = sluggify(strip_tags($this->FlushText()->content));
+		$this->before = "<h{$this->level} id=\"$id\">";
+		return parent::Reduce();
+	}
 }
 
 //
@@ -160,10 +185,10 @@ abstract class Lib {
 		$parser->DefineTag('center',     new SimpleTag('<center>', '</center>'));
 		
 		// Titles
-		$parser->DefineTag('h1',         new SimpleTag('<h3>', '</h3>', true));
-		$parser->DefineTag('h2',         new SimpleTag('<h4>', '</h4>', true));
-		$parser->DefineTag('h3',         new SimpleTag('<h5>', '</h5>', true));
-		$parser->DefineTag('h4',         new SimpleTag('<h6>', '</h6>', true));
+		$parser->DefineTag('h1',         new TitleTag(3));
+		$parser->DefineTag('h2',         new TitleTag(4));
+		$parser->DefineTag('h3',         new TitleTag(5));
+		$parser->DefineTag('h4',         new TitleTag(6));
 		
 		// Lists
 		$parser->DefineTag('list',       new ListTag());
