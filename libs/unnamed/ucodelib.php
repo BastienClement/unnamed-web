@@ -159,6 +159,12 @@ abstract class Lib {
 		$parser->DefineTag('blizzquote', new BlizzquoteTag());
 		$parser->DefineTag('center',     new SimpleTag('<center>', '</center>'));
 		
+		// Titles
+		$parser->DefineTag('h1',         new SimpleTag('<h3>', '</h3>', true));
+		$parser->DefineTag('h2',         new SimpleTag('<h4>', '</h4>', true));
+		$parser->DefineTag('h3',         new SimpleTag('<h5>', '</h5>', true));
+		$parser->DefineTag('h4',         new SimpleTag('<h6>', '</h6>', true));
+		
 		// Lists
 		$parser->DefineTag('list',       new ListTag());
 		$parser->DefineTag('*',          new ListItemTag());
