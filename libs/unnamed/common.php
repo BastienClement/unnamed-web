@@ -16,7 +16,14 @@ if(!defined("IS_PUN")):
 	define('PUN_ROOT', UNNAMED_ROOT.'/forums/');
 	define('PUN_TURN_OFF_MAINT', 1);
 	define('PUN_QUIET_VISIT', 1);
+	define("PUN_SHOW_QUERIES", 1);
 	require PUN_ROOT.'include/common.php';
+	
+	// WTF if this fucking default transaction committed in footer.php ?!?
+	register_shutdown_function(function() {
+		global $db;
+		$db->end_transaction();
+	});
 endif;
 
 require UNNAMED_LIBS.'/unnamed/functions.php';

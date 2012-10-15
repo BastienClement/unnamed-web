@@ -7,7 +7,7 @@ if(!isset($_ARGS[0]))
 	return_404();
 
 $art_id = (int) $_ARGS[0];
-$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
 
 if(!$art = $db->fetch_assoc($articles))
 	return_404();
@@ -17,6 +17,8 @@ if(sluggify($art['subject']) != $_ARGS[1]) {
 	header('Location: /article/'.$art_id.'/'.sluggify($art['subject']));
 	exit;
 }
+
+$res = $db->query("UPDATE {$db->prefix}topics SET num_views = num_views+1 WHERE id = $art_id LIMIT 1");
 
 define('ACTIVE_PAGE', 'articles');
 define('PAGE_TITLE',  'Articles');
@@ -34,8 +36,9 @@ include('layout/header.php');
 
 <div class="last-news-infos">
 	<span class="article-comments">
-		<?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
-		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class=" icon-comment"></i></a>
+		<?php echo $art['num_views']+1; ?> <i class="icon-eye-open"></i>
+		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class="icon-comment"></i></a>
+		/ <?php echo $art['num_likes']; ?> <i class="icon-heart"></i>
 	</span>
 	Publié par
 	<strong><a href="/profile/<?php echo $art['poster_id']; ?>/<?php echo sluggify($art['poster']); ?>"><?php echo htmlspecialchars($art['poster']); ?></a></strong>,
@@ -231,3 +234,4 @@ endif;
 	</div>
 </div>
 <?php include('layout/footer.php'); ?>
+
