@@ -92,11 +92,16 @@ if(!defined('UNNAMED'))
 					<li class="sub">
 						<a href="/blogs"<?php if(ACTIVE_PAGE == 'blogs') echo ' class="active"'; ?>>Blogs</a>
 						<ul>
-							<li><a href="">Blog de random</a></li>
-							<li><a href="">Blog de random</a></li>
-							<li><a href="">Blog de random</a></li>
-							<li><a href="">Blog de random</a></li>
-							<li><a href="">Blog de random</a></li>
+							<?php
+							$res = $db->query("SELECT DISTINCT(poster) FROM {$db->prefix}topics WHERE forum_id = 17 ORDER BY poster");
+							while($row = $db->fetch_assoc($res)):
+							?>
+							<li>
+								<a href="http://<?php echo sluggify($row['poster']); ?>.unnamed.eu/">
+									Blog de <?php echo htmlspecialchars(ucfirst($row['poster'])); ?>
+								</a>
+							</li>
+							<?php endwhile; ?>
 						</ul>
 					<li class="sub">
 						<a href="/forums/"<?php if(defined('IS_PUN')) echo ' class="active"'; ?>>Forums</a>
