@@ -496,7 +496,7 @@ a:hover #home-link {
 	color: #bbb;
 }
 
-.last-news:hover a {
+.last-news:hover > a {
 	color: #FFF;
 }
 

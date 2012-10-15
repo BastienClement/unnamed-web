@@ -9,7 +9,7 @@ include('layout/header.php');
 				<div id="slide-blogs">
 					<?php
 	
-					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 17 ORDER BY t.posted DESC LIMIT 4");
+					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 17 ORDER BY t.posted DESC LIMIT 4");
 					
 					$xbbc_meta = xbbc_ucode_parser();
 					$xbbc_meta->SetFlag(\XBBC\PARSE_META);
@@ -24,8 +24,9 @@ include('layout/header.php');
 							<div class="slide-title-wrapper">
 								<div class="slide-title"><?php echo htmlspecialchars($row['subject']); ?></div>
 								<div class="slide-comments">
-									<?php echo $row['num_views']; ?> <i class=" icon-eye-open"></i>
-									/ <?php echo $row['num_replies']; ?> <i class=" icon-comment"></i>
+									<?php echo $row['num_views']; ?> <i class="icon-eye-open"></i>
+									/ <?php echo $row['num_replies']; ?> <i class="icon-comment"></i>
+									/ <?php echo $row['num_likes']; ?> <i class="icon-heart"></i>
 								</div>
 								<div class="slide-author">Par <?php echo htmlspecialchars($row['poster']); ?></div>
 							</div>
