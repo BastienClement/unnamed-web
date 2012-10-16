@@ -1,6 +1,7 @@
 <?php
 
 // Parser is sometimes included before the Unnamed common file
+if(!defined("IS_PUN")) define("IS_PUN", 1);
 require_once dirname(__FILE__).'/../../libs/unnamed/common.php';
 
 //
