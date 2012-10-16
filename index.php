@@ -9,7 +9,7 @@ include('layout/header.php');
 				<div id="slide-blogs">
 					<?php
 	
-					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 17 ORDER BY t.posted DESC LIMIT 4");
+					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 17 ORDER BY t.posted DESC LIMIT 4");
 					
 					$xbbc_meta = xbbc_ucode_parser();
 					$xbbc_meta->SetFlag(\XBBC\PARSE_META);

@@ -2,7 +2,7 @@
 
 <?php
 
-$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.forum_id = 16 ORDER BY t.posted DESC LIMIT 5");
+$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 16 ORDER BY t.posted DESC LIMIT 5");
 
 $xbbc_lead = xbbc_ucode_parser();
 $xbbc_meta = xbbc_ucode_parser();
