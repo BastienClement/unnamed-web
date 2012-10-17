@@ -7,8 +7,6 @@ function xbbc_ucode_parser() {
 	$parser = new \XBBC\Parser;
 	\UCode\Lib::load($parser);
 	
-	$parser->RootTag(new \UCode\Root());
-	
 	return $parser;
 }
 
