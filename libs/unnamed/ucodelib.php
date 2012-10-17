@@ -202,16 +202,7 @@ class ColorTag extends SimpleTag {
 	}
 	
 	public function __create() {
-		if($this->arg) {
-			$wh_class = WowheadTag::ColorAsClass($this->arg);
-		} else {
-			foreach($this->xargs as $color => $_) {
-				if($wh_class = WowheadTag::ColorAsClass($color))
-					break;
-			}
-		}
-		
-		if($wh_class) {
+		if($wh_class = WowheadTag::ColorAsClass($this->arg)) {
 			$this->before = "<span class=\"$wh_class\">";
 		} elseif($color = self::ParseColor($this->arg)) {
 			$this->before = "<span style=\"color:$color\">";
