@@ -1743,7 +1743,7 @@ COLOUR SCHEME
 
 .pun .blockmenu a:hover, .pun .blockmenu a:active, .pun .blockmenu a:focus,
 .pun .blockmenu .isactive a:link, .pun .blockmenu .isactive a:visited {
-	color: #000;
+	color: #000 !important;
 	background: #6ddc00;
 }
 
