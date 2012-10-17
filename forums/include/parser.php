@@ -105,10 +105,10 @@ function parse_message($text, $hide_smilies = '0')
 	
 	$flags = 0;
 	
-	if($pun_config['p_sig_bbcode'] != '1' || strpos($text, '[') === false || strpos($text, ']') === false)
+	if(strpos($text, '[') === false || strpos($text, ']') === false)
 		$flags |= NO_CODE;
 	
-	if($pun_config['o_smilies_sig'] != '1' || $pun_user['show_smilies'] != '1' || $hide_smilies != '0')
+	if($pun_user['show_smilies'] != '1' || $hide_smilies != '0')
 		$flags |= NO_SMILIES;
 	
 	return $xbbc->Flags($flags)->Parse($text);
