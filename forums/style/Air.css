@@ -1117,9 +1117,9 @@ MAIN FORMS
 }
 
 .pun .blockform .forminfo, .pun .error-info {
-	padding: 12px 18px;
+	/*padding: 12px 18px;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 1px;*/
 	position: relative;
 }
 
@@ -1704,8 +1704,8 @@ COLOUR SCHEME
 }
 
 .pun .forminfo {
-	background: #fff;
-	border-color: #dfe6ee;
+	/*background: #fff;
+	border-color: #dfe6ee;*/
 }
 
 #puninstall form#install .forminfo {
