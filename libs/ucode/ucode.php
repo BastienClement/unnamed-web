@@ -47,7 +47,11 @@ abstract class Lib {
 		$parser->DefineTag('i',          new \XBBC\SimpleTag('<em>', '</em>'));
 		$parser->DefineTag('u',          new \XBBC\SimpleTag('<span style="text-decoration: underline;">', '</span>'));
 		$parser->DefineTag('s',          new \XBBC\SimpleTag('<span style="text-decoration: line-through;">', '</span>'));
-		
+		$parser->DefineTag('sup',        new \XBBC\SimpleTag('<sup>', '</sup>'));
+		$parser->DefineTag('sub',        new \XBBC\SimpleTag('<sub>', '</sub>'));
+		$parser->DefineTag('ins',        new \XBBC\SimpleTag('<ins>', '</ins>'));
+		$parser->DefineTag('del',        new \XBBC\SimpleTag('<del>', '</del>'));
+
 		// Basics
 		$parser->DefineTag('url',        new LinkTag());
 		$parser->DefineTag('img',        new ImageTag());
@@ -57,6 +61,7 @@ abstract class Lib {
 		$parser->DefineTag('hr',         new \XBBC\SingleTag('<div class="hr"></div>', true));
 		$parser->DefineTag('center',     new \XBBC\SimpleTag('<center>', '</center>'));
 		$parser->DefineTag('color',      new ColorTag());
+		$parser->DefineTag('a',          new AnchorTag());
 		
 		// Quotes
 		$parser->DefineTag('quote',      new QuoteTag());

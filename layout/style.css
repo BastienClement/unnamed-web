@@ -864,6 +864,14 @@ a.button:after {
 	vertical-align: -2px;
 }
 
+.ucode ins, .ucode .unnamed-green {
+	color: #6ddc00 !important;
+}
+
+.ucode del {
+	opacity: 0.6;
+}
+
 .postmsg .ucode > :first-child {
 	margin-top: 0;
 }

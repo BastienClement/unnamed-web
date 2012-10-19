@@ -13,7 +13,7 @@ class LinkTag extends \XBBC\SimpleTag {
 	}
 	
 	public function __create() {
-		if($this->arg)
+		if($this->arg && $this->arg[0] != '#')
 			$this->arg = \XBBC\TagTools::SanitizeURL($this->arg);
 	}
 	
@@ -32,10 +32,16 @@ class LinkTag extends \XBBC\SimpleTag {
 	}
 	
 	public function Reduce() {
+		$this->FlushText();
+		
 		if($this->embedded_img)
 			$url = htmlspecialchars($this->embedded_img->GetURL());
 		else
-			$url = $this->arg ? htmlspecialchars($this->arg) : \XBBC\TagTools::SanitizeURL($this->content, true);
+			$url = $this->arg
+				? htmlspecialchars($this->arg)
+				: ($this->content[0] == '#'
+					? htmlspecialchars($this->content)
+					: \XBBC\TagTools::SanitizeURL($this->content, true));
 		
 		if($url)
 			$this->before = '<a href="'.$url.'">';
@@ -253,5 +259,19 @@ class ListItemTag extends \XBBC\SimpleTag {
 		}
 		
 		return parent::CanShift($tag);
+	}
+}
+
+//
+// [a]
+//
+class AnchorTag extends \XBBC\SingleTag {
+	public function __construct() {
+		parent::__construct(null, true);
+	}
+	
+	public function __create() {
+		parent::__create();
+		$this->html = '<div id="'.htmlspecialchars($this->arg).'"></div>';
 	}
 }

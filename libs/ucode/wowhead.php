@@ -49,8 +49,9 @@ abstract class WowheadTag extends \XBBC\LeafTag {
 		'say'         => 's2',
 		'whisper'     => 's3',
 		
-		// Blizzard blue
-		'blizzard'    => 'blizzard-blue'
+		// Misc
+		'blizzard'    => 'blizzard-blue',
+		'unnamed'     => 'unnamed-green'
 	);
 	
 	// Private colors not used by the [color] tag

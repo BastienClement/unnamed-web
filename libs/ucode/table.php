@@ -50,9 +50,9 @@ class TableDataTag extends \XBBC\SimpleTag {
 	
 	public function __construct($header = false) {
 		if($header)
-			parent::__construct("<th>", "</th>", true);
+			parent::__construct(null, "</th>", true);
 		else
-			parent::__construct("<td>", "</td>", true);
+			parent::__construct(null, "</td>", true);
 		
 		$this->display = \XBBC\DISPLAY_SPECIAL;
 		$this->strip_empty = false;
@@ -82,8 +82,28 @@ class TableDataTag extends \XBBC\SimpleTag {
 	public function StripWhitespaces() { return false; }
 	
 	public function Reduce() {
+		$this->before = $this->GenerateOpenTag();
 		$this->content = preg_replace('/^(\s|<br \/>)+|(\s|<br \/>)+$/', '', $this->FlushText()->content);
 		return parent::Reduce();
+	}
+	
+	protected function GenerateOpenTag() {
+		$attrs = array();
+		
+		if(isset($this->xargs['align']))
+			$attrs[] = 'align="'.htmlspecialchars($this->xargs['align']).'"';
+		
+		if(isset($this->xargs['valign']))
+			$attrs[] = 'valign="'.htmlspecialchars($this->xargs['valign']).'"';
+		
+		if(isset($this->xargs['rowspan']))
+			$attrs[] = 'rowspan="'.((int) $this->xargs['rowspan']).'"';
+		
+		if(isset($this->xargs['colspan']))
+			$attrs[] = 'colspan="'.((int) $this->xargs['colspan']).'"';
+		
+		$attrs = empty($attrs) ? '' : ' '.implode(' ', $attrs);
+		return (($header) ? '<th' : '<td').$attrs.'>';
 	}
 }
 
