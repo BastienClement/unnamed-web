@@ -1879,4 +1879,12 @@ tr .tclcon .pagestext a:hover {
 	margin-top: -5px;
 	margin-bottom: -5px;
 }
+
+.ucode h3, .ucode h4, .ucode h5, .ucode h6  {
+	width: auto !important;
+	display: block !important;
+	text-indent: 0px !important;
+	position: static !important;
+	padding: 0px !important;
+	margin: 10px 0;
 }

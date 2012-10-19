@@ -840,6 +840,30 @@ a.button:after {
 	color: #ddd;
 }
 
+.ucode .socket {
+	display: inline-block;
+	height: 14px;
+	vertical-align: -2px;
+	padding: 0px !important;
+	width: 14px;
+}
+	
+.ucode .db-icon, .ucode .wow-class img, .ucode .wow-race img {
+	vertical-align: -3px;
+	width: 15px;
+}
+
+.ucode .icon-boss, .ucode .icon-quest {
+	box-shadow: none;
+	vertical-align: -3px;
+}
+
+.ucode .wow-icon {
+	width: 15px;
+	height: 15px;
+	vertical-align: -2px;
+}
+
 .postmsg .ucode > :first-child {
 	margin-top: 0;
 }

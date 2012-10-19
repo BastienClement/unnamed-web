@@ -2,7 +2,7 @@
 
 function xbbc_ucode_parser() {
 	require_once UNNAMED_LIBS.'/xbbc/xbbc.php';
-	require_once UNNAMED_LIBS.'/unnamed/ucodelib.php';
+	require_once UNNAMED_LIBS.'/ucode/ucode.php';
 	
 	$parser = new \XBBC\Parser;
 	\UCode\Lib::load($parser);
