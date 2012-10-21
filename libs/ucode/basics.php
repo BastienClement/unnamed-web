@@ -12,7 +12,7 @@ class LinkTag extends \XBBC\SimpleTag {
 		parent::__construct(null, '</a>');
 	}
 	
-	public function __create() {
+	protected function __create() {
 		if($this->arg && $this->arg[0] != '#')
 			$this->arg = \XBBC\TagTools::SanitizeURL($this->arg);
 	}
@@ -32,16 +32,14 @@ class LinkTag extends \XBBC\SimpleTag {
 	}
 	
 	public function Reduce() {
-		$this->FlushText();
-		
 		if($this->embedded_img)
 			$url = htmlspecialchars($this->embedded_img->GetURL());
 		else
 			$url = $this->arg
 				? htmlspecialchars($this->arg)
 				: ($this->content[0] == '#'
-					? htmlspecialchars($this->content)
-					: \XBBC\TagTools::SanitizeURL($this->content, true));
+					? htmlspecialchars($this->Content())
+					: \XBBC\TagTools::SanitizeURL($this->Content(), true));
 		
 		if($url)
 			$this->before = '<a href="'.$url.'">';
@@ -113,7 +111,7 @@ class ColorTag extends \XBBC\SimpleTag {
 		parent::__construct(null, '</span>');
 	}
 	
-	public function __create() {
+	protected function __create() {
 		if($wh_class = WowheadTag::ColorAsClass($this->arg)) {
 			$this->before = "<span class=\"$wh_class\">";
 		} elseif($color = self::ParseColor($this->arg)) {
@@ -175,6 +173,20 @@ class BlizzquoteTag extends QuoteTag {
 }
 
 //
+// [mmoquote]
+//
+class MmoquoteTag extends QuoteTag {
+	public function __construct() {
+		parent::__construct();
+		$this->before = '<blockquote class="blizzquote mmoquote">';
+	}
+	
+	public function GetAuthorString() {
+		return 'MMO-Champion :';
+	}
+}
+
+//
 // [h1] ... [h4]
 //
 class TitleTag extends \XBBC\SimpleTag {
@@ -188,7 +200,7 @@ class TitleTag extends \XBBC\SimpleTag {
 	}
 	
 	public function Reduce() {
-		$id = 'h-'.sluggify(strip_tags($this->FlushText()->content));
+		$id = 'h-'.sluggify(strip_tags($this->Content()));
 		
 		if(isset(self::$IDS_CACHE[$id])) {
 			$id = $id.'-'.(self::$IDS_CACHE[$id]++);
@@ -270,7 +282,7 @@ class AnchorTag extends \XBBC\SingleTag {
 		parent::__construct(null, true);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		parent::__create();
 		$this->html = '<div id="'.htmlspecialchars($this->arg).'"></div>';
 	}

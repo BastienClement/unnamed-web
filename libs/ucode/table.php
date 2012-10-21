@@ -116,7 +116,7 @@ class TableTextTag extends \XBBC\MainTag {
 		$this->before = $this->after = '';
 	}
 	
-	public function __create() {
+	protected function __create() {
 		$this->element = '$table-text';
 	}
 }

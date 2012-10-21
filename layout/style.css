@@ -754,6 +754,10 @@ a.button:after {
 	color: #0091FF;
 }
 
+.ucode .mmoquote {
+	color: #90E055;
+}
+
 .ucode .blizzquote strong, .ucode .blizzquote em, .ucode .blizzquote a {
 	color: #bbb;
 }

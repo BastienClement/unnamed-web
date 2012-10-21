@@ -110,7 +110,7 @@ abstract class WowheadTag extends \XBBC\LeafTag {
 		parent::__construct(null, '</a>', false);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		// Optional domain
 		if(isset($this->xargs['domain']) && isset(self::$domains[$this->xargs['domain']])) {
 			$this->domain = self::$domains[$this->xargs['domain']];
@@ -186,7 +186,7 @@ class DBTag extends WowheadTag {
 	protected $safe_arg = false;
 	protected $type, $id;
 	
-	public function __create() {
+	protected function __create() {
 		if(isset($this->xargs['args'])) {
 			$this->args[] = $this->xargs['args'];
 		}
@@ -334,7 +334,7 @@ class ItemTag extends WowheadTag {
 // [npc]
 //
 class NPCTag extends WowheadTag {
-	public function __create() {
+	protected function __create() {
 		parent::__create();
 		
 		if(isset($this->xargs['boss'])) {
@@ -360,7 +360,7 @@ class ObjectTag extends WowheadTag {
 // [quest]
 //
 class QuestTag extends WowheadTag {
-	public function __create() {
+	protected function __create() {
 		parent::__create();
 		
 		if(isset($this->xargs['bare']))
@@ -418,7 +418,7 @@ class SocketTag extends \XBBC\SingleTag {
 		parent::__construct(null);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		if(isset(self::$socket_classes[strtolower($this->arg)])) {
 			$this->html = '<span class="socket '.self::$socket_classes[strtolower($this->arg)].'"></span>';
 		} else {
@@ -437,7 +437,7 @@ class IconTag extends \XBBC\SingleTag {
 		parent::__construct(null);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		$this->html = '<img src="http://wow.zamimg.com/images/wow/icons/small/'.$this->arg.'.jpg" class="wow-icon" alt="'.$this->arg.'" /">';
 	}
 }
@@ -465,7 +465,7 @@ class ClassTag extends \XBBC\SingleTag {
 		parent::__construct(null);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		$arg = strtolower($this->arg);
 		
 		if(isset(self::$class_data[$arg])) {
@@ -507,7 +507,7 @@ class RaceTag extends \XBBC\SingleTag {
 		parent::__construct(null);
 	}
 	
-	public function __create() {
+	protected function __create() {
 		if(isset(self::$race_data[strtolower($this->arg)])) {
 			$race_data = self::$race_data[strtolower($this->arg)];
 		} else {

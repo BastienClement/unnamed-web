@@ -27,7 +27,6 @@ abstract class ArgAsContentTag extends \XBBC\TagDefinition {
 	public function __create() {
 		if($this->arg) {
 			$this->Bufferize($this->arg);
-			$this->FlushText();
 		}
 	}
 	
@@ -93,6 +92,7 @@ abstract class Lib {
 		
 		// More WoW stuff
 		$parser->DefineTag('blizzquote', new BlizzquoteTag());
+		$parser->DefineTag('mmoquote',   new MmoquoteTag());
 		$parser->DefineTag('socket',     new SocketTag());
 		$parser->DefineTag('icon',       new IconTag());
 		$parser->DefineTag('class',      new ClassTag());
