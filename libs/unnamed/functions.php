@@ -4,7 +4,7 @@ function xbbc_ucode_parser() {
 	require_once UNNAMED_LIBS.'/xbbc/xbbc.php';
 	require_once UNNAMED_LIBS.'/ucode/ucode.php';
 	
-	$parser = new \XBBC\Parser;
+	$parser = new \XBBC\Parser(\XBBC\SMILIES_OPTIMIZER);
 	\UCode\Lib::load($parser);
 	
 	return $parser;

@@ -103,7 +103,7 @@ function parse_message($text, $hide_smilies = '0')
 	static $xbbc; 
 	if(!$xbbc) $xbbc = xbbc_ucode_parser();
 	
-	$flags = 0;
+	$flags = \XBBC\SMILIES_OPTIMIZER;
 	
 	if(strpos($text, '[') === false || strpos($text, ']') === false)
 		$flags |= NO_CODE;
