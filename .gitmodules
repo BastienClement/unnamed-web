@@ -1,3 +1,6 @@
 [submodule "libs/xbbc"]
 	path = libs/xbbc
 	url = git://github.com/unnamed-lab/xbbcode-parser.git
+[submodule "libs/ucode"]
+	path = libs/ucode
+	url = git@github.com:unnamed-lab/ucode-lib.git
