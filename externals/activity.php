@@ -1,5 +1,5 @@
 <?php
-include dirname(__FILE__).'/libs/simple_html_dom.php';
+include dirname(__FILE__).'/../libs/simple_html_dom.php';
 
 $url  = "http://eu.battle.net/wow/fr/guild/marecage-de-zangar/The_Unnamed/news";
 $html = file_get_html($url);
