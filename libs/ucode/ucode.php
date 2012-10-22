@@ -8,6 +8,7 @@ namespace UCode;
 require 'basics.php';
 require 'table.php';
 require 'wowhead.php';
+require 'components.php';
 
 //
 // A root tag wrapping contents into a .ucode div
@@ -97,6 +98,10 @@ abstract class Lib {
 		$parser->DefineTag('icon',       new IconTag());
 		$parser->DefineTag('class',      new ClassTag());
 		$parser->DefineTag('race',       new RaceTag());
+		
+		// Components
+		$parser->DefineTag('spoiler',    new SpoilerTag());
+		$parser->DefineTag('toggler',    new TogglerTag());
 		
 		// Root
 		$parser->RootTag(new \UCode\URoot());

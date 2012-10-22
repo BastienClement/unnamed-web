@@ -40,6 +40,7 @@ if(!defined('UNNAMED'))
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="/layout/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/layout/scripts/unnamed.js"></script>
 	<script src="/layout/scripts/timeago.js"></script>
 	<script src="http://static.wowhead.com/widgets/power.js"></script>
 	<script type="text/javascript" src="/layout/shadowbox-3.0.3/shadowbox.js"></script>

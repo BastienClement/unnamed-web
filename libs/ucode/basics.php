@@ -131,9 +131,6 @@ class ColorTag extends \XBBC\SimpleTag {
 // [quote], emulate a new document root
 //
 class QuoteTag extends \XBBC\RootTag {
-	// How many times can quote-tags be nested
-	public static $MAX_NESTING = 3;
-	
 	public function __construct() {
 		parent::__construct();
 		$this->before = '<blockquote>';
@@ -142,7 +139,7 @@ class QuoteTag extends \XBBC\RootTag {
 	}
 	
 	public function MaxNesting() {
-		return self::$MAX_NESTING;
+		return 3;
 	}
 	
 	public function Reduce() {

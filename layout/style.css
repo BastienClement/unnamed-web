@@ -766,11 +766,11 @@ a.button:after {
 	background: rgba(70, 70, 70, 0.1);
 }
 
-.ucode blockquote :last-child {
+.ucode blockquote > :last-child {
 	margin-bottom: 0;
 }
 
-.ucode blockquote :first-child {
+.ucode blockquote > :first-child {
 	margin-top: 0;
 }
 
@@ -779,6 +779,8 @@ a.button:after {
 	text-align: left;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.3);
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .ucode tr:nth-child(2n) {
@@ -797,6 +799,14 @@ a.button:after {
 .ucode tr:last-child td, .ucode tr:last-child th {
 	padding: 10px;
 	background: none;
+}
+
+.ucode td > :first-child, .ucode th > :first-child {
+	margin-top: 0;
+}
+
+.ucode td > :last-child, .ucode th > :last-child {
+	margin-bottom: 0;
 }
 
 .ucode h3, .ucode h4, .ucode h5, .ucode h6 {
@@ -874,6 +884,61 @@ a.button:after {
 
 .ucode del {
 	opacity: 0.6;
+}
+
+.ucode .spoiler {
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+	overflow: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.ucode .spoiler-inner {
+	margin: 10px;
+	opacity: 0;
+	-webkit-transition: opacity .3s ease;
+	-moz-transition: opacity .3s ease;
+	-ms-transition: opacity .3s ease;
+	-o-transition: opacity .3s ease;
+	transition: opacity .3s ease;
+}
+
+.ucode .spoiler:hover .spoiler-inner {
+	opacity: 1;
+}
+
+.ucode .toggler {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.ucode .toggler-link {
+	position: relative;
+	padding-left: 15px;
+}
+
+.ucode .toggler-link:before {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-image: url('bootstrap/img/glyphicons-halflings-white.png');
+	background-position: -456px -72px;
+	width: 12px;
+	height: 14px;
+	content: "";
+}
+
+.ucode .toggler.toggled .toggler-link:before {
+	background-position: -313px -119px;
+}
+
+.ucode .toggler-inner {
+	display: none;
+}
+
+.ucode .toggler.toggled .toggler-inner {
+	display: block;
 }
 
 .postmsg .ucode > :first-child {
