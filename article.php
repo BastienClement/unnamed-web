@@ -7,7 +7,7 @@ if(!isset($_ARGS[0]))
 	return_404();
 
 $art_id = (int) $_ARGS[0];
-$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message, u.email_setting, u.biography FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id INNER JOIN {$db->profile}users AS u ON u.id = p.poster_id  WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
 
 if(!$art = $db->fetch_assoc($articles))
 	return_404();
@@ -94,8 +94,10 @@ include('layout/header.php');
 	<?php require UNNAMED_BLOCKS.'/article/share.php'; ?>
 	<div class="hr"></div>
 
+<?php if($art['biography']): ?>
 	<?php require UNNAMED_BLOCKS.'/article/author.php'; ?>
 	<div class="hr"></div>
+<?php endif; ?>
 
 <?php
 	preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
