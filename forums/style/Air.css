@@ -1888,3 +1888,7 @@ tr .tclcon .pagestext a:hover {
 	padding: 0px !important;
 	margin: 10px 0;
 }
+
+#brdfooter .box {
+	position: relative;
+}
