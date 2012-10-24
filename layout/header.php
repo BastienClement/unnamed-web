@@ -112,7 +112,7 @@ if(!defined('UNNAMED'))
 					<li>
 						<a href="/videos"<?php if(ACTIVE_PAGE == 'videos') echo ' class="active"'; ?>>Vidéos</a>
 					</li>
-					<li class="sub">
+					<!--<li class="sub">
 						<a href="/streams"<?php if(ACTIVE_PAGE == 'streams') echo ' class="active"'; ?>>Streams</a>
 						<ul>
 							<li><a href="">Stream de random</a></li>
@@ -121,7 +121,7 @@ if(!defined('UNNAMED'))
 							<li><a href="">Stream de random</a></li>
 							<li><a href="">Stream de random</a></li>
 						</ul>
-					</li>
+					</li>-->
 					<li>
 						<a href="/progression"<?php if(ACTIVE_PAGE == 'progress') echo ' class="active"'; ?>>Progression</a>
 					</li>
