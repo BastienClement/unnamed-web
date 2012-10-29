@@ -1,3 +1,4 @@
+<?php header("Status: 404 Not Found"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,13 +30,13 @@
 		}
 		
 		#logo {
-			width: 650px;
-			height: 400px;
+			width: 743px;
+			height: 200px;
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			margin-left: -325px;
-			margin-top: -200px;
+			margin-left: -371px;
+			margin-top: -100px;
 		}
 		
 	</style>
@@ -43,7 +44,7 @@
 <body>
 	<div id="squares"></div>
 	<div id="logo">
-		<a href="/"><img src="/layout/img/404.png" /></a>
+		<a href="/"><img src="/layout/img/logo.png" /></a>
 	</div>
 </body>
 </html>

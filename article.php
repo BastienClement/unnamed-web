@@ -1,8 +1,5 @@
 ﻿<?php
 
-include('libs/unnamed/common.php');
-require_routing();
-
 if(!isset($_ARGS[0]))
 	return_404();
 

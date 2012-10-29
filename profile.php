@@ -1,5 +1,4 @@
 <?php
-require 'layout/header.php';
 
 $id = (int) $_ARGS[0];
 $res = $db->query("SELECT * FROM {$db->prefix}users WHERE id = $id LIMIT 1");
@@ -7,6 +6,7 @@ $res = $db->query("SELECT * FROM {$db->prefix}users WHERE id = $id LIMIT 1");
 if(!($user = $db->fetch_assoc($res)))
 	return_404();
 
+require 'layout/header.php';
 ?>
 
 <div class="section">

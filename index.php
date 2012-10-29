@@ -1,4 +1,10 @@
 <?php
+// Fake rewrite to _router for index
+if(!defined('UNNAMED_ROUTED')):
+	$_SERVER['REQUEST_URI'] = '/index';
+	require '_router.php';
+else:
+
 define('ACTIVE_PAGE', 'index');
 include('layout/header.php');
 ?>
@@ -74,4 +80,7 @@ include('layout/header.php');
 	</div>
 </div>
 
-<?php include('layout/footer.php'); ?>
+<?php
+include('layout/footer.php'); 
+endif;
+
