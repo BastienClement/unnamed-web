@@ -30,6 +30,6 @@ foreach ($table->find('tr') as $rows){
 	);
 }
 
-return = serialize($return);
+$return = serialize($return);
 
 file_put_contents(dirname(__FILE__) . "/data/progress.txt", $return);
