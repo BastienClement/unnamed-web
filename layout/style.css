@@ -719,6 +719,11 @@ a.button:after {
 	text-align: center;
 }
 
+#rankingWrapper td {
+	vertical-align: bottom;
+	line-height: 28px;
+}
+
 #rankingServer span {
 	line-height: 60px;
 	font-size: 76px;
