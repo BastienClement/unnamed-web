@@ -26,3 +26,7 @@ function handle_blog_request($blog, $args) {
 	
 	return_404();
 }
+
+function blog_url($author, $url) {
+	return UNNAMED_PROD ? "http://$author.unnamed.eu$url" : "http://{$_SERVER['HTTP_HOST']}/$author$url";
+}
