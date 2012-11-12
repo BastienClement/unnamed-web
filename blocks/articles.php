@@ -1,33 +1,30 @@
 <?php
 
-if(!defined("BLOCK_ARTICLES_FULL")){
-echo "<h2>Derniers articles</h2>";
+if(!defined('BLOCK_ARTICLES_FULL')) {
+	echo '<h2>Derniers articles</h2>';
 }
 
-if(defined("BLOCK_ARTICLES_FULL")){
-
-$nb_articles = $db->query("SELECT COUNT(*) as total FROM topics WHERE forum_id = 16");
-while($nb_articles = $db->fetch_assoc($nb_articles)){
-$total_articles = $nb_articles["total"];
-}
-
-$page = isset($_ARGS[0]) ? $_ARGS[0] : 1;
-if(!is_numeric($page) || $page < 1) return_404(); else $page--;
-$limit = ($page) ? ($page*10).',10' : '10';
+if(defined('BLOCK_ARTICLES_FULL')) {
+	$nb_articles = $db->query('SELECT COUNT(*) AS total FROM topics WHERE forum_id = 16');
+	$total_articles = $db->fetch_assoc($nb_articles)['total'];
+	
+	$page = isset($_ARGS[0]) ? $_ARGS[0] : 1;
+	if(!is_numeric($page) || $page < 1)
+		return_404();
+	
+	$limit = ($page > 1) ? (($page-1) * 10).',10' : '10';
 } else{
-$limit = 5;
+	$limit = 5;
 }
 
 $articles = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 16 ORDER BY t.id DESC LIMIT $limit");
 
-$xbbc_lead = xbbc_ucode_parser();
-$xbbc_meta = xbbc_ucode_parser();
-
-$xbbc_lead->SetFlag(\XBBC\PARSE_LEAD);
-$xbbc_meta->SetFlag(\XBBC\PARSE_META);
+$xbbc_parser = xbbc_ucode_parser();
+$xbbc_parser->SetFlag(\XBBC\PARSE_LEAD);
 
 while($article = $db->fetch_assoc($articles)):
-	$meta = $xbbc_meta->Parse($article['message']);
+	$message = $xbbc_parser->Parse($article['message']);
+	$meta = $xbbc_parser->LastMeta();
 	$art_url = "/article/{$article['id']}/".sluggify($article['subject']);
 ?>
 
@@ -49,33 +46,30 @@ while($article = $db->fetch_assoc($articles)):
 			/ <?php echo $article['num_likes']; ?> <i class="icon-heart"></i>
 		</div>
 		<?php
-			echo ($meta['desc'] && !defined("BLOCK_ARTICLES_FULL")) ? $xbbc_lead->Parse($meta['desc']) : $xbbc_lead->Parse($article['message']);
+			echo ($meta['desc'] && !defined("BLOCK_ARTICLES_FULL")) ? $xbbc_parser->Parse($meta['desc']) : $message;
 		?>
 	</div>
 </div>
 
 <?php
 endwhile;
-?>
 
+if(defined('BLOCK_ARTICLES_FULL')) {
+	$nb_pages = ceil($total_articles / 10);
+	
+	echo '<div class="button-wrapper pagination">';
 
-<?php if(defined("BLOCK_ARTICLES_FULL")){
-
-$nb_pages = ceil($total_articles/10);
-
-	echo "<div class=\"button-wrapper pagination\">";
-
-		for($i=1; $i<=$nb_pages; $i++){
-			if($i==$page+1){
+	for($i = 1; $i <= $nb_pages; $i++) {
+		if($i == $page) {
 			echo '<a href="/articles/'.$i.'" class="button active">'.$i.'</a>'; 
-			} else{
-				echo '<a href="/articles/'.$i.'" class="button">'.$i.'</a>';
-			}
+		} else{
+			echo '<a href="/articles/'.$i.'" class="button">'.$i.'</a>';
 		}
+	}
 		
-	echo "</div>";
-
+	echo '</div>';
 } else {
-echo "<div class=\"button-wrapper\"><a href=\"/articles\" class=\"button\">Tous les articles</a></div>";
+	echo '<div class="button-wrapper"><a href="/articles" class="button">Tous les articles</a></div>';
 }
+
 ?>
