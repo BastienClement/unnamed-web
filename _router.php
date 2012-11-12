@@ -3,8 +3,8 @@
 define('UNNAMED_ROUTED', 1);
 ob_start();
 
-require "libs/unnamed/common.php";
-require "libs/unnamed/blogs.php";
+require_once "libs/unnamed/common.php";
+require_once "libs/unnamed/blogs.php";
 
 // Print 404 and exit
 function return_404() {

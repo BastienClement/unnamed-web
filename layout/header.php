@@ -94,11 +94,11 @@ if(!defined('UNNAMED'))
 						<a href="/blogs"<?php if(ACTIVE_PAGE == 'blogs') echo ' class="active"'; ?>>Blogs</a>
 						<ul>
 							<?php
-							$posters = $db->query("SELECT DISTINCT(poster) FROM {$db->prefix}topics WHERE forum_id = 17 ORDER BY poster");
+							$posters = $db->query("SELECT DISTINCT(t.poster), u.slug FROM topics AS t INNER JOIN users AS u ON u.username = t.poster WHERE t.forum_id = 17 AND u.slug != '' ORDER BY t.poster");
 							while($poster = $db->fetch_assoc($posters)):
 							?>
 							<li>
-								<a href="http://<?php echo sluggify($poster['poster']); ?>.unnamed.eu/">
+								<a href="<?php echo blog_url($poster['slug']); ?>">
 									<?php echo htmlspecialchars(ucfirst($poster['poster'])); ?>
 								</a>
 							</li>

@@ -26,6 +26,7 @@ if(!defined("IS_PUN")):
 	});
 endif;
 
+require_once UNNAMED_LIBS.'/unnamed/blogs.php';
 require UNNAMED_LIBS.'/unnamed/functions.php';
 
 // Load timer

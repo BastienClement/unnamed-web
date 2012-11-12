@@ -15,7 +15,7 @@ include('layout/header.php');
 				<div id="slide-blogs">
 					<?php
 	
-					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 17 ORDER BY t.id DESC LIMIT 4");
+					$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message, u.slug FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id INNER JOIN users AS u ON u.id = p.poster_id WHERE t.forum_id = 17 AND u.slug != '' ORDER BY t.id DESC LIMIT 4");
 					
 					$xbbc_meta = xbbc_ucode_parser();
 					$xbbc_meta->SetFlag(\XBBC\PARSE_META);
@@ -24,7 +24,7 @@ include('layout/header.php');
 						$meta = $xbbc_meta->Parse($row['message']);
 					?>
 					
-					<a href="">
+					<a href="<?php echo blog_url($row['slug'], "/article/{$row['id']}/".sluggify($row['subject'])); ?>">
 						<div class="col-slide col">
 							<img src="<?php echo htmlspecialchars($meta['thumb']); ?>"/>
 							<div class="slide-title-wrapper">
