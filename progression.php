@@ -1,5 +1,5 @@
 <?php
-define('ACTIVE_PAGE', 'progression');
+define('ACTIVE_PAGE', 'progress');
 define('PAGE_TITLE',  'Progression');
 include('layout/header.php');
 ?>
