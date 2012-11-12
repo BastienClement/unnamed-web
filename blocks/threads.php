@@ -1,4 +1,4 @@
-<h2>Sujets actifs</h2>
+<h2>Sujets actifs des forums</h2>
 
 <?php
 
