@@ -73,6 +73,10 @@ code {
 	font-family: 'Droid Sans Mono', monospace;
 }
 
+pre > code {
+	float: left;
+}
+
 a:hover {
 	color: #fff !important;
 }
