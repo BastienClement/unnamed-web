@@ -496,7 +496,7 @@ a:hover #home-link {
 	position: relative;
 }
 
-.last-news a {
+.last-news > a {
 	color: #bbb;
 }
 
@@ -660,9 +660,19 @@ a:hover #home-link {
 	transition: background .3s ease, color .3s ease;
 }
 
+.pagination .active{
+	background: rgba(125, 125, 125, 0.3);
+	color: #fff;
+}
+
 a.button {
 	padding: 10px 25px 10px 10px;
 }
+
+.pagination a.button{
+	padding:10px;
+}
+
 
 a.button:after {
 	position: absolute;
@@ -674,6 +684,10 @@ a.button:after {
 	width: 12px;
 	height: 14px;
 	content: "";
+}
+
+.pagination a.button:after{
+display:none;
 }
 
 .button:first-child {

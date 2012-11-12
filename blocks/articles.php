@@ -1,8 +1,24 @@
-<h2>Derniers articles</h2>
-
 <?php
 
-$res = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 16 ORDER BY t.id DESC LIMIT 5");
+if(!defined("BLOCK_ARTICLES_FULL")){
+echo "<h2>Derniers articles</h2>";
+}
+
+if(defined("BLOCK_ARTICLES_FULL")){
+
+$nb_articles = $db->query("SELECT COUNT(*) as total FROM topics WHERE forum_id = 16");
+while($nb_articles = $db->fetch_assoc($nb_articles)){
+$total_articles = $nb_articles["total"];
+}
+
+$page = isset($_ARGS[0]) ? $_ARGS[0] : 1;
+if(!is_numeric($page) || $page < 1) return_404(); else $page--;
+$limit = ($page) ? ($page*10).',10' : '10';
+} else{
+$limit = 5;
+}
+
+$articles = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id WHERE t.forum_id = 16 ORDER BY t.id DESC LIMIT $limit");
 
 $xbbc_lead = xbbc_ucode_parser();
 $xbbc_meta = xbbc_ucode_parser();
@@ -10,16 +26,16 @@ $xbbc_meta = xbbc_ucode_parser();
 $xbbc_lead->SetFlag(\XBBC\PARSE_LEAD);
 $xbbc_meta->SetFlag(\XBBC\PARSE_META);
 
-while($row = $db->fetch_assoc($res)):
-	$meta = $xbbc_meta->Parse($row['message']);
-	$art_url = "/article/{$row['id']}/".sluggify($row['subject']);
+while($article = $db->fetch_assoc($articles)):
+	$meta = $xbbc_meta->Parse($article['message']);
+	$art_url = "/article/{$article['id']}/".sluggify($article['subject']);
 ?>
 
 <div class="content-block">
 	<div class="last-news">
 		<a href="<?php echo $art_url; ?>">
 			<div class="last-news-title">
-				<h3><?php echo htmlspecialchars($row['subject']); ?></h3>
+				<h3><?php echo htmlspecialchars($article['subject']); ?></h3>
 				<div class="last-news-img">
 					<img src="<?php echo $meta['thumb']; ?>"/>
 					<div class="last-news-img-bar"></div>
@@ -27,13 +43,13 @@ while($row = $db->fetch_assoc($res)):
 			</div>
 		</a>
 		<div class="last-news-infos">
-			<abbr class="timeago-uc" title="<?php echo date('c', $row['posted']); ?>"><?php echo date('d/m/Y H:i', $row['posted']); ?></abbr>
-			&ndash; <?php echo $row['num_views']; ?> <i class="icon-eye-open"></i>
-			/ <a href="<?php echo $art_url; ?>#showcomments"><?php echo $row['num_replies']; ?> <i class="icon-comment"><i class="icon-comment"></i></i></a>
-			/ <?php echo $row['num_likes']; ?> <i class="icon-heart"></i>
+			<abbr class="timeago-uc" title="<?php echo date('c', $article['posted']); ?>"><?php echo date('d/m/Y H:i', $article['posted']); ?></abbr>
+			&ndash; <?php echo $article['num_views']; ?> <i class="icon-eye-open"></i>
+			/ <a href="<?php echo $art_url; ?>#showcomments"><?php echo $article['num_replies']; ?> <i class="icon-comment"><i class="icon-comment"></i></i></a>
+			/ <?php echo $article['num_likes']; ?> <i class="icon-heart"></i>
 		</div>
 		<?php
-			echo $meta['desc'] ? $xbbc_lead->Parse($meta['desc']) : $xbbc_lead->Parse($row['message']);
+			echo ($meta['desc'] && !defined("BLOCK_ARTICLES_FULL")) ? $xbbc_lead->Parse($meta['desc']) : $xbbc_lead->Parse($article['message']);
 		?>
 	</div>
 </div>
@@ -42,4 +58,24 @@ while($row = $db->fetch_assoc($res)):
 endwhile;
 ?>
 
-<div class="button-wrapper"><a href="/articles" class="button">Tous les articles</a></div>
+
+<?php if(defined("BLOCK_ARTICLES_FULL")){
+
+$nb_pages = ceil($total_articles/10);
+
+	echo "<div class=\"button-wrapper pagination\">";
+
+		for($i=1; $i<=$nb_pages; $i++){
+			if($i==$page+1){
+			echo '<a href="/articles/'.$i.'" class="button active">'.$i.'</a>'; 
+			} else{
+				echo '<a href="/articles/'.$i.'" class="button">'.$i.'</a>';
+			}
+		}
+		
+	echo "</div>";
+
+} else {
+echo "<div class=\"button-wrapper\"><a href=\"/articles\" class=\"button\">Tous les articles</a></div>";
+}
+?>
