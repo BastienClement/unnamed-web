@@ -660,8 +660,8 @@ a:hover #home-link {
 	transition: background .3s ease, color .3s ease;
 }
 
-.pagination .active{
-	background: rgba(125, 125, 125, 0.3);
+.pagination .active {
+	background: rgba(80, 80, 80, 0.3) !important;
 	color: #fff;
 }
 
