@@ -25,6 +25,10 @@ function user_avatar($id) {
 	echo "<img src=\"http://www.unnamed.eu/avatars/$id\" />";
 }
 
+function url($url = '/') {
+	return UNNAMED_PROD ? 'http://'.UNNAMED_DOMAIN.".unnamed.eu$url" : $url;
+}
+
 function truncate($string, $max_length = 50, $replacement = '...', $trunc_at_space = false) {
 	$max_length -= strlen($replacement);
 	$string_length = strlen($string);

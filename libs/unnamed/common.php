@@ -9,6 +9,7 @@ define('UNNAMED_LIBS',   UNNAMED_ROOT.'/libs');
 
 define('UNNAMED_PROD', isset($_SERVER['UNNAMED_PROD']));
 define('UNNAMED_DEV', !UNNAMED_PROD);
+define('UNNAMED_DOMAIN', isset($_SERVER['UNNAMED_DOMAIN']) ? $_SERVER['UNNAMED_DOMAIN'] : null);
 
 require UNNAMED_ROOT.'/externals/loader.php';
 
@@ -29,8 +30,14 @@ endif;
 require_once UNNAMED_LIBS.'/unnamed/blogs.php';
 require UNNAMED_LIBS.'/unnamed/functions.php';
 
-// Load timer
+// Absolute URLs for prod version, fix blog navigation
+ob_start(function($html) {
+	return preg_replace_callback('#(href|src)="(/[^/][^"]*)"#', function($matches) {
+		return $matches[1].'="'.url($matches[2]).'"';
+	}, $html);
+});
 
+// Load timer
 if(defined('IS_PUN')):
 	ob_end_clean();
 endif;
