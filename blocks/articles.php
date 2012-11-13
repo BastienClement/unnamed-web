@@ -1,5 +1,7 @@
 <?php
 
+$PER_PAGE = 10;
+
 if(!defined('BLOCK_ARTICLES_FULL')) {
 	echo '<h2>Derniers articles</h2>';
 }
@@ -12,7 +14,7 @@ if(defined('BLOCK_ARTICLES_FULL')) {
 	if(!is_numeric($page) || $page < 1)
 		return_404();
 	
-	$limit = ($page > 1) ? (($page-1) * 10).',10' : '10';
+	$limit = ($page > 1) ? (($page-1) * $PER_PAGE).','.$PER_PAGE : $PER_PAGE;
 } else{
 	$limit = 5;
 }
@@ -55,19 +57,9 @@ while($article = $db->fetch_assoc($articles)):
 endwhile;
 
 if(defined('BLOCK_ARTICLES_FULL')) {
-	$nb_pages = ceil($total_articles / 10);
-	
-	echo '<div class="button-wrapper pagination">';
-
-	for($i = 1; $i <= $nb_pages; $i++) {
-		if($i == $page) {
-			echo '<a href="/articles/'.$i.'" class="button active">'.$i.'</a>'; 
-		} else{
-			echo '<a href="/articles/'.$i.'" class="button">'.$i.'</a>';
-		}
-	}
-		
-	echo '</div>';
+	$nb_pages = ceil($total_articles / $PER_PAGE);
+	echo '<div class="hr"></div>';
+	paginate_blashier("/articles/%", $page, $nb_pages);
 } else {
 	echo '<div class="button-wrapper"><a href="/articles" class="button">Tous les articles</a></div>';
 }

@@ -57,3 +57,56 @@ function links_list($articles) {
 <?php
 	endforeach;
 }
+
+function paginate_blashier($link_pattern, $cur, $max) {
+	echo '<div class="button-wrapper pagination">';
+	
+	if($cur > 1)
+		echo '<a href="'.paginate_fmt($link_pattern, $cur-1).'" class="button prev">Précédent</a>';
+	
+	if($cur != 1) {
+		paginate_link($link_pattern, 1, $cur);
+	}
+	
+	if($cur > 4) {
+		$fast_prev = floor(($cur-2 + 1) / 2);
+		paginate_link($link_pattern, $fast_prev, $cur);
+	}
+	
+	for($i = max($cur-2, 2); $i < $cur && $i > 1; $i++) {
+		paginate_link($link_pattern, $i, $cur);
+	}
+	
+	paginate_link($link_pattern, $cur, $cur);
+	
+	for($i = $cur+1; $i < $cur+3 && $i < $max; $i++) {
+		paginate_link($link_pattern, $i, $cur);
+	}
+	
+	if($cur < $max-3) {
+		$fast_next = ceil(($cur+2 + $max) / 2);
+		paginate_link($link_pattern, $fast_next, $cur);
+	}
+	
+	if($cur != $max) {
+		paginate_link($link_pattern, $max, $cur);
+	}
+	
+	if($cur < $max) {
+		echo '<a href="'.paginate_fmt($link_pattern, $cur+1).'" class="button next">Suivant</a>';
+	}
+	
+	echo '</div>';
+}
+
+function paginate_link($link_pattern, $i, $cur) {
+	echo '<a href="'.paginate_fmt($link_pattern, $i).'" class="button'.(($i == $cur) ? ' active' : '').'">'.$i.'</a>';
+}
+
+function paginate_fmt($link_pattern, $i) {
+	if($i == 1)
+		$i = '';
+	
+	$link = str_replace('%', $i, $link_pattern);
+	return rtrim($link, '/');
+}

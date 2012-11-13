@@ -647,7 +647,7 @@ a:hover #home-link {
 	border: 0;
 	color: #bbb;
 	cursor: pointer;
-	margin-left: 10px;
+	margin: 0px 5px;
 	padding: 10px;
 	background: rgba(0, 0, 0, 0.3);
 	display: inline-block;
@@ -669,14 +669,9 @@ a.button {
 	padding: 10px 25px 10px 10px;
 }
 
-.pagination a.button{
-	padding:10px;
-}
-
-
 a.button:after {
 	position: absolute;
-	top: 10px;
+	top: 11px;
 	right: 10px;
 	margin: 0 0 0 5px;
 	background-image: url('bootstrap/img/glyphicons-halflings-white.png');
@@ -686,12 +681,40 @@ a.button:after {
 	content: "";
 }
 
-.pagination a.button:after{
-display:none;
+.button:first-child {
+	margin-left: 0;
 }
 
-.button:first-child {
-	margin: 0;
+
+.pagination {
+	text-align: center;
+}
+
+.pagination a.button {
+	padding:10px;
+}
+
+
+.pagination a.button:after{
+	display:none;
+}
+
+.pagination a.button.prev {
+	padding-left: 25px;
+}
+
+.pagination a.button.next {
+	padding-right: 25px;
+}
+
+.pagination a.button.prev:after, .pagination a.button.next:after {
+	display: block;
+}
+
+.pagination a.button.prev:after {
+	background-position: -432px -72px;
+	right: auto;
+	left: 3px;
 }
 
 .button:hover {
