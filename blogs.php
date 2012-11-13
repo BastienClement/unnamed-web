@@ -1,11 +1,9 @@
 <?php
 define('ACTIVE_PAGE', 'blogs');
 define('PAGE_TITLE',  'Blogs');
-include('layout/header.php');
+
+define('BLOCK_ARTICLES_FORUM_ID', 17);
+define('BLOCK_ARTICLES_LINK_TPL', '/blogs/%');
+
+include('articles.php');
 ?>
-<div class="section">
-	<div class="section-light">
-	<div class="section-content">
-	</div>
-</div>
-<?php include('layout/footer.php'); ?>

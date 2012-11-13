@@ -161,7 +161,7 @@ p {
 
 /* 2-col */
 
-.twocols-layout, .twocols-alt-layout {
+.twocols-layout, .twocols-alt-layout, .twocols-split-layout {
 	background-image: url('/layout/img/line-col.gif');
 	background-repeat: repeat-y;
 	background-position: 700px 0;
@@ -187,6 +187,16 @@ p {
 
 .twocols-alt-layout .col2 {
 	width: 740px;
+}
+
+/* Split layout */
+
+.twocols-split-layout {
+	background-position: 490px 0;
+}
+
+.twocols-split-layout .col {
+	width: 470px;
 }
 
 /* Special cases */
@@ -555,6 +565,23 @@ a:hover #home-link {
 
 .last-news .ucode > :first-child {
 	margin-top: 0;
+}
+
+.last-news .ucode > :last-child {
+	margin-bottom: 0;
+}
+
+#split-articles-layout .box:last-child {
+	margin-bottom: 0px;
+}
+
+.last-news .readmore {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.last-news .readmore .button {
+	margin-right: 0px;
 }
 
 #copyright {
