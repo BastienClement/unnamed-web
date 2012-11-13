@@ -1,6 +1,6 @@
 <?php
 
-$PER_PAGE = 10;
+$PER_PAGE = 8;
 
 if(!defined('BLOCK_ARTICLES_FULL')) {
 	echo '<h2>Derniers articles</h2>';
@@ -8,11 +8,15 @@ if(!defined('BLOCK_ARTICLES_FULL')) {
 
 if(defined('BLOCK_ARTICLES_FULL')) {
 	$nb_articles = $db->query('SELECT COUNT(*) AS total FROM topics WHERE forum_id = 16');
+	
 	$total_articles = $db->fetch_assoc($nb_articles)['total'];
+	$nb_pages = ceil($total_articles / $PER_PAGE);
 	
 	$page = isset($_ARGS[0]) ? $_ARGS[0] : 1;
-	if(!is_numeric($page) || $page < 1)
+	if(!is_numeric($page) || $page < 1 || $page > $nb_pages)
 		return_404();
+	else
+		$page = (int) $page;
 	
 	$limit = ($page > 1) ? (($page-1) * $PER_PAGE).','.$PER_PAGE : $PER_PAGE;
 } else{
@@ -57,7 +61,6 @@ while($article = $db->fetch_assoc($articles)):
 endwhile;
 
 if(defined('BLOCK_ARTICLES_FULL')) {
-	$nb_pages = ceil($total_articles / $PER_PAGE);
 	echo '<div class="hr"></div>';
 	paginate_blashier("/articles/%", $page, $nb_pages);
 } else {

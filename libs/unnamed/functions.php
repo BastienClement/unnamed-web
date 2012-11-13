@@ -61,6 +61,8 @@ function links_list($articles) {
 function paginate_blashier($link_pattern, $cur, $max) {
 	echo '<div class="button-wrapper pagination">';
 	
+	// Don't ask me how the following works. It just does, OK? :-)
+	
 	if($cur > 1)
 		echo '<a href="'.paginate_fmt($link_pattern, $cur-1).'" class="button prev">Précédent</a>';
 	
