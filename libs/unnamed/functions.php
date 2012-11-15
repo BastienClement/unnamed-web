@@ -26,7 +26,7 @@ function user_avatar($id) {
 }
 
 function url($url = '/') {
-	return UNNAMED_PROD ? 'http://'.UNNAMED_DOMAIN.".unnamed.eu$url" : $url;
+	return UNNAMED_DOMAIN.$url;
 }
 
 function truncate($string, $max_length = 50, $replacement = '...', $trunc_at_space = false) {

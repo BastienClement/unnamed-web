@@ -25,7 +25,7 @@ require 'layout/header.php';
 				</div>
 				
 				<div class="col col2">
-					<h2>Characters</h2>
+					<h2>Personnages</h2>
 					<style>
 						/* PAS TOUCHE À CA POUR LE MOMENT STP :) */
 						

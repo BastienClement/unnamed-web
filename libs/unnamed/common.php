@@ -9,7 +9,8 @@ define('UNNAMED_LIBS',   UNNAMED_ROOT.'/libs');
 
 define('UNNAMED_PROD', isset($_SERVER['UNNAMED_PROD']));
 define('UNNAMED_DEV', !UNNAMED_PROD);
-define('UNNAMED_DOMAIN', isset($_SERVER['UNNAMED_DOMAIN']) ? $_SERVER['UNNAMED_DOMAIN'] : null);
+
+define('UNNAMED_DOMAIN', 'http://'.$_SERVER['HTTP_HOST']);
 
 require UNNAMED_ROOT.'/externals/loader.php';
 
