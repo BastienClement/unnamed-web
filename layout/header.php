@@ -35,6 +35,9 @@ if(!defined('UNNAMED'))
 	<link rel="stylesheet" type="text/css" href="/layout/style.css">
 	<link rel="stylesheet" type="text/css" href="/layout/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/layout/shadowbox-3.0.3/shadowbox.css">
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
 
 	<link rel="icon" type="image/png" href="/layout/img/fav.png" />
 	
