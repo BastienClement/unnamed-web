@@ -8,19 +8,20 @@ $xbbc_parser->SetFlag(\XBBC\PARSE_LEAD);
 header('Content-Type: application/rss+xml; charset=UTF-8');
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
-echo '<rss version="2.0">';
+echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
 echo '<channel>';
 echo '<title>Unnamed.eu - Flux RSS</title>';
 echo '<link>http://www.unnamed.eu</link>';
+echo '<atom:link href="'.url("/rss").'" rel="self" type="application/rss+xml" />';
 echo '<description>Portail de la guilde The Unnamed sur le serveur Marécage de Zangar (EU)</description>';
 
 while($article = $db->fetch_assoc($articles)):
 	echo '<item>';
-	echo '<title><![CDATA['.$article['subject'].']]></title>';
+	echo '<title><![CDATA['.$article['subject'].' ['.$article['poster'].']]]></title>';
 	echo '<link>'.url("/article/").$article['id'].'/'.sluggify($article['subject']).'</link>';
 	echo '<description><![CDATA['.strip_tags($xbbc_parser->Parse($article['message'])).']]></description>';
 	echo '<pubDate>'.date("r",$article['posted']).'</pubDate>';
-	echo '<guid isPermaLink="false">'.$article['id'].'</guid>';
+	echo '<guid isPermaLink="false">Articles #'.$article['id'].'</guid>';
 	echo '</item>';
 endwhile;
 
