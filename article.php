@@ -76,7 +76,17 @@ if ($db->num_rows($comments) > 0){
 <div class="comment-block" id="comment-<?php echo $comment['id']; ?>">
 <div class="author-avatar"><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php user_avatar($comment[poster_id]); ?></a></div>
 <div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php echo $comment['poster']; ?></a> <span class="comment-date"> <?php echo $date_icon." ".$date;?></span></div>
-<div class="comment-body"><p><?php echo $xbbc->Parse($comment['message']) ?></p></div><div class="clearfix"></div></div>
+<div class="comment-body"><p><?php echo $xbbc->Parse($comment['message']) ?></p></div>
+
+<?php
+
+if (isset($comment['edited'])){
+		echo "<div class=\"last_mod\">Dernière modification par ".$comment['edited_by']." <abbr class=\"timeago\" title=\"".date("c",$comment['edited'])."\">".date("d/m/Y à H:i:s",$comment['edited'])."</abbr></div>";
+		}
+		
+?>
+
+<div class="clearfix"></div></div>
 </div>
 
 <?php

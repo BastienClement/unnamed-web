@@ -14,5 +14,3 @@
 		<a href=""><i class="icon-envelope icon-white"></i> E-mail</a>
 	</div>
 </div>
-
-<?php var_dump($art['email_setting']); ?>
