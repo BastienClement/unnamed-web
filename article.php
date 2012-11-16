@@ -4,7 +4,7 @@ if(!isset($_ARGS[0]))
 	return_404();
 
 $art_id = (int) $_ARGS[0];
-$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message, u.email_setting, u.biography FROM {$db->profile}topics AS t INNER JOIN {$db->profile}posts AS p ON p.topic_id = t.id INNER JOIN {$db->profile}users AS u ON u.id = p.poster_id  WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message, u.email_setting, u.biography, t.first_post_id FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id INNER JOIN users AS u ON u.id = p.poster_id  WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
 
 if(!$art = $db->fetch_assoc($articles))
 	return_404();
@@ -15,7 +15,7 @@ if(sluggify($art['subject']) != $_ARGS[1]) {
 	exit;
 }
 
-$res = $db->query("UPDATE {$db->prefix}topics SET num_views = num_views+1 WHERE id = $art_id LIMIT 1");
+$res = $db->query("UPDATE topics SET num_views = num_views+1 WHERE id = $art_id LIMIT 1");
 
 define('ACTIVE_PAGE', 'articles');
 define('PAGE_TITLE',  'Articles');
@@ -34,7 +34,8 @@ include('layout/header.php');
 <div class="last-news-infos">
 	<span class="article-comments">
 		<?php echo $art['num_views']+1; ?> <i class="icon-eye-open"></i>
-		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class="icon-comment"></i></a>
+		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class="icon-comment"><i class=
+"icon-comment"></i></i></a>
 		/ <?php echo $art['num_likes']; ?> <i class="icon-heart"></i>
 	</span>
 	Publié par
@@ -54,35 +55,69 @@ include('layout/header.php');
 
 <h2>Commentaires</h2>
 
-<div class="comment-block">
-<div class="author-avatar"><a href=""><img src="/layout/img/noavatar.jpg"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Aarak</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum bland</p></div></div>
+<?php
+
+$comments = $db->query("SELECT id, poster, poster_id, message, edited, edited_by, posted FROM posts WHERE topic_id = $art_id AND id != {$art['first_post_id']}");
+
+if ($db->num_rows($comments) > 0){
+
+	while($comment = $db->fetch_assoc($comments)){
+	
+		$date = "<abbr class=\"timeago-uc\" title=\"".date("c" , $comment['posted'])."\">".date("d/m/y H:i:s" , $comment['posted'])."</abbr>";
+		
+		if((time() - $comment['posted']) < 86400){
+			$date_icon = "<i class=\"icon-time\"></i>";
+		} else {
+			$date_icon = "<i class=\"icon-calendar\"></i>";
+		};
+		
+?>
+
+<div class="comment-block" id="comment-<?php echo $comment['id']; ?>">
+<div class="author-avatar"><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php user_avatar($comment[poster_id]); ?></a></div>
+<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php echo $comment['poster']; ?></a> <span class="comment-date"> <?php echo $date_icon." ".$date;?></span></div>
+<div class="comment-body"><p><?php echo $xbbc->Parse($comment['message']) ?></p></div><div class="clearfix"></div></div>
 </div>
 
-<div class="comment-block">
-<div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/2"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Noumah</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor.</p><p>Vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue.</p><p> Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
-</div>
+<?php
 
-<div class="comment-block">
-<div class="author-avatar"><a href=""><img src="http://www.unnamed.eu/avatars/215"/></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="">Blash</a> <span class="comment-date"><i class=" icon-calendar"></i> 17/09/2010 <i class=" icon-time"></i> 15h09</span></div>
-<div class="comment-body"><p>Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.</p><p>Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla. Vestibulum blandit risus at massa semper lacinia. In molestie sollicitudin faucibus. Curabitur semper ante massa, sed cursus augue.</p></div></div>
-</div>
+	}
+
+} else {
+
+	echo '<div class="alert">Il n\'y a pas encore de commentaires pour cet article.</div>';
+
+}
+
+?>
 
 <div class="hr" id="leavecomment"></div>
 
 <h2>écrire un commentaire</h2>
 
+<?php if($pun_user['is_guest']): ?>
+
 <div class="alert">Vous devez être <a href="/forums/login.php">identifié(e)</a> afin de pouvour écrire un commentaire !</div>
-<form>
-	<textarea></textarea>
+
+<?php 
+
+else :
+
+?>
+
+<form id="quickpostform" method="post" action="/forums/post.php?tid=<?php echo $art_id; ?>">
+	<input type="hidden" name="form_sent" value="1" />
+	<textarea name="req_message"></textarea>
 	<div class="button-wrapper">
-		<input type="button" class="button" value="Valider" />
+		<input type="submit" name="submit" class="button" value="Valider" />
 	</div>
 </form>
+
+<?php
+
+endif;
+
+?>
 
 </div>
 
@@ -117,4 +152,3 @@ include('layout/header.php');
 </div>
 </div>
 <?php include('layout/footer.php'); ?>
-
