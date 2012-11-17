@@ -5,7 +5,7 @@
 		<?php user_avatar($art['poster_id']); ?>
 	</div>
 	<div id="about-author-desc">
-		Curabitur purus dolor, vehicula vestibulum pretium non, placerat eget nisl. Ut quis euismod augue. Donec mollis imperdiet mollis. Curabitur vel rutrum nulla.
+		<?php echo htmlspecialchars($art['biography']); ?>
 	</div>
 	<div class="clearfix"></div>
 	<div id="about-author-contact">
