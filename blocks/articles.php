@@ -50,7 +50,7 @@ while($article = $db->fetch_assoc($articles)):
 				par <strong><a href="/profile/<?php echo $article['poster_id']; ?>"><?php echo htmlspecialchars($article['poster']); ?></a></strong>
 			<?php endif; ?>
 			&ndash; <?php echo $article['num_views']; ?> <i class="icon-eye-open"></i>
-			/ <a href="<?php echo $art_url; ?>#showcomments"><?php echo $article['num_replies']; ?> <i class="icon-comment"><i class="icon-comment"></i></i></a>
+			/ <a href="<?php echo $art_url; ?>#showcomments"><?php echo $article['num_replies']; ?> <i class="icon-comment"><i class="icon-comment icon-white"></i></i></a>
 			/ <?php echo $article['num_likes']; ?> <i class="icon-heart"></i>
 		</div>
 		<?php

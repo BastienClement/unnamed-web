@@ -14,9 +14,22 @@
 .icon-white, .nav > .active > a > [class^="icon-"], .nav > .active > a > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
 	background-image: url("bootstrap/img/glyphicons-halflings-white.png");
 }
+.icon-green, .nav > .active > a > [class^="icon-"], .nav > .active > a > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
+	background-image: url("bootstrap/img/glyphicons-halflings-green.png");
+}
 
-[class^="icon-"] > [class^="icon-"], [class*=" icon-"] > [class*=" icon-"] {
+[class^="icon-"] > [class*="icon-white"], [class^=" icon-"] > [class*=" icon-white"]{
 	background-image: url("bootstrap/img/glyphicons-halflings-white.png");
+	opacity: 0;
+	-webkit-transition: opacity .3s ease;
+	-moz-transition: opacity .3s ease;
+	-ms-transition: opacity .3s ease;
+	-o-transition: opacity .3s ease;
+	transition: opacity .3s ease;
+}
+
+[class^="icon-"] > [class*="icon-green"], [class^=" icon-"] > [class*=" icon-green"] {
+	background-image: url("bootstrap/img/glyphicons-halflings-green.png");
 	opacity: 0;
 	-webkit-transition: opacity .3s ease;
 	-moz-transition: opacity .3s ease;

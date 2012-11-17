@@ -35,7 +35,7 @@ include('layout/header.php');
 	<span class="article-comments">
 		<?php echo $art['num_views']+1; ?> <i class="icon-eye-open"></i>
 		/ <a href="#showcomments"><?php echo $art['num_replies']; ?> <i class="icon-comment"><i class=
-"icon-comment"></i></i></a>
+"icon-comment icon-white"></i></i></a>
 		/ <?php echo $art['num_likes']; ?> <i class="icon-heart"></i>
 	</span>
 	Publié par
@@ -75,7 +75,7 @@ if ($db->num_rows($comments) > 0){
 
 <div class="comment-block" id="comment-<?php echo $comment['id']; ?>">
 <div class="author-avatar"><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php user_avatar($comment[poster_id]); ?></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class=" icon-retweet"><i class=" icon-retweet"></i></i> Citer</a></span><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php echo $comment['poster']; ?></a> <span class="comment-date"> <?php echo $date_icon." ".$date;?></span></div>
+<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class="icon-retweet"><i class="icon-retweet icon-white"></i></i> Citer</a></span><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php echo $comment['poster']; ?></a> <span class="comment-date"> <?php echo $date_icon." ".$date;?></span></div>
 <div class="comment-body"><p><?php echo $xbbc->Parse($comment['message']) ?></p></div>
 
 <?php

@@ -21,4 +21,4 @@ links_list($threads);
 
 ?>
 
-<div class="button-wrapper"><a href="/articles" class="button">Accéder au forum</a></div>
+<div class="button-wrapper"><a href="/articles" class="button">Accéder aux forums</a></div>
