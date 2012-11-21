@@ -132,7 +132,7 @@ require 'layout/header.php';
 					
 					<div>
 						<?php
-							$chars = $db->query("SELECT r.name, c.main, r.class, r.race, r.gender, r.level, r.achievements, r.rank FROM guild_chars AS c INNER JOIN guild_roster AS r ON r.name = c.char WHERE c.owner = $id");
+							$chars = $db->query("SELECT r.name, c.main, r.class, r.race, r.gender, r.level, r.achievements, r.rank FROM guild_chars AS c INNER JOIN guild_roster AS r ON r.name = c.char WHERE c.owner = $id ORDER BY main DESC, level DESC, name ASC");
 							while($char = $db->fetch_assoc($chars)):
 						?>
 							<a href="#" class="char-wrapper">
