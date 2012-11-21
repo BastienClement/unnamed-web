@@ -59,9 +59,9 @@ include('layout/header.php');
 
 $comments = $db->query("SELECT id, poster, poster_id, message, edited, edited_by, posted FROM posts WHERE topic_id = $art_id AND id != {$art['first_post_id']}");
 
-if ($db->num_rows($comments) > 0){
+if($db->num_rows($comments) > 0) {
 
-	while($comment = $db->fetch_assoc($comments)){
+	while($comment = $db->fetch_assoc($comments)) {
 	
 		$date = "<abbr class=\"timeago-uc\" title=\"".date("c" , $comment['posted'])."\">".date("d/m/y H:i:s" , $comment['posted'])."</abbr>";
 		
@@ -74,19 +74,35 @@ if ($db->num_rows($comments) > 0){
 ?>
 
 <div class="comment-block" id="comment-<?php echo $comment['id']; ?>">
-<div class="author-avatar"><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php user_avatar($comment[poster_id]); ?></a></div>
-<div class="comment"><div class="comment-top"><span class="comment-actions"><a href=""><i class="icon-retweet"><i class="icon-retweet icon-white"></i></i> Citer</a></span><a href="/profile/<?php echo $comment['poster_id']; ?>"><?php echo $comment['poster']; ?></a> <span class="comment-date"> <?php echo $date_icon." ".$date;?></span></div>
-<div class="comment-body"><p><?php echo $xbbc->Parse($comment['message']) ?></p></div>
-
-<?php
-
-if (isset($comment['edited'])){
-		echo "<div class=\"last_mod\">Dernière modification par ".$comment['edited_by']." <abbr class=\"timeago\" title=\"".date("c",$comment['edited'])."\">".date("d/m/Y à H:i:s",$comment['edited'])."</abbr></div>";
+	<div class="author-avatar">
+		<a href="/profile/<?php echo $comment['poster_id']; ?>">
+			<?php user_avatar($comment[poster_id]); ?>
+		</a>
+	</div>
+	<div class="comment" data-quote-text="<?php echo htmlspecialchars(json_encode($comment['message'])); ?>" data-quote-author="<?php echo htmlspecialchars($comment['poster']); ?>">
+		<div class="comment-top">
+			<div class="comment-actions">
+				<a href="#leavecomment" class="quote-action" data-quote-target="comment-message">
+					<i class="icon-retweet"><i class="icon-retweet icon-white"></i></i> Citer
+				</a>
+			</div>
+			<a href="/profile/<?php echo $comment['poster_id']; ?>">
+				<?php echo htmlspecialchars($comment['poster']); ?>
+			</a>
+			<span class="comment-date">
+				<?php echo $date_icon." ".$date; ?>
+			</span>
+		</div>
+		<div class="comment-body">
+			<?php echo $xbbc->Parse($comment['message']); ?>
+		</div>
+		<?php
+		if(isset($comment['edited'])) {
+			echo "<div class=\"last_mod\">Dernière modification par ".$comment['edited_by']." <abbr class=\"timeago\" title=\"".date("c", $comment['edited'])."\">".date("d/m/Y à H:i:s", $comment['edited'])."</abbr></div>";
 		}
-		
-?>
-
-<div class="clearfix"></div></div>
+		?>
+		<div class="clearfix"></div>
+	</div>
 </div>
 
 <?php
@@ -117,7 +133,7 @@ else :
 
 <form id="quickpostform" method="post" action="/forums/post.php?tid=<?php echo $art_id; ?>">
 	<input type="hidden" name="form_sent" value="1" />
-	<textarea name="req_message"></textarea>
+	<textarea name="req_message" id="comment-message"></textarea>
 	<div class="button-wrapper">
 		<input type="submit" name="submit" class="button" value="Valider" />
 	</div>
