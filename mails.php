@@ -23,7 +23,7 @@ if($quota == 100){
 <div id="menu-inbox">
 <a href="/mails/compose" class="new-message">Nouveau message</a>
 <div class="hr"></div>
-<a href="/mails/"><span style="margin-top:-1px;display:block;background:#6DDC00;padding:2px 8px;font-size:13px;float:right;color:#545454;border-radius:100px;text-shadow:none;font-weight:bold;">8</span>Boite de réception</a>
+<a href="/mails/"><span style="margin-top:-1px;display:block;background:#6DDC00;padding:2px 8px;font-size:13px;float:right;color:#545454;border-radius:100px;text-shadow:none;color:#000">8</span>Boite de réception</a>
 <a href="/mails/all">Tous les messages<div class="progress-bar"><div class="progress-indicator" style="width:<?php echo $quota;?>%;background:<?php echo $indicator_color;?>;"></div></div></a>
 <a href="/mails/trash">Corbeille</a>
 
