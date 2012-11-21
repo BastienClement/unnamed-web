@@ -1,4 +1,16 @@
 /*
+ * UNNAMED JS
+ */
+
+unnamed = {
+	progress_goto: function(ext_id) {
+		var top = $("#" + ext_id).offset().top;
+		$("body").animate({scrollTop: top}, "slow");
+		return false;
+	}
+}
+
+/*
  * UCODE JS
  */
 

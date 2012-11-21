@@ -1068,22 +1068,12 @@ a.button:after {
  Progression
  --------------------- */
 
-#progression h2 {
+.progress-block h2 {
 	text-transform:none;
 	color:#FFF;
 	margin: 0;
 	padding: 0;
 	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-}
-
-#progression {
-	margin-top: 20px;
-}
-
-.noir {
-	background: rgba(15,15,15,0.7);
-	padding: 10px;
-	margin-top:10px;
 }
 
 .progress-block {
@@ -1092,7 +1082,16 @@ a.button:after {
 	padding: 10px;
 	margin-bottom: 20px;
 	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
-	
+}
+
+.progress-block .inner {
+	background: rgba(15,15,15,0.7);
+	padding: 10px;
+	margin-top:10px;
+}
+
+.progress-block table {
+	width: 630px;
 }
 
 #dragonsoul {
@@ -1137,24 +1136,24 @@ a.button:after {
 	background-position: center -173px;
 }
 
-#terrace {
+#toes {
 	background: url("http://www.unnamed.eu/themes/v2/img/progress/terrace.png");
 	background-position: center -75px;
 }
 
-#mogushan {
+#msv {
 	background: url("http://www.unnamed.eu/themes/v2/img/progress/mogushan.png");
 	background-position: center -100px;
 }
 
-.green{
+.green {
 	color:#6DDC00;
 }
 
-.red{
+.red {
 	color:red;
 }
 
-.yellow{
+.yellow {
 	color:yellow;
 }
