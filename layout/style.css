@@ -1264,6 +1264,7 @@ a.button:after {
 }
 
 #menu-inbox a{
+	position:relative;
 	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 	color:#bbb;
 	background:rgba(0,0,0,0.3);
@@ -1278,3 +1279,16 @@ a.button:after {
 #menu-inbox a:hover{
 	color:#FFF !important;
 }
+
+.progress-bar{
+	background:rgba(109,220,0, 0.15);
+	height:2px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.progress-indicator{
+	height:2px;
+	}

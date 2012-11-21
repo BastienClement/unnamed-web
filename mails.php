@@ -2,26 +2,30 @@
 define('ACTIVE_PAGE', 'inbox');
 define('PAGE_TITLE',  'Messagerie');
 include('layout/header.php');
+
+$quota = 80;
+
+if($quota == 100){
+	$indicator_color = "red";
+} elseif ($quota >= 80 && $quota < 100){
+	$indicator_color = "orange";
+} else {
+	$indicator_color = "#6DDC00";
+}
 ?>
+	
 <div class="section">
-	<div class="section-light">
-	<div class="section-content">
-	<div class="twocols-alt-layout">
+<div class="section-light">
+<div class="section-content">
+<div class="twocols-alt-layout">
 <div class="col col1">
 
-
-
 <div id="menu-inbox">
-
-<a href="" class="new-message">Nouveau message</a>
-
+<a href="/mails/compose" class="new-message">Nouveau message</a>
 <div class="hr"></div>
-
-<a href=""><span style="margin-top:-1px;display:block;background:#222;padding:2px 8px;font-size:13px;float:right;color:#545454;border-radius:100px;">228</span> Boite de réception</a>
-<a href="">Messages envoyés</a>
-<a href="">Brouillon</a>
-<a href="">Tous les messages</a>
-<a href="">Corbeille</a>
+<a href="/mails/"><span style="margin-top:-1px;display:block;background:#6DDC00;padding:2px 8px;font-size:13px;float:right;color:#545454;border-radius:100px;text-shadow:none;font-weight:bold;">8</span>Boite de réception</a>
+<a href="/mails/all">Tous les messages<div class="progress-bar"><div class="progress-indicator" style="width:<?php echo $quota;?>%;background:<?php echo $indicator_color;?>;"></div></div></a>
+<a href="/mails/trash">Corbeille</a>
 
 <div class="hr"></div>
 
@@ -34,6 +38,10 @@ include('layout/header.php');
 </div>
 
 <div class="col col2">
+	
+<div class="alert">Votre boîte de réception ne contient aucun message.</div>
+
+
 <div class="ucode">
 <table cellspacing="0" cellpadding="0">
 <tr>
@@ -49,6 +57,7 @@ include('layout/header.php');
 <div class="hr"></div>
 
 </div>
+
 </div>
 
 <div class="clearfix"></div>
