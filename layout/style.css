@@ -38,6 +38,11 @@ body::-webkit-scrollbar-track-piece {
 	background-color: rgba(128, 128, 128, 0.3);
 }
 
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+	background-color: rgba(128, 128, 128, 0.4);
+}
+
 ::-webkit-scrollbar-corner {
 	background: transparent;
 }
