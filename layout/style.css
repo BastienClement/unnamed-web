@@ -1063,3 +1063,98 @@ a.button:after {
 .progress-indicator{
 	height:2px;
 	}
+	
+/* ---------------------
+ Progression
+ --------------------- */
+
+#progression h2 {
+	text-transform:none;
+	color:#FFF;
+	margin: 0;
+	padding: 0;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+#progression {
+	margin-top: 20px;
+}
+
+.noir {
+	background: rgba(15,15,15,0.7);
+	padding: 10px;
+	margin-top:10px;
+}
+
+.progress-block {
+	color: white;
+	width: 660px;
+	padding: 10px;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+	
+}
+
+#dragonsoul {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/dragonsoul.png") center;
+}
+
+#icc {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/icc.png") center top;
+}
+
+#halion {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/sanctum.png");
+	background-position: center -160px;
+}
+
+#edc {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/edc.png") center;
+}
+
+#uldu {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/uldu.png") center;
+}
+
+#quatrevents {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/trone.png") center;
+}
+
+#firelands {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/firelands.png") center;
+}
+
+#ailenoire {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/ailenoire.png") center;
+}
+
+#crepuscule {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/crepuscule.png") center;
+}
+
+#hof {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/hof.png");
+	background-position: center -173px;
+}
+
+#terrace {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/terrace.png");
+	background-position: center -75px;
+}
+
+#mogushan {
+	background: url("http://www.unnamed.eu/themes/v2/img/progress/mogushan.png");
+	background-position: center -100px;
+}
+
+.green{
+	color:#6DDC00;
+}
+
+.red{
+	color:red;
+}
+
+.yellow{
+	color:yellow;
+}
