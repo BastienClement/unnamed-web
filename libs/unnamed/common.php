@@ -30,6 +30,7 @@ endif;
 
 require_once UNNAMED_LIBS.'/unnamed/blogs.php';
 require UNNAMED_LIBS.'/unnamed/functions.php';
+require UNNAMED_LIBS.'/unnamed/wow.php';
 
 // Absolute URLs for prod version, fix blog navigation
 ob_start(function($html) {
