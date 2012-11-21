@@ -1,6 +1,6 @@
 <?php
 
-define('PUN_ROOT', '../forums/');
+define('PUN_ROOT', dirname(__FILE__).'/../forums/');
 define('PUN_TURN_OFF_MAINT', 1);
 define('PUN_QUIET_VISIT', 1);
 require PUN_ROOT.'include/common.php';
