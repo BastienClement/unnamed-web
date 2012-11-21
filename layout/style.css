@@ -15,6 +15,33 @@ body {
 	color: #bbb;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+	display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: transparent;
+}
+
+body::-webkit-scrollbar-track-piece {
+	background: #222;
+}
+
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+	background-color: rgba(128, 128, 128, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
 h2, h3 {
 	text-transform: uppercase;
 	font-family: 'PT Sans Narrow', sans-serif;
