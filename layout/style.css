@@ -1162,14 +1162,12 @@ a.button:after {
  Recrutement
  --------------------- */
  
- .open{
-	width:15px;
-	height:15px;
-	background:#6DDC00;
+ .class-icon{
+	width:18px;
+	height:18px;
+	display:block;
  }
  
- .closed{
-	width:15px;
-	height:15px;
-	background:red;
+ .recruitement-close{
+	opacity:0.2;
  }
