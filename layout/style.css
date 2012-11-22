@@ -1095,54 +1095,54 @@ a.button:after {
 }
 
 #dragonsoul {
-	background: url("/layout/img/progressdragonsoul.png") center;
+	background: url("/layout/img/progress/dragonsoul.png") center;
 }
 
 #icc {
-	background: url("/layout/img/progressicc.png") center top;
+	background: url("/layout/img/progress/icc.png") center top;
 }
 
 #halion {
-	background: url("/layout/img/progresssanctum.png");
+	background: url("/layout/img/progress/sanctum.png");
 	background-position: center -160px;
 }
 
 #edc {
-	background: url("/layout/img/progressedc.png") center;
+	background: url("/layout/img/progress/edc.png") center;
 }
 
 #uldu {
-	background: url("/layout/img/progressuldu.png") center;
+	background: url("/layout/img/progress/uldu.png") center;
 }
 
 #quatrevents {
-	background: url("/layout/img/progresstrone.png") center;
+	background: url("/layout/img/progress/trone.png") center;
 }
 
 #firelands {
-	background: url("/layout/img/progressfirelands.png") center;
+	background: url("/layout/img/progress/firelands.png") center;
 }
 
 #ailenoire {
-	background: url("/layout/img/progressailenoire.png") center;
+	background: url("/layout/img/progress/ailenoire.png") center;
 }
 
 #crepuscule {
-	background: url("/layout/img/progresscrepuscule.png") center;
+	background: url("/layout/img/progress/crepuscule.png") center;
 }
 
 #hof {
-	background: url("/layout/img/progresshof.png");
+	background: url("/layout/img/progress/hof.png");
 	background-position: center -173px;
 }
 
 #toes {
-	background: url("/layout/img/progressterrace.png");
+	background: url("/layout/img/progress/terrace.png");
 	background-position: center -75px;
 }
 
 #msv {
-	background: url("/layout/img/progressmogushan.png");
+	background: url("/layout/img/progress/mogushan.png");
 	background-position: center -100px;
 }
 
