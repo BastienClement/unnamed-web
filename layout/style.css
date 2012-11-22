@@ -1095,54 +1095,54 @@ a.button:after {
 }
 
 #dragonsoul {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/dragonsoul.png") center;
+	background: url("/layout/img/progressdragonsoul.png") center;
 }
 
 #icc {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/icc.png") center top;
+	background: url("/layout/img/progressicc.png") center top;
 }
 
 #halion {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/sanctum.png");
+	background: url("/layout/img/progresssanctum.png");
 	background-position: center -160px;
 }
 
 #edc {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/edc.png") center;
+	background: url("/layout/img/progressedc.png") center;
 }
 
 #uldu {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/uldu.png") center;
+	background: url("/layout/img/progressuldu.png") center;
 }
 
 #quatrevents {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/trone.png") center;
+	background: url("/layout/img/progresstrone.png") center;
 }
 
 #firelands {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/firelands.png") center;
+	background: url("/layout/img/progressfirelands.png") center;
 }
 
 #ailenoire {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/ailenoire.png") center;
+	background: url("/layout/img/progressailenoire.png") center;
 }
 
 #crepuscule {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/crepuscule.png") center;
+	background: url("/layout/img/progresscrepuscule.png") center;
 }
 
 #hof {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/hof.png");
+	background: url("/layout/img/progresshof.png");
 	background-position: center -173px;
 }
 
 #toes {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/terrace.png");
+	background: url("/layout/img/progressterrace.png");
 	background-position: center -75px;
 }
 
 #msv {
-	background: url("http://www.unnamed.eu/themes/v2/img/progress/mogushan.png");
+	background: url("/layout/img/progressmogushan.png");
 	background-position: center -100px;
 }
 
