@@ -70,6 +70,8 @@ include('layout/header.php');
 				<div class="col col3">
 					<?php require UNNAMED_BLOCKS.'/ranking.php'; ?>
 					<div class="hr"></div>
+					<?php require UNNAMED_BLOCKS.'/recruitement.php'; ?>
+					<div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/activity.php'; ?>
 					<!-- <div class="hr"></div>
 					<?php require UNNAMED_BLOCKS.'/sponsors.php'; ?> -->

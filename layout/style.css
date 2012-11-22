@@ -1157,3 +1157,19 @@ a.button:after {
 .yellow {
 	color:yellow;
 }
+
+/* ---------------------
+ Recrutement
+ --------------------- */
+ 
+ .open{
+	width:15px;
+	height:15px;
+	background:#6DDC00;
+ }
+ 
+ .closed{
+	width:15px;
+	height:15px;
+	background:red;
+ }
