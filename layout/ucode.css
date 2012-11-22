@@ -58,9 +58,19 @@
 	padding: 10px 10px 12px 10px;
 }
 
+.ucode table.compact td, .ucode table.compact th {
+	padding-top: 5px;
+	padding-bottom: 7px;
+}
+
 .ucode tr:last-child td, .ucode tr:last-child th {
 	padding: 10px;
 	background: none;
+}
+
+.ucode table.compact tr:last-child td, .ucode table.compact tr:last-child th {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .ucode td > :first-child, .ucode th > :first-child {
