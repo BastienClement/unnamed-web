@@ -1,4 +1,4 @@
-<h2>Partager cet article</h2>
+<h2>Partager <?php echo defined('SHARE_WHAT') ? SHARE_WHAT : 'cet article'; ?></h2>
 
 <div id="share">
 	<a href=""><img src="/layout/img/social-icons/facebook.png" alt="Facebook" title="Facebook"/></a>
