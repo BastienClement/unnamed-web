@@ -41,8 +41,8 @@
 	background: rgba(0, 0, 0, 0.3);
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border-spacing:0;
-	border-collapse:collapse;
+	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 .ucode tr:nth-child(2n) {
@@ -82,7 +82,7 @@
 }
 
 .ucode h3, .ucode h4, .ucode h5, .ucode h6 {
-	margin: 10px 0;
+	margin: 15px 0;
 	font-family: 'PT Sans Narrow', sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -111,10 +111,6 @@
 
 .ucode > ul, .ucode > ol {
 	margin: 10px 0 10px 20px;
-}
-
-.ucode ul li, .ucode ol li {
-	margin-top: 3px;
 }
 
 .ucode li:first-child {
