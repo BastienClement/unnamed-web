@@ -18,6 +18,10 @@ if(!$html->find('div[id=server-error] h2')):
 			'time' => trim($li->find('dt', 0)->plaintext),
 		);
 	}
-
-	file_put_contents(dirname(__FILE__) . "/data/activity.txt", serialize($results));
+	
+	if(count($results) < 1) {
+		file_put_contents(dirname(__FILE__) . "/data/activity_error.txt", $html->save());
+	} else {
+		file_put_contents(dirname(__FILE__) . "/data/activity.txt", serialize($results));
+	}
 endif;
