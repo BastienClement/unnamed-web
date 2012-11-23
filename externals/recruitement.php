@@ -1,4 +1,4 @@
-<pre><?php
+<?php
 
 include dirname(__FILE__).'/../libs/simple_html_dom.php';
 include dirname(__FILE__).'/../libs/unnamed/wow.php';
