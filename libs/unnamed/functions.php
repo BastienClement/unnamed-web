@@ -138,3 +138,7 @@ function array_every($input, $callback) {
 	
 	return true;
 }
+
+function current_url() {
+	return 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+}
