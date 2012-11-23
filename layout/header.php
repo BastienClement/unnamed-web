@@ -102,8 +102,8 @@ if(!defined('UNNAMED'))
 							while($poster = $db->fetch_assoc($posters)):
 							?>
 							<li>
-								<a href="<?php echo blog_url($poster['slug']); ?>">
-									<?php echo htmlspecialchars(ucfirst($poster['poster'])); ?>
+								<a href="<?php echo blog_url($poster['slug']); ?>"<?php if($blog_author['slug'] == $poster['slug']) echo ' class="active"'; ?>>
+									<?php echo htmlspecialchars($poster['poster']); ?>
 								</a>
 							</li>
 							<?php endwhile; ?>
