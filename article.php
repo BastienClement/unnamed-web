@@ -150,7 +150,6 @@ endif;
 <div class="col col2">
 
 	<?php 
-	define('SHARE_WHAT', 'ce blog');
 	require UNNAMED_BLOCKS.'/article/share.php'; ?>
 	<div class="hr"></div>
 
