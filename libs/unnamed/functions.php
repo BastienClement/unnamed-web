@@ -7,6 +7,8 @@ function xbbc_ucode_parser() {
 	$parser = new \XBBC\Parser(\XBBC\SMILIES_OPTIMIZER);
 	\UCode\Lib::load($parser);
 	
+	$parser->SmiliesPrefix('http://www.unnamed.eu/forum/img/smilies/');
+	
 	return $parser;
 }
 
