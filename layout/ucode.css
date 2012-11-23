@@ -137,21 +137,18 @@
 	padding: 0px !important;
 	width: 14px;
 }
-	
-.ucode .db-icon, .ucode .wow-class img, .ucode .wow-race img {
-	vertical-align: -3px;
-	width: 15px;
-}
 
 .ucode .icon-boss, .ucode .icon-quest {
 	box-shadow: none;
 	vertical-align: -3px;
 }
 
-.ucode .wow-icon {
+.ucode .db-icon, .ucode .wow-class img, .ucode .wow-race img, .ucode .wow-icon, .ucode .tab img {
 	width: 15px;
 	height: 15px;
-	vertical-align: -2px;
+	vertical-align: -4px;
+	border: 1px solid #333;
+	margin-right: 1px;
 }
 
 .ucode ins, .ucode .unnamed-green {
@@ -227,12 +224,6 @@
 
 .ucode .tab.active {
 	color: #6DDC00;
-}
-
-.ucode .tab img {
-	width: 15px;
-	vertical-align: -3px;
-	margin-right: 3px;
 }
 
 .ucode .tabs-contents {

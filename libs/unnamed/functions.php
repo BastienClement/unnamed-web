@@ -116,3 +116,23 @@ function paginate_fmt($link_pattern, $i) {
 	$link = str_replace('%', $i, $link_pattern);
 	return rtrim($link, '/');
 }
+
+function array_some($input, $callback) {
+	foreach($input as $row) {
+		if($callback($row)) {
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+function array_every($input, $callback) {
+	foreach($input as $row) {
+		if(!$callback($row)) {
+			return false;
+		}
+	}
+	
+	return true;
+}

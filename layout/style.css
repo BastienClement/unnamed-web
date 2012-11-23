@@ -803,6 +803,7 @@ a.button:after {
 	width: 18px;
 	height: 18px;
 	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+	border: 1px solid #333;
 }
 
 .newsfeed a{
@@ -1161,13 +1162,14 @@ a.button:after {
 /* ---------------------
  Recrutement
  --------------------- */
- 
- .class-icon{
-	width:18px;
-	height:18px;
-	display:block;
- }
- 
- .recruitement-close{
-	opacity:0.2;
- }
+
+.class-icon{
+	width: 18px;
+	height: 18px;
+	display: block;
+	border: 1px solid #333;
+}
+
+.recruitement-close{
+	opacity: 0.1;
+}

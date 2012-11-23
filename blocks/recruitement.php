@@ -1,14 +1,29 @@
+<?php
+	$recruiting = unserialize(load_external('recruitement'));
+?>
+
 <h2>Recrutement</h2>
 
 <div class="ucode">
-<table>
+<table class="compact">
+<?php 
+	foreach($recruiting as $class => $specs):
+		if(!array_some($specs, function($v) { return $v; })) continue;
+?>
 	<tr>
-		<td><span class="wow-class c1">Guerrier</span></td><td style="width:18px;"></td>
-		<td style="width:18px;"><img class="class-icon" src="http://wow.zamimg.com/images/wow/icons/small/ability_warrior_savageblow.jpg" title="Armes"/></td>
-		<td style="width:18px;"><img class="class-icon" src="http://wow.zamimg.com/images/wow/icons/small/ability_warrior_innerrage.jpg" title="Fureur"/></td>
-		<td style="width:18px;"><img class="class-icon  recruitement-close" src="http://wow.zamimg.com/images/wow/icons/small/ability_warrior_defensivestance.jpg" title="Protection"/></td>
+		<td>
+			<span class="wow-class c<?php echo $class; ?>"><?php echo ($class == CLASS_DK) ? "DK" : $CLASS[$class][0]; ?></span>
+		</td>
+		<?php if(count($specs) < 4): ?>
+			<td style="width:18px;"></td>
+		<?php endif; ?>
+		<?php foreach($specs as $s_id => $open): ?>
+			<td style="width:18px;">
+				<img class="class-icon<?php if(!$open) echo ' recruitement-close'; ?>" src="http://wow.zamimg.com/images/wow/icons/small/<?php echo $SPEC_ICONS[$s_id]; ?>.jpg" title="<?php echo $SPEC[$s_id]; ?>"/>
+			</td>
+		<?php endforeach; ?>
 	</tr>
-	
+<?php endforeach; ?>
 </table>
 
 </div>
