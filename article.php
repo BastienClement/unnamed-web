@@ -149,7 +149,9 @@ endif;
 
 <div class="col col2">
 
-	<?php require UNNAMED_BLOCKS.'/article/share.php'; ?>
+	<?php 
+	define('SHARE_WHAT', 'ce blog');
+	require UNNAMED_BLOCKS.'/article/share.php'; ?>
 	<div class="hr"></div>
 
 <?php if($art['biography']): ?>

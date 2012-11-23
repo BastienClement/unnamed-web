@@ -5,7 +5,9 @@ function handle_blog_request($blog, $args) {
 	if(!preg_match('/^[a-z]+$/', $blog))
 		return;
 	
-	global $db;
+	foreach($GLOBALS as $var_name => &$var_value) {
+		$$var_name =& $var_value;
+	}
 	
 	$res = $db->query('SELECT * FROM users WHERE slug = "'.$blog.'" LIMIT 1');
 	$blog_author = $db->fetch_assoc($res);
