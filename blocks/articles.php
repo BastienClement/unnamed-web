@@ -3,6 +3,7 @@
 $PER_PAGE = defined('BLOCK_ARTICLES_PER_PAGE') ?  BLOCK_ARTICLES_PER_PAGE : 16;
 $FORUM_ID = defined('BLOCK_ARTICLES_FORUM_ID') ?  BLOCK_ARTICLES_FORUM_ID : 16;
 $LINK_TPL = defined('BLOCK_ARTICLES_LINK_TPL') ?  BLOCK_ARTICLES_LINK_TPL : "/articles/%";
+$AUTHOR = defined('BLOCK_ARTICLES_AUTHOR') ? 'AND p.poster_id = '.BLOCK_ARTICLES_AUTHOR : '';
 
 if(defined('BLOCK_ARTICLES_FULL')) {
 	$nb_articles = $db->query("SELECT COUNT(*) AS total FROM topics WHERE forum_id = $FORUM_ID");
@@ -22,7 +23,7 @@ if(defined('BLOCK_ARTICLES_FULL')) {
 	$limit = 5;
 }
 
-$articles = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message, p.poster_id FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id WHERE t.forum_id = $FORUM_ID ORDER BY t.id DESC LIMIT $limit");
+$articles = $db->query("SELECT t.id, t.poster, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, p.message, p.poster_id FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id WHERE t.forum_id = $FORUM_ID $AUTHOR ORDER BY t.id DESC LIMIT $limit");
 
 $xbbc_parser = xbbc_ucode_parser();
 $xbbc_parser->SetFlag(\XBBC\PARSE_LEAD);
