@@ -257,3 +257,7 @@
 .ucode > :last-child {
 	margin-bottom: 0;
 }
+
+.ucode .latex {
+	box-shadow: none;
+}
