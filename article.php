@@ -47,6 +47,14 @@ include('layout/header.php');
 <?php
 	$xbbc = xbbc_ucode_parser();
 	$art_html = $xbbc->Parse($art['message']);
+	
+	preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
+	$display_toc = (count($titles) >= 4);
+	
+	if($display_toc) {
+		$art_html = preg_replace('/(<h[3-6] id="[a-z0-9\-]+")>/U', '$1 class="toc">', $art_html);
+	}
+	
 	echo $art_html;
 ?>
 </div>
@@ -159,8 +167,7 @@ endif;
 <?php endif; ?>
 
 <?php
-	preg_match_all('/<h([3-6]) id="([a-z0-9\-]+)">(.*)<\/h\1>/U', $art_html, $titles, PREG_SET_ORDER);
-	if(count($titles) >= 4):
+	if($display_toc):
 ?>
 		<?php require UNNAMED_BLOCKS.'/article/toc.php'; ?>
 		<div class="hr"></div>
