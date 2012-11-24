@@ -143,8 +143,13 @@
 	width: 15px;
 	height: 15px;
 	vertical-align: -4px;
-	border: 1px solid #333;
+	border: 1px solid #333 !important;
+	color: #333 !important;
 	margin-right: 1px;
+}
+
+.ucode a > img {
+	color: #333 !important;
 }
 
 .ucode ins, .ucode .unnamed-green {
