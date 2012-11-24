@@ -4,7 +4,11 @@ if(!isset($_ARGS[0]))
 	return_404();
 
 $art_id = (int) $_ARGS[0];
-$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message, u.email_setting, u.biography, t.first_post_id FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id INNER JOIN users AS u ON u.id = p.poster_id  WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17) LIMIT 1");
+
+// TODO : only if really unnamed !
+$UNNAMED_DRAFT = 'OR t.forum_id = 19';
+
+$articles = $db->query("SELECT t.id, t.poster, p.poster_id, t.subject, t.posted, t.num_views, t.num_replies, t.num_likes, t.forum_id, p.message, u.email_setting, u.biography, t.first_post_id FROM topics AS t INNER JOIN posts AS p ON p.id = t.first_post_id INNER JOIN users AS u ON u.id = p.poster_id  WHERE t.id = $art_id AND (t.forum_id = 16 OR t.forum_id = 17 $UNNAMED_DRAFT) LIMIT 1");
 
 if(!$art = $db->fetch_assoc($articles))
 	return_404();
