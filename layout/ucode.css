@@ -261,3 +261,28 @@
 .ucode .latex {
 	box-shadow: none;
 }
+
+.ucode        { counter-reset: heading1; }
+.ucode h3.toc { counter-reset: heading2; }
+.ucode h4.toc { counter-reset: heading3; }
+.ucode h5.toc { counter-reset: heading4; }
+
+.ucode h3.toc::before {
+	counter-increment: heading1;
+	content: counter(heading1, upper-roman) " - ";
+}
+
+.ucode h4.toc::before {
+	counter-increment: heading2;
+	content: counter(heading1) "." counter(heading2) ". ";
+}
+
+.ucode h5.toc::before {
+	counter-increment: heading3;
+	content: counter(heading1) "." counter(heading2) "." counter(heading3) ". ";
+}
+
+.ucode h6.toc::before {
+	counter-increment: heading4;
+	content: counter(heading1) "." counter(heading2) "." counter(heading3) "." counter(heading4) ". ";
+}
